@@ -1,0 +1,252 @@
+[
+ {
+  "id": "Q001",
+  "text": "der beleg von MediaMarkt im juli",
+  "target": "R0089"
+ },
+ {
+  "id": "Q002",
+  "text": "der beleg von dm im oktober",
+  "target": "R0006"
+ },
+ {
+  "id": "Q003",
+  "text": "Motoroel bei ATU",
+  "target": "R0038"
+ },
+ {
+  "id": "Q004",
+  "text": "der vom MediaMarkt im april",
+  "target": "R0056"
+ },
+ {
+  "id": "Q005",
+  "text": "Winterjacke 2026",
+  "target": "R0068"
+ },
+ {
+  "id": "Q006",
+  "text": "der vom MediaMarkt im september",
+  "target": "R0088"
+ },
+ {
+  "id": "Q007",
+  "text": "Windeln 2026",
+  "target": "R0023"
+ },
+ {
+  "id": "Q008",
+  "text": "die Vitamin D vom juli",
+  "target": "R0049"
+ },
+ {
+  "id": "Q009",
+  "text": "der vom Thalia im april",
+  "target": "R0075"
+ },
+ {
+  "id": "Q010",
+  "text": "die T-Shirts vom februar",
+  "target": "R0060"
+ },
+ {
+  "id": "Q011",
+  "text": "die Scheibenwischer vom maerz",
+  "target": "R0033"
+ },
+ {
+  "id": "Q012",
+  "text": "der beleg von ATU im september",
+  "target": "R0037"
+ },
+ {
+  "id": "Q013",
+  "text": "Sneaker 2026",
+  "target": "R0057"
+ },
+ {
+  "id": "Q014",
+  "text": "T-Shirts bei H&M",
+  "target": "R0039"
+ },
+ {
+  "id": "Q015",
+  "text": "der vom EDEKA im august",
+  "target": "R0059"
+ },
+ {
+  "id": "Q016",
+  "text": "der beleg von EDEKA im august",
+  "target": "R0050"
+ },
+ {
+  "id": "Q017",
+  "text": "Vitamin D 2025",
+  "target": "R0031"
+ },
+ {
+  "id": "Q018",
+  "text": "Zahnpasta bei dm",
+  "target": "R0046"
+ },
+ {
+  "id": "Q019",
+  "text": "Lautsprecher bei Saturn",
+  "target": "R0003"
+ },
+ {
+  "id": "Q020",
+  "text": "Roman 2024",
+  "target": "R0002"
+ },
+ {
+  "id": "Q021",
+  "text": "Kaese bei EDEKA",
+  "target": "R0096"
+ },
+ {
+  "id": "Q022",
+  "text": "Silikon 2025",
+  "target": "R0100"
+ },
+ {
+  "id": "Q023",
+  "text": "der vom dm im dezember",
+  "target": "R0046"
+ },
+ {
+  "id": "Q024",
+  "text": "der vom dm im april",
+  "target": "R0080"
+ },
+ {
+  "id": "Q025",
+  "text": "der beleg von Apotheke am Markt im april",
+  "target": "R0081"
+ },
+ {
+  "id": "Q026",
+  "text": "der beleg von MediaMarkt im juli",
+  "target": "R0040"
+ },
+ {
+  "id": "Q027",
+  "text": "der vom Thalia im april",
+  "target": "R0075"
+ },
+ {
+  "id": "Q028",
+  "text": "Kochbuch bei Thalia",
+  "target": "R0012"
+ },
+ {
+  "id": "Q029",
+  "text": "der vom EDEKA im juni",
+  "target": "R0096"
+ },
+ {
+  "id": "Q030",
+  "text": "Stichsaege 2026",
+  "target": "R0026"
+ },
+ {
+  "id": "Q031",
+  "text": "der vom OBI im oktober",
+  "target": "R0047"
+ },
+ {
+  "id": "Q032",
+  "text": "Scheibenwischer bei ATU",
+  "target": "R0033"
+ },
+ {
+  "id": "Q033",
+  "text": "der beleg von EDEKA im juni",
+  "target": "R0096"
+ },
+ {
+  "id": "Q034",
+  "text": "der vom H&M im februar",
+  "target": "R0060"
+ },
+ {
+  "id": "Q035",
+  "text": "die Bilderrahmen vom juli",
+  "target": "R0097"
+ },
+ {
+  "id": "Q036",
+  "text": "der beleg von H&M im august",
+  "target": "R0072"
+ },
+ {
+  "id": "Q037",
+  "text": "Silikon bei OBI",
+  "target": "R0051"
+ },
+ {
+  "id": "Q038",
+  "text": "die T-Shirts vom oktober",
+  "target": "R0069"
+ },
+ {
+  "id": "Q039",
+  "text": "Winterjacke bei H&M",
+  "target": "R0048"
+ },
+ {
+  "id": "Q040",
+  "text": "Notizbuch bei Thalia",
+  "target": "R0075"
+ },
+ {
+  "id": "Q041",
+  "text": "die Winterjacke vom februar",
+  "target": "R0014"
+ },
+ {
+  "id": "Q042",
+  "text": "Kerzen 2024",
+  "target": "R0004"
+ },
+ {
+  "id": "Q043",
+  "text": "der beleg von Apotheke am Markt im september",
+  "target": "R0029"
+ },
+ {
+  "id": "Q044",
+  "text": "SSD bei MediaMarkt",
+  "target": "R0082"
+ },
+ {
+  "id": "Q045",
+  "text": "der beleg von Thalia im februar",
+  "target": "R0084"
+ },
+ {
+  "id": "Q046",
+  "text": "der beleg von BAUHAUS im august",
+  "target": "R0018"
+ },
+ {
+  "id": "Q047",
+  "text": "der beleg von H&M im november",
+  "target": "R0039"
+ },
+ {
+  "id": "Q048",
+  "text": "Sneaker 2024",
+  "target": "R0013"
+ },
+ {
+  "id": "Q049",
+  "text": "die Farbroller vom august",
+  "target": "R0018"
+ },
+ {
+  "id": "Q050",
+  "text": "Winterjacke 2026",
+  "target": "R0048"
+ }
+]

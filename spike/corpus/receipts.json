@@ -1,0 +1,2493 @@
+[
+ {
+  "id": "R0001",
+  "merchant": "H&M",
+  "category": "Kleidung",
+  "date": "2024-01-24",
+  "total_cents": 12277,
+  "positions": [
+   {
+    "label": "JEANS SLIM FIT 32/32",
+    "query": "Jeans",
+    "photo": "blaue Jeans",
+    "qty": 1,
+    "price_cents": 3507
+   },
+   {
+    "label": "WINTERJACKE PARKA M",
+    "query": "Winterjacke",
+    "photo": "schwarze Winterjacke",
+    "qty": 1,
+    "price_cents": 8770
+   }
+  ],
+  "text": "H&M Filiale 12\n24.01.2024\n1x JEANS SLIM FIT 32/32 35,07\n1x WINTERJACKE PARKA M 87,70\nSUMME 122,77\nBON-NR 100000\nKategorie: Kleidung"
+ },
+ {
+  "id": "R0002",
+  "merchant": "Thalia",
+  "category": "Buecher",
+  "date": "2024-10-14",
+  "total_cents": 1410,
+  "positions": [
+   {
+    "label": "ROMAN TASCHENBUCH BESTS",
+    "query": "Roman",
+    "photo": "Taschenbuch Roman",
+    "qty": 1,
+    "price_cents": 1410
+   }
+  ],
+  "text": "Thalia Filiale 12\n14.10.2024\n1x ROMAN TASCHENBUCH BESTS 14,10\nSUMME 14,10\nBON-NR 100001\nKategorie: Buecher"
+ },
+ {
+  "id": "R0003",
+  "merchant": "Saturn",
+  "category": "Elektronik",
+  "date": "2024-09-07",
+  "total_cents": 35265,
+  "positions": [
+   {
+    "label": "USB-C LADENETZT. 65W",
+    "query": "Ladegeraet",
+    "photo": "weisses USB-C Ladegeraet",
+    "qty": 1,
+    "price_cents": 3928
+   },
+   {
+    "label": "LED-DECKE BATH 24W",
+    "query": "Deckenlampe",
+    "photo": "runde LED Deckenlampe",
+    "qty": 2,
+    "price_cents": 5392
+   },
+   {
+    "label": "DRUCKERPATR. HP 305XL",
+    "query": "Druckerpatronen",
+    "photo": "HP Druckerpatronen Doppelpack",
+    "qty": 2,
+    "price_cents": 3817
+   },
+   {
+    "label": "BT-LAUTSPR. JBL FLIP6",
+    "query": "Lautsprecher",
+    "photo": "schwarzer JBL Lautsprecher",
+    "qty": 1,
+    "price_cents": 12919
+   }
+  ],
+  "text": "Saturn Filiale 12\n07.09.2024\n1x USB-C LADENETZT, 65W 39,28\n2x LED-DECKE BATH 24W 53,92\n2x DRUCKERPATR, HP 305XL 38,17\n1x BT-LAUTSPR, JBL FLIP6 129,19\nSUMME 352,65\nBON-NR 100002\nKategorie: Elektronik"
+ },
+ {
+  "id": "R0004",
+  "merchant": "IKEA",
+  "category": "Moebel",
+  "date": "2024-02-13",
+  "total_cents": 1216,
+  "positions": [
+   {
+    "label": "KERZEN GLIMMA 20ST",
+    "query": "Kerzen",
+    "photo": "Packung Teelichter",
+    "qty": 2,
+    "price_cents": 608
+   }
+  ],
+  "text": "IKEA Filiale 12\n13.02.2024\n2x KERZEN GLIMMA 20ST 6,08\nSUMME 12,16\nBON-NR 100003\nKategorie: Moebel"
+ },
+ {
+  "id": "R0005",
+  "merchant": "dm",
+  "category": "Drogerie",
+  "date": "2024-12-15",
+  "total_cents": 1464,
+  "positions": [
+   {
+    "label": "WINDELN PREMIUM GR.4",
+    "query": "Windeln",
+    "photo": "Windelpackung",
+    "qty": 1,
+    "price_cents": 1464
+   }
+  ],
+  "text": "dm Filiale 12\n15.12.2024\n1x WINDELN PREMIUM GR,4 14,64\nSUMME 14,64\nBON-NR 100004\nKategorie: Drogerie"
+ },
+ {
+  "id": "R0006",
+  "merchant": "dm",
+  "category": "Drogerie",
+  "date": "2025-10-07",
+  "total_cents": 372,
+  "positions": [
+   {
+    "label": "DUSCHGEL MILCH&HONIG 250",
+    "query": "Duschgel",
+    "photo": "dm Duschgel Flasche",
+    "qty": 3,
+    "price_cents": 124
+   }
+  ],
+  "text": "dm Filiale 12\n07.10.2025\n3x DUSCHGEL MILCH&HONIG 250 1,24\nSUMME 3,72\nBON-NR 100005\nKategorie: Drogerie"
+ },
+ {
+  "id": "R0007",
+  "merchant": "dm",
+  "category": "Drogerie",
+  "date": "2024-04-28",
+  "total_cents": 2726,
+  "positions": [
+   {
+    "label": "WINDELN PREMIUM GR.4",
+    "query": "Windeln",
+    "photo": "Windelpackung",
+    "qty": 2,
+    "price_cents": 1363
+   }
+  ],
+  "text": "dm Filiale 12\n28.04.2024\n2x WINDELN PREMIUM GR,4 13,63\nSUMME 27,26\nBON-NR 100006\nKategorie: Drogerie"
+ },
+ {
+  "id": "R0008",
+  "merchant": "H&M",
+  "category": "Kleidung",
+  "date": "2025-03-12",
+  "total_cents": 16086,
+  "positions": [
+   {
+    "label": "JEANS SLIM FIT 32/32",
+    "query": "Jeans",
+    "photo": "blaue Jeans",
+    "qty": 3,
+    "price_cents": 3917
+   },
+   {
+    "label": "T-SHIRT 3ER-PACK WEISS",
+    "query": "T-Shirts",
+    "photo": "drei weisse T-Shirts",
+    "qty": 3,
+    "price_cents": 1445
+   }
+  ],
+  "text": "H&M Filiale 12\n12.03.2025\n3x JEANS SLIM FIT 32/32 39,17\n3x T-SHIRT 3ER-PACK WEISS 14,45\nSUMME 160,86\nBON-NR 100007\nKategorie: Kleidung"
+ },
+ {
+  "id": "R0009",
+  "merchant": "Apotheke am Markt",
+  "category": "Gesundheit",
+  "date": "2025-09-24",
+  "total_cents": 1378,
+  "positions": [
+   {
+    "label": "NASENSPRAY 0,1% 10ML",
+    "query": "Nasenspray",
+    "photo": "Nasenspray Flasche",
+    "qty": 2,
+    "price_cents": 689
+   }
+  ],
+  "text": "Apotheke am Markt Filiale 12\n24.09.2025\n2x NASENSPRAY 0,1% 10ML 6,89\nSUMME 13,78\nBON-NR 100008\nKategorie: Gesundheit"
+ },
+ {
+  "id": "R0010",
+  "merchant": "dm",
+  "category": "Drogerie",
+  "date": "2025-11-11",
+  "total_cents": 225,
+  "positions": [
+   {
+    "label": "ZAHNPASTA KRÄUTER 75ML",
+    "query": "Zahnpasta",
+    "photo": "Zahnpasta Tube",
+    "qty": 1,
+    "price_cents": 225
+   }
+  ],
+  "text": "dm Filiale 12\n11.11.2025\n1x ZAHNPASTA KRÄUTER 75ML 2,25\nSUMME 2,25\nBON-NR 100009\nKategorie: Drogerie"
+ },
+ {
+  "id": "R0011",
+  "merchant": "EDEKA",
+  "category": "Lebensmittel",
+  "date": "2025-02-07",
+  "total_cents": 3100,
+  "positions": [
+   {
+    "label": "OLIVENOEL NATIV 750ML",
+    "query": "Olivenoel",
+    "photo": "Olivenoelflasche",
+    "qty": 2,
+    "price_cents": 1168
+   },
+   {
+    "label": "BERGKAESE 400G STK",
+    "query": "Kaese",
+    "photo": "Stueck Bergkaese",
+    "qty": 1,
+    "price_cents": 634
+   },
+   {
+    "label": "SCHOKOLADE VOLLMILCH 100",
+    "query": "Schokolade",
+    "photo": "Schokoladentafel",
+    "qty": 1,
+    "price_cents": 130
+   }
+  ],
+  "text": "EDEKA Filiale 12\n07.02.2025\n2x OLIVENOEL NATIV 750ML 11,68\n1x BERGKAESE 400G STK 6,34\n1x SCHOKOLADE VOLLMILCH 100 1,30\nSUMME 31,00\nBON-NR 100010\nKategorie: Lebensmittel"
+ },
+ {
+  "id": "R0012",
+  "merchant": "Thalia",
+  "category": "Buecher",
+  "date": "2025-12-19",
+  "total_cents": 5266,
+  "positions": [
+   {
+    "label": "NOTIZBUCH A5 LINIERT",
+    "query": "Notizbuch",
+    "photo": "schwarzes Notizbuch",
+    "qty": 2,
+    "price_cents": 1123
+   },
+   {
+    "label": "KOCHBUCH ITALIENISCH",
+    "query": "Kochbuch",
+    "photo": "Kochbuch mit Pasta-Cover",
+    "qty": 1,
+    "price_cents": 3020
+   }
+  ],
+  "text": "Thalia Filiale 12\n19.12.2025\n2x NOTIZBUCH A5 LINIERT 11,23\n1x KOCHBUCH ITALIENISCH 30,20\nSUMME 52,66\nBON-NR 100011\nKategorie: Buecher"
+ },
+ {
+  "id": "R0013",
+  "merchant": "Deichmann",
+  "category": "Schuhe",
+  "date": "2024-01-28",
+  "total_cents": 13962,
+  "positions": [
+   {
+    "label": "SNEAKER COURT VISION 43",
+    "query": "Sneaker",
+    "photo": "weisse Sneaker",
+    "qty": 3,
+    "price_cents": 4654
+   }
+  ],
+  "text": "Deichmann Filiale 12\n28.01.2024\n3x SNEAKER COURT VISION 43 46,54\nSUMME 139,62\nBON-NR 100012\nKategorie: Schuhe"
+ },
+ {
+  "id": "R0014",
+  "merchant": "H&M",
+  "category": "Kleidung",
+  "date": "2026-02-13",
+  "total_cents": 25050,
+  "positions": [
+   {
+    "label": "WINTERJACKE PARKA M",
+    "query": "Winterjacke",
+    "photo": "schwarze Winterjacke",
+    "qty": 3,
+    "price_cents": 7028
+   },
+   {
+    "label": "T-SHIRT 3ER-PACK WEISS",
+    "query": "T-Shirts",
+    "photo": "drei weisse T-Shirts",
+    "qty": 3,
+    "price_cents": 1322
+   }
+  ],
+  "text": "H&M Filiale 12\n13.02.2026\n3x WINTERJACKE PARKA M 70,28\n3x T-SHIRT 3ER-PACK WEISS 13,22\nSUMME 250,50\nBON-NR 100013\nKategorie: Kleidung"
+ },
+ {
+  "id": "R0015",
+  "merchant": "H&M",
+  "category": "Kleidung",
+  "date": "2024-11-18",
+  "total_cents": 10445,
+  "positions": [
+   {
+    "label": "WINTERJACKE PARKA M",
+    "query": "Winterjacke",
+    "photo": "schwarze Winterjacke",
+    "qty": 1,
+    "price_cents": 7201
+   },
+   {
+    "label": "T-SHIRT 3ER-PACK WEISS",
+    "query": "T-Shirts",
+    "photo": "drei weisse T-Shirts",
+    "qty": 2,
+    "price_cents": 1622
+   }
+  ],
+  "text": "H&M Filiale 12\n18.11.2024\n1x WINTERJACKE PARKA M 72,01\n2x T-SHIRT 3ER-PACK WEISS 16,22\nSUMME 104,45\nBON-NR 100014\nKategorie: Kleidung"
+ },
+ {
+  "id": "R0016",
+  "merchant": "Deichmann",
+  "category": "Schuhe",
+  "date": "2024-12-24",
+  "total_cents": 18384,
+  "positions": [
+   {
+    "label": "EINLEGESOHLEN COMFORT",
+    "query": "Einlegesohlen",
+    "photo": "Einlegesohlen Paar",
+    "qty": 3,
+    "price_cents": 907
+   },
+   {
+    "label": "SNEAKER COURT VISION 43",
+    "query": "Sneaker",
+    "photo": "weisse Sneaker",
+    "qty": 3,
+    "price_cents": 5221
+   }
+  ],
+  "text": "Deichmann Filiale 12\n24.12.2024\n3x EINLEGESOHLEN COMFORT 9,07\n3x SNEAKER COURT VISION 43 52,21\nSUMME 183,84\nBON-NR 100015\nKategorie: Schuhe"
+ },
+ {
+  "id": "R0017",
+  "merchant": "H&M",
+  "category": "Kleidung",
+  "date": "2025-03-12",
+  "total_cents": 29283,
+  "positions": [
+   {
+    "label": "WINTERJACKE PARKA M",
+    "query": "Winterjacke",
+    "photo": "schwarze Winterjacke",
+    "qty": 3,
+    "price_cents": 9761
+   }
+  ],
+  "text": "H&M Filiale 12\n12.03.2025\n3x WINTERJACKE PARKA M 97,61\nSUMME 292,83\nBON-NR 100016\nKategorie: Kleidung"
+ },
+ {
+  "id": "R0018",
+  "merchant": "BAUHAUS",
+  "category": "Baumarkt",
+  "date": "2025-08-01",
+  "total_cents": 2978,
+  "positions": [
+   {
+    "label": "FARBROLLER-SET 3TLG",
+    "query": "Farbroller",
+    "photo": "Farbroller-Set mit Wanne",
+    "qty": 2,
+    "price_cents": 1489
+   }
+  ],
+  "text": "BAUHAUS Filiale 12\n01.08.2025\n2x FARBROLLER-SET 3TLG 14,89\nSUMME 29,78\nBON-NR 100017\nKategorie: Baumarkt"
+ },
+ {
+  "id": "R0019",
+  "merchant": "BAUHAUS",
+  "category": "Baumarkt",
+  "date": "2025-10-03",
+  "total_cents": 1277,
+  "positions": [
+   {
+    "label": "HOLZSCHRAUBEN 4X40 200ST",
+    "query": "Holzschrauben",
+    "photo": "Schachtel Holzschrauben",
+    "qty": 1,
+    "price_cents": 1277
+   }
+  ],
+  "text": "BAUHAUS Filiale 12\n03.10.2025\n1x HOLZSCHRAUBEN 4X40 200ST 12,77\nSUMME 12,77\nBON-NR 100018\nKategorie: Baumarkt"
+ },
+ {
+  "id": "R0020",
+  "merchant": "ATU",
+  "category": "Auto",
+  "date": "2025-03-22",
+  "total_cents": 22915,
+  "positions": [
+   {
+    "label": "BATTERIELADEGER. 4A",
+    "query": "Batterieladegeraet",
+    "photo": "Autobatterie-Ladegeraet",
+    "qty": 2,
+    "price_cents": 7160
+   },
+   {
+    "label": "SCHEIBENWISCHER AERO 650",
+    "query": "Scheibenwischer",
+    "photo": "Scheibenwischer Paar",
+    "qty": 3,
+    "price_cents": 2865
+   }
+  ],
+  "text": "ATU Filiale 12\n22.03.2025\n2x BATTERIELADEGER, 4A 71,60\n3x SCHEIBENWISCHER AERO 650 28,65\nSUMME 229,15\nBON-NR 100019\nKategorie: Auto"
+ },
+ {
+  "id": "R0021",
+  "merchant": "Saturn",
+  "category": "Elektronik",
+  "date": "2025-12-10",
+  "total_cents": 43381,
+  "positions": [
+   {
+    "label": "DRUCKERPATR. HP 305XL",
+    "query": "Druckerpatronen",
+    "photo": "HP Druckerpatronen Doppelpack",
+    "qty": 1,
+    "price_cents": 3959
+   },
+   {
+    "label": "USB-C LADENETZT. 65W",
+    "query": "Ladegeraet",
+    "photo": "weisses USB-C Ladegeraet",
+    "qty": 1,
+    "price_cents": 3191
+   },
+   {
+    "label": "LED-DECKE BATH 24W",
+    "query": "Deckenlampe",
+    "photo": "runde LED Deckenlampe",
+    "qty": 1,
+    "price_cents": 6408
+   },
+   {
+    "label": "BT-LAUTSPR. JBL FLIP6",
+    "query": "Lautsprecher",
+    "photo": "schwarzer JBL Lautsprecher",
+    "qty": 3,
+    "price_cents": 9941
+   }
+  ],
+  "text": "Saturn Filiale 12\n10.12.2025\n1x DRUCKERPATR, HP 305XL 39,59\n1x USB-C LADENETZT, 65W 31,91\n1x LED-DECKE BATH 24W 64,08\n3x BT-LAUTSPR, JBL FLIP6 99,41\nSUMME 433,81\nBON-NR 100020\nKategorie: Elektronik"
+ },
+ {
+  "id": "R0022",
+  "merchant": "Apotheke am Markt",
+  "category": "Gesundheit",
+  "date": "2025-01-03",
+  "total_cents": 4887,
+  "positions": [
+   {
+    "label": "PFLASTER-SET WASSERFEST",
+    "query": "Pflaster",
+    "photo": "Pflasterbox",
+    "qty": 1,
+    "price_cents": 411
+   },
+   {
+    "label": "NASENSPRAY 0,1% 10ML",
+    "query": "Nasenspray",
+    "photo": "Nasenspray Flasche",
+    "qty": 2,
+    "price_cents": 531
+   },
+   {
+    "label": "VITAMIN D3 1000 90ST",
+    "query": "Vitamin D",
+    "photo": "Vitamin D Tablettendose",
+    "qty": 3,
+    "price_cents": 1138
+   }
+  ],
+  "text": "Apotheke am Markt Filiale 12\n03.01.2025\n1x PFLASTER-SET WASSERFEST 4,11\n2x NASENSPRAY 0,1% 10ML 5,31\n3x VITAMIN D3 1000 90ST 11,38\nSUMME 48,87\nBON-NR 100021\nKategorie: Gesundheit"
+ },
+ {
+  "id": "R0023",
+  "merchant": "dm",
+  "category": "Drogerie",
+  "date": "2026-04-18",
+  "total_cents": 2737,
+  "positions": [
+   {
+    "label": "WINDELN PREMIUM GR.4",
+    "query": "Windeln",
+    "photo": "Windelpackung",
+    "qty": 2,
+    "price_cents": 1315
+   },
+   {
+    "label": "DUSCHGEL MILCH&HONIG 250",
+    "query": "Duschgel",
+    "photo": "dm Duschgel Flasche",
+    "qty": 1,
+    "price_cents": 107
+   }
+  ],
+  "text": "dm Filiale 12\n18.04.2026\n2x WINDELN PREMIUM GR,4 13,15\n1x DUSCHGEL MILCH&HONIG 250 1,07\nSUMME 27,37\nBON-NR 100022\nKategorie: Drogerie"
+ },
+ {
+  "id": "R0024",
+  "merchant": "OBI",
+  "category": "Baumarkt",
+  "date": "2026-06-14",
+  "total_cents": 14989,
+  "positions": [
+   {
+    "label": "DUEBEL-SET UX 100ST",
+    "query": "Duebel",
+    "photo": "rotes Fischer Duebel-Set",
+    "qty": 1,
+    "price_cents": 1723
+   },
+   {
+    "label": "ARBEITSHANDSCHUHE L",
+    "query": "Arbeitshandschuhe",
+    "photo": "graue Arbeitshandschuhe",
+    "qty": 3,
+    "price_cents": 1146
+   },
+   {
+    "label": "STICHSAEGE PST 800",
+    "query": "Stichsaege",
+    "photo": "grüne Bosch Stichsaege",
+    "qty": 1,
+    "price_cents": 9035
+   },
+   {
+    "label": "SILIKON SANITAER GRAU",
+    "query": "Silikon",
+    "photo": "Kartusche Sanitärsilikon",
+    "qty": 1,
+    "price_cents": 793
+   }
+  ],
+  "text": "OBI Filiale 12\n14.06.2026\n1x DUEBEL-SET UX 100ST 17,23\n3x ARBEITSHANDSCHUHE L 11,46\n1x STICHSAEGE PST 800 90,35\n1x SILIKON SANITAER GRAU 7,93\nSUMME 149,89\nBON-NR 100023\nKategorie: Baumarkt"
+ },
+ {
+  "id": "R0025",
+  "merchant": "ATU",
+  "category": "Auto",
+  "date": "2026-03-14",
+  "total_cents": 9044,
+  "positions": [
+   {
+    "label": "MOTOROEL 5W-30 5L",
+    "query": "Motoroel",
+    "photo": "Motoroel Kanister",
+    "qty": 2,
+    "price_cents": 4522
+   }
+  ],
+  "text": "ATU Filiale 12\n14.03.2026\n2x MOTOROEL 5W-30 5L 45,22\nSUMME 90,44\nBON-NR 100024\nKategorie: Auto"
+ },
+ {
+  "id": "R0026",
+  "merchant": "OBI",
+  "category": "Baumarkt",
+  "date": "2026-09-04",
+  "total_cents": 8935,
+  "positions": [
+   {
+    "label": "STICHSAEGE PST 800",
+    "query": "Stichsaege",
+    "photo": "grüne Bosch Stichsaege",
+    "qty": 1,
+    "price_cents": 8935
+   }
+  ],
+  "text": "OBI Filiale 12\n04.09.2026\n1x STICHSAEGE PST 800 89,35\nSUMME 89,35\nBON-NR 100025\nKategorie: Baumarkt"
+ },
+ {
+  "id": "R0027",
+  "merchant": "MediaMarkt",
+  "category": "Elektronik",
+  "date": "2026-08-16",
+  "total_cents": 35946,
+  "positions": [
+   {
+    "label": "WASSERKOCHER 1,7L EDELST",
+    "query": "Wasserkocher",
+    "photo": "Edelstahl-Wasserkocher",
+    "qty": 1,
+    "price_cents": 4551
+   },
+   {
+    "label": "KOPFH. SONY WH-1000XM5",
+    "query": "Kopfhoerer",
+    "photo": "schwarze Sony Kopfhoerer",
+    "qty": 1,
+    "price_cents": 31395
+   }
+  ],
+  "text": "MediaMarkt Filiale 12\n16.08.2026\n1x WASSERKOCHER 1,7L EDELST 45,51\n1x KOPFH, SONY WH-1000XM5 313,95\nSUMME 359,46\nBON-NR 100026\nKategorie: Elektronik"
+ },
+ {
+  "id": "R0028",
+  "merchant": "dm",
+  "category": "Drogerie",
+  "date": "2026-05-14",
+  "total_cents": 2425,
+  "positions": [
+   {
+    "label": "ZAHNPASTA KRÄUTER 75ML",
+    "query": "Zahnpasta",
+    "photo": "Zahnpasta Tube",
+    "qty": 1,
+    "price_cents": 293
+   },
+   {
+    "label": "DUSCHGEL MILCH&HONIG 250",
+    "query": "Duschgel",
+    "photo": "dm Duschgel Flasche",
+    "qty": 3,
+    "price_cents": 164
+   },
+   {
+    "label": "WINDELN PREMIUM GR.4",
+    "query": "Windeln",
+    "photo": "Windelpackung",
+    "qty": 1,
+    "price_cents": 1220
+   },
+   {
+    "label": "WASCHMITTEL COLOR 20WL",
+    "query": "Waschmittel",
+    "photo": "dm Waschmittel Flasche",
+    "qty": 1,
+    "price_cents": 420
+   }
+  ],
+  "text": "dm Filiale 12\n14.05.2026\n1x ZAHNPASTA KRÄUTER 75ML 2,93\n3x DUSCHGEL MILCH&HONIG 250 1,64\n1x WINDELN PREMIUM GR,4 12,20\n1x WASCHMITTEL COLOR 20WL 4,20\nSUMME 24,25\nBON-NR 100027\nKategorie: Drogerie"
+ },
+ {
+  "id": "R0029",
+  "merchant": "Apotheke am Markt",
+  "category": "Gesundheit",
+  "date": "2026-09-28",
+  "total_cents": 5222,
+  "positions": [
+   {
+    "label": "NASENSPRAY 0,1% 10ML",
+    "query": "Nasenspray",
+    "photo": "Nasenspray Flasche",
+    "qty": 1,
+    "price_cents": 530
+   },
+   {
+    "label": "PFLASTER-SET WASSERFEST",
+    "query": "Pflaster",
+    "photo": "Pflasterbox",
+    "qty": 3,
+    "price_cents": 429
+   },
+   {
+    "label": "VITAMIN D3 1000 90ST",
+    "query": "Vitamin D",
+    "photo": "Vitamin D Tablettendose",
+    "qty": 3,
+    "price_cents": 1135
+   }
+  ],
+  "text": "Apotheke am Markt Filiale 12\n28.09.2026\n1x NASENSPRAY 0,1% 10ML 5,30\n3x PFLASTER-SET WASSERFEST 4,29\n3x VITAMIN D3 1000 90ST 11,35\nSUMME 52,22\nBON-NR 100028\nKategorie: Gesundheit"
+ },
+ {
+  "id": "R0030",
+  "merchant": "EDEKA",
+  "category": "Lebensmittel",
+  "date": "2024-10-08",
+  "total_cents": 3192,
+  "positions": [
+   {
+    "label": "KAFFEEBOHNEN CREMA 1KG",
+    "query": "Kaffee",
+    "photo": "Kaffeepackung Bohnen",
+    "qty": 2,
+    "price_cents": 1596
+   }
+  ],
+  "text": "EDEKA Filiale 12\n08.10.2024\n2x KAFFEEBOHNEN CREMA 1KG 15,96\nSUMME 31,92\nBON-NR 100029\nKategorie: Lebensmittel"
+ },
+ {
+  "id": "R0031",
+  "merchant": "Apotheke am Markt",
+  "category": "Gesundheit",
+  "date": "2025-05-07",
+  "total_cents": 3708,
+  "positions": [
+   {
+    "label": "PFLASTER-SET WASSERFEST",
+    "query": "Pflaster",
+    "photo": "Pflasterbox",
+    "qty": 2,
+    "price_cents": 597
+   },
+   {
+    "label": "VITAMIN D3 1000 90ST",
+    "query": "Vitamin D",
+    "photo": "Vitamin D Tablettendose",
+    "qty": 1,
+    "price_cents": 1202
+   },
+   {
+    "label": "NASENSPRAY 0,1% 10ML",
+    "query": "Nasenspray",
+    "photo": "Nasenspray Flasche",
+    "qty": 2,
+    "price_cents": 656
+   }
+  ],
+  "text": "Apotheke am Markt Filiale 12\n07.05.2025\n2x PFLASTER-SET WASSERFEST 5,97\n1x VITAMIN D3 1000 90ST 12,02\n2x NASENSPRAY 0,1% 10ML 6,56\nSUMME 37,08\nBON-NR 100030\nKategorie: Gesundheit"
+ },
+ {
+  "id": "R0032",
+  "merchant": "OBI",
+  "category": "Baumarkt",
+  "date": "2024-08-20",
+  "total_cents": 26235,
+  "positions": [
+   {
+    "label": "STICHSAEGE PST 800",
+    "query": "Stichsaege",
+    "photo": "grüne Bosch Stichsaege",
+    "qty": 3,
+    "price_cents": 8745
+   }
+  ],
+  "text": "OBI Filiale 12\n20.08.2024\n3x STICHSAEGE PST 800 87,45\nSUMME 262,35\nBON-NR 100031\nKategorie: Baumarkt"
+ },
+ {
+  "id": "R0033",
+  "merchant": "ATU",
+  "category": "Auto",
+  "date": "2025-03-12",
+  "total_cents": 5164,
+  "positions": [
+   {
+    "label": "SCHEIBENWISCHER AERO 650",
+    "query": "Scheibenwischer",
+    "photo": "Scheibenwischer Paar",
+    "qty": 2,
+    "price_cents": 2582
+   }
+  ],
+  "text": "ATU Filiale 12\n12.03.2025\n2x SCHEIBENWISCHER AERO 650 25,82\nSUMME 51,64\nBON-NR 100032\nKategorie: Auto"
+ },
+ {
+  "id": "R0034",
+  "merchant": "MediaMarkt",
+  "category": "Elektronik",
+  "date": "2026-09-23",
+  "total_cents": 90803,
+  "positions": [
+   {
+    "label": "KOPFH. SONY WH-1000XM5",
+    "query": "Kopfhoerer",
+    "photo": "schwarze Sony Kopfhoerer",
+    "qty": 3,
+    "price_cents": 26696
+   },
+   {
+    "label": "HDMI-KABEL 2M ULTRA",
+    "query": "HDMI-Kabel",
+    "photo": "HDMI-Kabel verpackt",
+    "qty": 1,
+    "price_cents": 1840
+   },
+   {
+    "label": "SSD SAMSUNG 870EVO 1TB",
+    "query": "SSD",
+    "photo": "Samsung SSD Festplatte",
+    "qty": 1,
+    "price_cents": 8875
+   }
+  ],
+  "text": "MediaMarkt Filiale 12\n23.09.2026\n3x KOPFH, SONY WH-1000XM5 266,96\n1x HDMI-KABEL 2M ULTRA 18,40\n1x SSD SAMSUNG 870EVO 1TB 88,75\nSUMME 908,03\nBON-NR 100033\nKategorie: Elektronik"
+ },
+ {
+  "id": "R0035",
+  "merchant": "Thalia",
+  "category": "Buecher",
+  "date": "2025-05-10",
+  "total_cents": 13213,
+  "positions": [
+   {
+    "label": "ROMAN TASCHENBUCH BESTS",
+    "query": "Roman",
+    "photo": "Taschenbuch Roman",
+    "qty": 3,
+    "price_cents": 1623
+   },
+   {
+    "label": "KOCHBUCH ITALIENISCH",
+    "query": "Kochbuch",
+    "photo": "Kochbuch mit Pasta-Cover",
+    "qty": 2,
+    "price_cents": 3016
+   },
+   {
+    "label": "NOTIZBUCH A5 LINIERT",
+    "query": "Notizbuch",
+    "photo": "schwarzes Notizbuch",
+    "qty": 2,
+    "price_cents": 1156
+   }
+  ],
+  "text": "Thalia Filiale 12\n10.05.2025\n3x ROMAN TASCHENBUCH BESTS 16,23\n2x KOCHBUCH ITALIENISCH 30,16\n2x NOTIZBUCH A5 LINIERT 11,56\nSUMME 132,13\nBON-NR 100034\nKategorie: Buecher"
+ },
+ {
+  "id": "R0036",
+  "merchant": "BAUHAUS",
+  "category": "Baumarkt",
+  "date": "2024-11-14",
+  "total_cents": 50400,
+  "positions": [
+   {
+    "label": "BOHRMASCH. PSB 750 RCE",
+    "query": "Bohrmaschine",
+    "photo": "gruene Bosch Bohrmaschine",
+    "qty": 1,
+    "price_cents": 11218
+   },
+   {
+    "label": "HOLZSCHRAUBEN 4X40 200ST",
+    "query": "Holzschrauben",
+    "photo": "Schachtel Holzschrauben",
+    "qty": 2,
+    "price_cents": 664
+   },
+   {
+    "label": "AKKUSCHR. GSR 18V-55",
+    "query": "Akkuschrauber",
+    "photo": "blauer Bosch Akkuschrauber",
+    "qty": 3,
+    "price_cents": 12618
+   }
+  ],
+  "text": "BAUHAUS Filiale 12\n14.11.2024\n1x BOHRMASCH, PSB 750 RCE 112,18\n2x HOLZSCHRAUBEN 4X40 200ST 6,64\n3x AKKUSCHR, GSR 18V-55 126,18\nSUMME 504,00\nBON-NR 100035\nKategorie: Baumarkt"
+ },
+ {
+  "id": "R0037",
+  "merchant": "ATU",
+  "category": "Auto",
+  "date": "2026-09-01",
+  "total_cents": 6912,
+  "positions": [
+   {
+    "label": "SCHEIBENWISCHER AERO 650",
+    "query": "Scheibenwischer",
+    "photo": "Scheibenwischer Paar",
+    "qty": 3,
+    "price_cents": 2304
+   }
+  ],
+  "text": "ATU Filiale 12\n01.09.2026\n3x SCHEIBENWISCHER AERO 650 23,04\nSUMME 69,12\nBON-NR 100036\nKategorie: Auto"
+ },
+ {
+  "id": "R0038",
+  "merchant": "ATU",
+  "category": "Auto",
+  "date": "2024-06-19",
+  "total_cents": 21672,
+  "positions": [
+   {
+    "label": "SCHEIBENWISCHER AERO 650",
+    "query": "Scheibenwischer",
+    "photo": "Scheibenwischer Paar",
+    "qty": 1,
+    "price_cents": 2630
+   },
+   {
+    "label": "MOTOROEL 5W-30 5L",
+    "query": "Motoroel",
+    "photo": "Motoroel Kanister",
+    "qty": 2,
+    "price_cents": 3662
+   },
+   {
+    "label": "BATTERIELADEGER. 4A",
+    "query": "Batterieladegeraet",
+    "photo": "Autobatterie-Ladegeraet",
+    "qty": 2,
+    "price_cents": 5859
+   }
+  ],
+  "text": "ATU Filiale 12\n19.06.2024\n1x SCHEIBENWISCHER AERO 650 26,30\n2x MOTOROEL 5W-30 5L 36,62\n2x BATTERIELADEGER, 4A 58,59\nSUMME 216,72\nBON-NR 100037\nKategorie: Auto"
+ },
+ {
+  "id": "R0039",
+  "merchant": "H&M",
+  "category": "Kleidung",
+  "date": "2025-11-04",
+  "total_cents": 28987,
+  "positions": [
+   {
+    "label": "WINTERJACKE PARKA M",
+    "query": "Winterjacke",
+    "photo": "schwarze Winterjacke",
+    "qty": 3,
+    "price_cents": 9068
+   },
+   {
+    "label": "T-SHIRT 3ER-PACK WEISS",
+    "query": "T-Shirts",
+    "photo": "drei weisse T-Shirts",
+    "qty": 1,
+    "price_cents": 1783
+   }
+  ],
+  "text": "H&M Filiale 12\n04.11.2025\n3x WINTERJACKE PARKA M 90,68\n1x T-SHIRT 3ER-PACK WEISS 17,83\nSUMME 289,87\nBON-NR 100038\nKategorie: Kleidung"
+ },
+ {
+  "id": "R0040",
+  "merchant": "MediaMarkt",
+  "category": "Elektronik",
+  "date": "2025-07-01",
+  "total_cents": 18596,
+  "positions": [
+   {
+    "label": "HDMI-KABEL 2M ULTRA",
+    "query": "HDMI-Kabel",
+    "photo": "HDMI-Kabel verpackt",
+    "qty": 3,
+    "price_cents": 2804
+   },
+   {
+    "label": "SSD SAMSUNG 870EVO 1TB",
+    "query": "SSD",
+    "photo": "Samsung SSD Festplatte",
+    "qty": 1,
+    "price_cents": 10184
+   }
+  ],
+  "text": "MediaMarkt Filiale 12\n01.07.2025\n3x HDMI-KABEL 2M ULTRA 28,04\n1x SSD SAMSUNG 870EVO 1TB 101,84\nSUMME 185,96\nBON-NR 100039\nKategorie: Elektronik"
+ },
+ {
+  "id": "R0041",
+  "merchant": "MediaMarkt",
+  "category": "Elektronik",
+  "date": "2024-07-28",
+  "total_cents": 3816,
+  "positions": [
+   {
+    "label": "WASSERKOCHER 1,7L EDELST",
+    "query": "Wasserkocher",
+    "photo": "Edelstahl-Wasserkocher",
+    "qty": 1,
+    "price_cents": 3816
+   }
+  ],
+  "text": "MediaMarkt Filiale 12\n28.07.2024\n1x WASSERKOCHER 1,7L EDELST 38,16\nSUMME 38,16\nBON-NR 100040\nKategorie: Elektronik"
+ },
+ {
+  "id": "R0042",
+  "merchant": "Deichmann",
+  "category": "Schuhe",
+  "date": "2025-05-27",
+  "total_cents": 6702,
+  "positions": [
+   {
+    "label": "SNEAKER COURT VISION 43",
+    "query": "Sneaker",
+    "photo": "weisse Sneaker",
+    "qty": 1,
+    "price_cents": 6702
+   }
+  ],
+  "text": "Deichmann Filiale 12\n27.05.2025\n1x SNEAKER COURT VISION 43 67,02\nSUMME 67,02\nBON-NR 100041\nKategorie: Schuhe"
+ },
+ {
+  "id": "R0043",
+  "merchant": "Saturn",
+  "category": "Elektronik",
+  "date": "2026-06-09",
+  "total_cents": 9624,
+  "positions": [
+   {
+    "label": "DRUCKERPATR. HP 305XL",
+    "query": "Druckerpatronen",
+    "photo": "HP Druckerpatronen Doppelpack",
+    "qty": 2,
+    "price_cents": 4812
+   }
+  ],
+  "text": "Saturn Filiale 12\n09.06.2026\n2x DRUCKERPATR, HP 305XL 48,12\nSUMME 96,24\nBON-NR 100042\nKategorie: Elektronik"
+ },
+ {
+  "id": "R0044",
+  "merchant": "ATU",
+  "category": "Auto",
+  "date": "2026-09-11",
+  "total_cents": 4728,
+  "positions": [
+   {
+    "label": "SCHEIBENWISCHER AERO 650",
+    "query": "Scheibenwischer",
+    "photo": "Scheibenwischer Paar",
+    "qty": 2,
+    "price_cents": 2364
+   }
+  ],
+  "text": "ATU Filiale 12\n11.09.2026\n2x SCHEIBENWISCHER AERO 650 23,64\nSUMME 47,28\nBON-NR 100043\nKategorie: Auto"
+ },
+ {
+  "id": "R0045",
+  "merchant": "Apotheke am Markt",
+  "category": "Gesundheit",
+  "date": "2025-01-04",
+  "total_cents": 5204,
+  "positions": [
+   {
+    "label": "VITAMIN D3 1000 90ST",
+    "query": "Vitamin D",
+    "photo": "Vitamin D Tablettendose",
+    "qty": 2,
+    "price_cents": 1418
+   },
+   {
+    "label": "PFLASTER-SET WASSERFEST",
+    "query": "Pflaster",
+    "photo": "Pflasterbox",
+    "qty": 1,
+    "price_cents": 592
+   },
+   {
+    "label": "NASENSPRAY 0,1% 10ML",
+    "query": "Nasenspray",
+    "photo": "Nasenspray Flasche",
+    "qty": 3,
+    "price_cents": 592
+   }
+  ],
+  "text": "Apotheke am Markt Filiale 12\n04.01.2025\n2x VITAMIN D3 1000 90ST 14,18\n1x PFLASTER-SET WASSERFEST 5,92\n3x NASENSPRAY 0,1% 10ML 5,92\nSUMME 52,04\nBON-NR 100044\nKategorie: Gesundheit"
+ },
+ {
+  "id": "R0046",
+  "merchant": "dm",
+  "category": "Drogerie",
+  "date": "2024-12-14",
+  "total_cents": 510,
+  "positions": [
+   {
+    "label": "ZAHNPASTA KRÄUTER 75ML",
+    "query": "Zahnpasta",
+    "photo": "Zahnpasta Tube",
+    "qty": 2,
+    "price_cents": 255
+   }
+  ],
+  "text": "dm Filiale 12\n14.12.2024\n2x ZAHNPASTA KRÄUTER 75ML 2,55\nSUMME 5,10\nBON-NR 100045\nKategorie: Drogerie"
+ },
+ {
+  "id": "R0047",
+  "merchant": "OBI",
+  "category": "Baumarkt",
+  "date": "2025-10-11",
+  "total_cents": 3345,
+  "positions": [
+   {
+    "label": "ARBEITSHANDSCHUHE L",
+    "query": "Arbeitshandschuhe",
+    "photo": "graue Arbeitshandschuhe",
+    "qty": 3,
+    "price_cents": 1115
+   }
+  ],
+  "text": "OBI Filiale 12\n11.10.2025\n3x ARBEITSHANDSCHUHE L 11,15\nSUMME 33,45\nBON-NR 100046\nKategorie: Baumarkt"
+ },
+ {
+  "id": "R0048",
+  "merchant": "H&M",
+  "category": "Kleidung",
+  "date": "2026-06-13",
+  "total_cents": 23263,
+  "positions": [
+   {
+    "label": "T-SHIRT 3ER-PACK WEISS",
+    "query": "T-Shirts",
+    "photo": "drei weisse T-Shirts",
+    "qty": 2,
+    "price_cents": 2075
+   },
+   {
+    "label": "JEANS SLIM FIT 32/32",
+    "query": "Jeans",
+    "photo": "blaue Jeans",
+    "qty": 3,
+    "price_cents": 3531
+   },
+   {
+    "label": "WINTERJACKE PARKA M",
+    "query": "Winterjacke",
+    "photo": "schwarze Winterjacke",
+    "qty": 1,
+    "price_cents": 8520
+   }
+  ],
+  "text": "H&M Filiale 12\n13.06.2026\n2x T-SHIRT 3ER-PACK WEISS 20,75\n3x JEANS SLIM FIT 32/32 35,31\n1x WINTERJACKE PARKA M 85,20\nSUMME 232,63\nBON-NR 100047\nKategorie: Kleidung"
+ },
+ {
+  "id": "R0049",
+  "merchant": "Apotheke am Markt",
+  "category": "Gesundheit",
+  "date": "2025-07-18",
+  "total_cents": 2220,
+  "positions": [
+   {
+    "label": "VITAMIN D3 1000 90ST",
+    "query": "Vitamin D",
+    "photo": "Vitamin D Tablettendose",
+    "qty": 2,
+    "price_cents": 1110
+   }
+  ],
+  "text": "Apotheke am Markt Filiale 12\n18.07.2025\n2x VITAMIN D3 1000 90ST 11,10\nSUMME 22,20\nBON-NR 100048\nKategorie: Gesundheit"
+ },
+ {
+  "id": "R0050",
+  "merchant": "EDEKA",
+  "category": "Lebensmittel",
+  "date": "2025-08-15",
+  "total_cents": 8445,
+  "positions": [
+   {
+    "label": "OLIVENOEL NATIV 750ML",
+    "query": "Olivenoel",
+    "photo": "Olivenoelflasche",
+    "qty": 3,
+    "price_cents": 785
+   },
+   {
+    "label": "BERGKAESE 400G STK",
+    "query": "Kaese",
+    "photo": "Stueck Bergkaese",
+    "qty": 2,
+    "price_cents": 762
+   },
+   {
+    "label": "SCHOKOLADE VOLLMILCH 100",
+    "query": "Schokolade",
+    "photo": "Schokoladentafel",
+    "qty": 3,
+    "price_cents": 180
+   },
+   {
+    "label": "KAFFEEBOHNEN CREMA 1KG",
+    "query": "Kaffee",
+    "photo": "Kaffeepackung Bohnen",
+    "qty": 3,
+    "price_cents": 1342
+   }
+  ],
+  "text": "EDEKA Filiale 12\n15.08.2025\n3x OLIVENOEL NATIV 750ML 7,85\n2x BERGKAESE 400G STK 7,62\n3x SCHOKOLADE VOLLMILCH 100 1,80\n3x KAFFEEBOHNEN CREMA 1KG 13,42\nSUMME 84,45\nBON-NR 100049\nKategorie: Lebensmittel"
+ },
+ {
+  "id": "R0051",
+  "merchant": "OBI",
+  "category": "Baumarkt",
+  "date": "2025-11-10",
+  "total_cents": 11537,
+  "positions": [
+   {
+    "label": "SILIKON SANITAER GRAU",
+    "query": "Silikon",
+    "photo": "Kartusche Sanitärsilikon",
+    "qty": 1,
+    "price_cents": 646
+   },
+   {
+    "label": "STICHSAEGE PST 800",
+    "query": "Stichsaege",
+    "photo": "grüne Bosch Stichsaege",
+    "qty": 1,
+    "price_cents": 10891
+   }
+  ],
+  "text": "OBI Filiale 12\n10.11.2025\n1x SILIKON SANITAER GRAU 6,46\n1x STICHSAEGE PST 800 108,91\nSUMME 115,37\nBON-NR 100050\nKategorie: Baumarkt"
+ },
+ {
+  "id": "R0052",
+  "merchant": "Apotheke am Markt",
+  "category": "Gesundheit",
+  "date": "2024-08-14",
+  "total_cents": 4468,
+  "positions": [
+   {
+    "label": "PFLASTER-SET WASSERFEST",
+    "query": "Pflaster",
+    "photo": "Pflasterbox",
+    "qty": 2,
+    "price_cents": 599
+   },
+   {
+    "label": "NASENSPRAY 0,1% 10ML",
+    "query": "Nasenspray",
+    "photo": "Nasenspray Flasche",
+    "qty": 1,
+    "price_cents": 570
+   },
+   {
+    "label": "VITAMIN D3 1000 90ST",
+    "query": "Vitamin D",
+    "photo": "Vitamin D Tablettendose",
+    "qty": 3,
+    "price_cents": 900
+   }
+  ],
+  "text": "Apotheke am Markt Filiale 12\n14.08.2024\n2x PFLASTER-SET WASSERFEST 5,99\n1x NASENSPRAY 0,1% 10ML 5,70\n3x VITAMIN D3 1000 90ST 9,00\nSUMME 44,68\nBON-NR 100051\nKategorie: Gesundheit"
+ },
+ {
+  "id": "R0053",
+  "merchant": "OBI",
+  "category": "Baumarkt",
+  "date": "2026-04-06",
+  "total_cents": 26242,
+  "positions": [
+   {
+    "label": "STICHSAEGE PST 800",
+    "query": "Stichsaege",
+    "photo": "grüne Bosch Stichsaege",
+    "qty": 2,
+    "price_cents": 8091
+   },
+   {
+    "label": "ARBEITSHANDSCHUHE L",
+    "query": "Arbeitshandschuhe",
+    "photo": "graue Arbeitshandschuhe",
+    "qty": 2,
+    "price_cents": 1482
+   },
+   {
+    "label": "DUEBEL-SET UX 100ST",
+    "query": "Duebel",
+    "photo": "rotes Fischer Duebel-Set",
+    "qty": 3,
+    "price_cents": 1548
+   },
+   {
+    "label": "SILIKON SANITAER GRAU",
+    "query": "Silikon",
+    "photo": "Kartusche Sanitärsilikon",
+    "qty": 2,
+    "price_cents": 1226
+   }
+  ],
+  "text": "OBI Filiale 12\n06.04.2026\n2x STICHSAEGE PST 800 80,91\n2x ARBEITSHANDSCHUHE L 14,82\n3x DUEBEL-SET UX 100ST 15,48\n2x SILIKON SANITAER GRAU 12,26\nSUMME 262,42\nBON-NR 100052\nKategorie: Baumarkt"
+ },
+ {
+  "id": "R0054",
+  "merchant": "Thalia",
+  "category": "Buecher",
+  "date": "2026-09-15",
+  "total_cents": 2718,
+  "positions": [
+   {
+    "label": "NOTIZBUCH A5 LINIERT",
+    "query": "Notizbuch",
+    "photo": "schwarzes Notizbuch",
+    "qty": 2,
+    "price_cents": 1359
+   }
+  ],
+  "text": "Thalia Filiale 12\n15.09.2026\n2x NOTIZBUCH A5 LINIERT 13,59\nSUMME 27,18\nBON-NR 100053\nKategorie: Buecher"
+ },
+ {
+  "id": "R0055",
+  "merchant": "dm",
+  "category": "Drogerie",
+  "date": "2025-11-09",
+  "total_cents": 3262,
+  "positions": [
+   {
+    "label": "ZAHNPASTA KRÄUTER 75ML",
+    "query": "Zahnpasta",
+    "photo": "Zahnpasta Tube",
+    "qty": 3,
+    "price_cents": 218
+   },
+   {
+    "label": "WINDELN PREMIUM GR.4",
+    "query": "Windeln",
+    "photo": "Windelpackung",
+    "qty": 1,
+    "price_cents": 1177
+   },
+   {
+    "label": "WASCHMITTEL COLOR 20WL",
+    "query": "Waschmittel",
+    "photo": "dm Waschmittel Flasche",
+    "qty": 2,
+    "price_cents": 558
+   },
+   {
+    "label": "DUSCHGEL MILCH&HONIG 250",
+    "query": "Duschgel",
+    "photo": "dm Duschgel Flasche",
+    "qty": 3,
+    "price_cents": 105
+   }
+  ],
+  "text": "dm Filiale 12\n09.11.2025\n3x ZAHNPASTA KRÄUTER 75ML 2,18\n1x WINDELN PREMIUM GR,4 11,77\n2x WASCHMITTEL COLOR 20WL 5,58\n3x DUSCHGEL MILCH&HONIG 250 1,05\nSUMME 32,62\nBON-NR 100054\nKategorie: Drogerie"
+ },
+ {
+  "id": "R0056",
+  "merchant": "MediaMarkt",
+  "category": "Elektronik",
+  "date": "2025-04-13",
+  "total_cents": 90454,
+  "positions": [
+   {
+    "label": "SSD SAMSUNG 870EVO 1TB",
+    "query": "SSD",
+    "photo": "Samsung SSD Festplatte",
+    "qty": 2,
+    "price_cents": 11338
+   },
+   {
+    "label": "KOPFH. SONY WH-1000XM5",
+    "query": "Kopfhoerer",
+    "photo": "schwarze Sony Kopfhoerer",
+    "qty": 2,
+    "price_cents": 33889
+   }
+  ],
+  "text": "MediaMarkt Filiale 12\n13.04.2025\n2x SSD SAMSUNG 870EVO 1TB 113,38\n2x KOPFH, SONY WH-1000XM5 338,89\nSUMME 904,54\nBON-NR 100055\nKategorie: Elektronik"
+ },
+ {
+  "id": "R0057",
+  "merchant": "Deichmann",
+  "category": "Schuhe",
+  "date": "2026-01-07",
+  "total_cents": 41391,
+  "positions": [
+   {
+    "label": "WANDERSCHUHE MID GTX 44",
+    "query": "Wanderschuhe",
+    "photo": "braune Wanderschuhe",
+    "qty": 3,
+    "price_cents": 11115
+   },
+   {
+    "label": "SNEAKER COURT VISION 43",
+    "query": "Sneaker",
+    "photo": "weisse Sneaker",
+    "qty": 2,
+    "price_cents": 4023
+   }
+  ],
+  "text": "Deichmann Filiale 12\n07.01.2026\n3x WANDERSCHUHE MID GTX 44 111,15\n2x SNEAKER COURT VISION 43 40,23\nSUMME 413,91\nBON-NR 100056\nKategorie: Schuhe"
+ },
+ {
+  "id": "R0058",
+  "merchant": "IKEA",
+  "category": "Moebel",
+  "date": "2025-07-28",
+  "total_cents": 23980,
+  "positions": [
+   {
+    "label": "KISSEN-SET FJAEDRAR 2ST",
+    "query": "Kissen",
+    "photo": "zwei graue Sofakissen",
+    "qty": 2,
+    "price_cents": 2493
+   },
+   {
+    "label": "BILDERRAHMEN RIBBA 50",
+    "query": "Bilderrahmen",
+    "photo": "schwarzer Bilderrahmen",
+    "qty": 1,
+    "price_cents": 1397
+   },
+   {
+    "label": "BILLY REGAL WEISS 80",
+    "query": "Regal",
+    "photo": "weisses Billy Regal",
+    "qty": 2,
+    "price_cents": 7738
+   },
+   {
+    "label": "KERZEN GLIMMA 20ST",
+    "query": "Kerzen",
+    "photo": "Packung Teelichter",
+    "qty": 3,
+    "price_cents": 707
+   }
+  ],
+  "text": "IKEA Filiale 12\n28.07.2025\n2x KISSEN-SET FJAEDRAR 2ST 24,93\n1x BILDERRAHMEN RIBBA 50 13,97\n2x BILLY REGAL WEISS 80 77,38\n3x KERZEN GLIMMA 20ST 7,07\nSUMME 239,80\nBON-NR 100057\nKategorie: Moebel"
+ },
+ {
+  "id": "R0059",
+  "merchant": "EDEKA",
+  "category": "Lebensmittel",
+  "date": "2025-08-05",
+  "total_cents": 513,
+  "positions": [
+   {
+    "label": "SCHOKOLADE VOLLMILCH 100",
+    "query": "Schokolade",
+    "photo": "Schokoladentafel",
+    "qty": 3,
+    "price_cents": 171
+   }
+  ],
+  "text": "EDEKA Filiale 12\n05.08.2025\n3x SCHOKOLADE VOLLMILCH 100 1,71\nSUMME 5,13\nBON-NR 100058\nKategorie: Lebensmittel"
+ },
+ {
+  "id": "R0060",
+  "merchant": "H&M",
+  "category": "Kleidung",
+  "date": "2024-02-21",
+  "total_cents": 6251,
+  "positions": [
+   {
+    "label": "JEANS SLIM FIT 32/32",
+    "query": "Jeans",
+    "photo": "blaue Jeans",
+    "qty": 1,
+    "price_cents": 2101
+   },
+   {
+    "label": "T-SHIRT 3ER-PACK WEISS",
+    "query": "T-Shirts",
+    "photo": "drei weisse T-Shirts",
+    "qty": 2,
+    "price_cents": 2075
+   }
+  ],
+  "text": "H&M Filiale 12\n21.02.2024\n1x JEANS SLIM FIT 32/32 21,01\n2x T-SHIRT 3ER-PACK WEISS 20,75\nSUMME 62,51\nBON-NR 100059\nKategorie: Kleidung"
+ },
+ {
+  "id": "R0061",
+  "merchant": "IKEA",
+  "category": "Moebel",
+  "date": "2025-08-11",
+  "total_cents": 6850,
+  "positions": [
+   {
+    "label": "BILDERRAHMEN RIBBA 50",
+    "query": "Bilderrahmen",
+    "photo": "schwarzer Bilderrahmen",
+    "qty": 2,
+    "price_cents": 1853
+   },
+   {
+    "label": "KISSEN-SET FJAEDRAR 2ST",
+    "query": "Kissen",
+    "photo": "zwei graue Sofakissen",
+    "qty": 1,
+    "price_cents": 2462
+   },
+   {
+    "label": "KERZEN GLIMMA 20ST",
+    "query": "Kerzen",
+    "photo": "Packung Teelichter",
+    "qty": 1,
+    "price_cents": 682
+   }
+  ],
+  "text": "IKEA Filiale 12\n11.08.2025\n2x BILDERRAHMEN RIBBA 50 18,53\n1x KISSEN-SET FJAEDRAR 2ST 24,62\n1x KERZEN GLIMMA 20ST 6,82\nSUMME 68,50\nBON-NR 100060\nKategorie: Moebel"
+ },
+ {
+  "id": "R0062",
+  "merchant": "ATU",
+  "category": "Auto",
+  "date": "2024-06-08",
+  "total_cents": 14426,
+  "positions": [
+   {
+    "label": "SCHEIBENWISCHER AERO 650",
+    "query": "Scheibenwischer",
+    "photo": "Scheibenwischer Paar",
+    "qty": 1,
+    "price_cents": 2407
+   },
+   {
+    "label": "BATTERIELADEGER. 4A",
+    "query": "Batterieladegeraet",
+    "photo": "Autobatterie-Ladegeraet",
+    "qty": 1,
+    "price_cents": 7543
+   },
+   {
+    "label": "MOTOROEL 5W-30 5L",
+    "query": "Motoroel",
+    "photo": "Motoroel Kanister",
+    "qty": 1,
+    "price_cents": 4476
+   }
+  ],
+  "text": "ATU Filiale 12\n08.06.2024\n1x SCHEIBENWISCHER AERO 650 24,07\n1x BATTERIELADEGER, 4A 75,43\n1x MOTOROEL 5W-30 5L 44,76\nSUMME 144,26\nBON-NR 100061\nKategorie: Auto"
+ },
+ {
+  "id": "R0063",
+  "merchant": "MediaMarkt",
+  "category": "Elektronik",
+  "date": "2026-02-19",
+  "total_cents": 11557,
+  "positions": [
+   {
+    "label": "WASSERKOCHER 1,7L EDELST",
+    "query": "Wasserkocher",
+    "photo": "Edelstahl-Wasserkocher",
+    "qty": 2,
+    "price_cents": 4509
+   },
+   {
+    "label": "HDMI-KABEL 2M ULTRA",
+    "query": "HDMI-Kabel",
+    "photo": "HDMI-Kabel verpackt",
+    "qty": 1,
+    "price_cents": 2539
+   }
+  ],
+  "text": "MediaMarkt Filiale 12\n19.02.2026\n2x WASSERKOCHER 1,7L EDELST 45,09\n1x HDMI-KABEL 2M ULTRA 25,39\nSUMME 115,57\nBON-NR 100062\nKategorie: Elektronik"
+ },
+ {
+  "id": "R0064",
+  "merchant": "Apotheke am Markt",
+  "category": "Gesundheit",
+  "date": "2024-03-10",
+  "total_cents": 554,
+  "positions": [
+   {
+    "label": "PFLASTER-SET WASSERFEST",
+    "query": "Pflaster",
+    "photo": "Pflasterbox",
+    "qty": 1,
+    "price_cents": 554
+   }
+  ],
+  "text": "Apotheke am Markt Filiale 12\n10.03.2024\n1x PFLASTER-SET WASSERFEST 5,54\nSUMME 5,54\nBON-NR 100063\nKategorie: Gesundheit"
+ },
+ {
+  "id": "R0065",
+  "merchant": "Apotheke am Markt",
+  "category": "Gesundheit",
+  "date": "2026-07-23",
+  "total_cents": 2544,
+  "positions": [
+   {
+    "label": "NASENSPRAY 0,1% 10ML",
+    "query": "Nasenspray",
+    "photo": "Nasenspray Flasche",
+    "qty": 3,
+    "price_cents": 848
+   }
+  ],
+  "text": "Apotheke am Markt Filiale 12\n23.07.2026\n3x NASENSPRAY 0,1% 10ML 8,48\nSUMME 25,44\nBON-NR 100064\nKategorie: Gesundheit"
+ },
+ {
+  "id": "R0066",
+  "merchant": "H&M",
+  "category": "Kleidung",
+  "date": "2025-02-23",
+  "total_cents": 30322,
+  "positions": [
+   {
+    "label": "WINTERJACKE PARKA M",
+    "query": "Winterjacke",
+    "photo": "schwarze Winterjacke",
+    "qty": 3,
+    "price_cents": 9204
+   },
+   {
+    "label": "JEANS SLIM FIT 32/32",
+    "query": "Jeans",
+    "photo": "blaue Jeans",
+    "qty": 1,
+    "price_cents": 2710
+   }
+  ],
+  "text": "H&M Filiale 12\n23.02.2025\n3x WINTERJACKE PARKA M 92,04\n1x JEANS SLIM FIT 32/32 27,10\nSUMME 303,22\nBON-NR 100065\nKategorie: Kleidung"
+ },
+ {
+  "id": "R0067",
+  "merchant": "ATU",
+  "category": "Auto",
+  "date": "2026-06-03",
+  "total_cents": 30076,
+  "positions": [
+   {
+    "label": "BATTERIELADEGER. 4A",
+    "query": "Batterieladegeraet",
+    "photo": "Autobatterie-Ladegeraet",
+    "qty": 2,
+    "price_cents": 8367
+   },
+   {
+    "label": "MOTOROEL 5W-30 5L",
+    "query": "Motoroel",
+    "photo": "Motoroel Kanister",
+    "qty": 2,
+    "price_cents": 3931
+   },
+   {
+    "label": "SCHEIBENWISCHER AERO 650",
+    "query": "Scheibenwischer",
+    "photo": "Scheibenwischer Paar",
+    "qty": 2,
+    "price_cents": 2740
+   }
+  ],
+  "text": "ATU Filiale 12\n03.06.2026\n2x BATTERIELADEGER, 4A 83,67\n2x MOTOROEL 5W-30 5L 39,31\n2x SCHEIBENWISCHER AERO 650 27,40\nSUMME 300,76\nBON-NR 100066\nKategorie: Auto"
+ },
+ {
+  "id": "R0068",
+  "merchant": "H&M",
+  "category": "Kleidung",
+  "date": "2026-03-14",
+  "total_cents": 29859,
+  "positions": [
+   {
+    "label": "WINTERJACKE PARKA M",
+    "query": "Winterjacke",
+    "photo": "schwarze Winterjacke",
+    "qty": 3,
+    "price_cents": 9953
+   }
+  ],
+  "text": "H&M Filiale 12\n14.03.2026\n3x WINTERJACKE PARKA M 99,53\nSUMME 298,59\nBON-NR 100067\nKategorie: Kleidung"
+ },
+ {
+  "id": "R0069",
+  "merchant": "H&M",
+  "category": "Kleidung",
+  "date": "2025-10-26",
+  "total_cents": 28218,
+  "positions": [
+   {
+    "label": "T-SHIRT 3ER-PACK WEISS",
+    "query": "T-Shirts",
+    "photo": "drei weisse T-Shirts",
+    "qty": 3,
+    "price_cents": 1848
+   },
+   {
+    "label": "WINTERJACKE PARKA M",
+    "query": "Winterjacke",
+    "photo": "schwarze Winterjacke",
+    "qty": 2,
+    "price_cents": 9487
+   },
+   {
+    "label": "JEANS SLIM FIT 32/32",
+    "query": "Jeans",
+    "photo": "blaue Jeans",
+    "qty": 1,
+    "price_cents": 3700
+   }
+  ],
+  "text": "H&M Filiale 12\n26.10.2025\n3x T-SHIRT 3ER-PACK WEISS 18,48\n2x WINTERJACKE PARKA M 94,87\n1x JEANS SLIM FIT 32/32 37,00\nSUMME 282,18\nBON-NR 100068\nKategorie: Kleidung"
+ },
+ {
+  "id": "R0070",
+  "merchant": "OBI",
+  "category": "Baumarkt",
+  "date": "2025-08-08",
+  "total_cents": 24574,
+  "positions": [
+   {
+    "label": "DUEBEL-SET UX 100ST",
+    "query": "Duebel",
+    "photo": "rotes Fischer Duebel-Set",
+    "qty": 2,
+    "price_cents": 1271
+   },
+   {
+    "label": "SILIKON SANITAER GRAU",
+    "query": "Silikon",
+    "photo": "Kartusche Sanitärsilikon",
+    "qty": 2,
+    "price_cents": 816
+   },
+   {
+    "label": "STICHSAEGE PST 800",
+    "query": "Stichsaege",
+    "photo": "grüne Bosch Stichsaege",
+    "qty": 2,
+    "price_cents": 9115
+   },
+   {
+    "label": "ARBEITSHANDSCHUHE L",
+    "query": "Arbeitshandschuhe",
+    "photo": "graue Arbeitshandschuhe",
+    "qty": 2,
+    "price_cents": 1085
+   }
+  ],
+  "text": "OBI Filiale 12\n08.08.2025\n2x DUEBEL-SET UX 100ST 12,71\n2x SILIKON SANITAER GRAU 8,16\n2x STICHSAEGE PST 800 91,15\n2x ARBEITSHANDSCHUHE L 10,85\nSUMME 245,74\nBON-NR 100069\nKategorie: Baumarkt"
+ },
+ {
+  "id": "R0071",
+  "merchant": "Apotheke am Markt",
+  "category": "Gesundheit",
+  "date": "2025-09-01",
+  "total_cents": 4849,
+  "positions": [
+   {
+    "label": "NASENSPRAY 0,1% 10ML",
+    "query": "Nasenspray",
+    "photo": "Nasenspray Flasche",
+    "qty": 3,
+    "price_cents": 703
+   },
+   {
+    "label": "PFLASTER-SET WASSERFEST",
+    "query": "Pflaster",
+    "photo": "Pflasterbox",
+    "qty": 2,
+    "price_cents": 679
+   },
+   {
+    "label": "VITAMIN D3 1000 90ST",
+    "query": "Vitamin D",
+    "photo": "Vitamin D Tablettendose",
+    "qty": 1,
+    "price_cents": 1382
+   }
+  ],
+  "text": "Apotheke am Markt Filiale 12\n01.09.2025\n3x NASENSPRAY 0,1% 10ML 7,03\n2x PFLASTER-SET WASSERFEST 6,79\n1x VITAMIN D3 1000 90ST 13,82\nSUMME 48,49\nBON-NR 100070\nKategorie: Gesundheit"
+ },
+ {
+  "id": "R0072",
+  "merchant": "H&M",
+  "category": "Kleidung",
+  "date": "2026-08-26",
+  "total_cents": 4904,
+  "positions": [
+   {
+    "label": "JEANS SLIM FIT 32/32",
+    "query": "Jeans",
+    "photo": "blaue Jeans",
+    "qty": 2,
+    "price_cents": 2452
+   }
+  ],
+  "text": "H&M Filiale 12\n26.08.2026\n2x JEANS SLIM FIT 32/32 24,52\nSUMME 49,04\nBON-NR 100071\nKategorie: Kleidung"
+ },
+ {
+  "id": "R0073",
+  "merchant": "EDEKA",
+  "category": "Lebensmittel",
+  "date": "2025-05-22",
+  "total_cents": 4718,
+  "positions": [
+   {
+    "label": "SCHOKOLADE VOLLMILCH 100",
+    "query": "Schokolade",
+    "photo": "Schokoladentafel",
+    "qty": 2,
+    "price_cents": 194
+   },
+   {
+    "label": "BERGKAESE 400G STK",
+    "query": "Kaese",
+    "photo": "Stueck Bergkaese",
+    "qty": 3,
+    "price_cents": 668
+   },
+   {
+    "label": "OLIVENOEL NATIV 750ML",
+    "query": "Olivenoel",
+    "photo": "Olivenoelflasche",
+    "qty": 2,
+    "price_cents": 1163
+   }
+  ],
+  "text": "EDEKA Filiale 12\n22.05.2025\n2x SCHOKOLADE VOLLMILCH 100 1,94\n3x BERGKAESE 400G STK 6,68\n2x OLIVENOEL NATIV 750ML 11,63\nSUMME 47,18\nBON-NR 100072\nKategorie: Lebensmittel"
+ },
+ {
+  "id": "R0074",
+  "merchant": "dm",
+  "category": "Drogerie",
+  "date": "2025-05-08",
+  "total_cents": 350,
+  "positions": [
+   {
+    "label": "ZAHNPASTA KRÄUTER 75ML",
+    "query": "Zahnpasta",
+    "photo": "Zahnpasta Tube",
+    "qty": 2,
+    "price_cents": 175
+   }
+  ],
+  "text": "dm Filiale 12\n08.05.2025\n2x ZAHNPASTA KRÄUTER 75ML 1,75\nSUMME 3,50\nBON-NR 100073\nKategorie: Drogerie"
+ },
+ {
+  "id": "R0075",
+  "merchant": "Thalia",
+  "category": "Buecher",
+  "date": "2025-04-07",
+  "total_cents": 6036,
+  "positions": [
+   {
+    "label": "KOCHBUCH ITALIENISCH",
+    "query": "Kochbuch",
+    "photo": "Kochbuch mit Pasta-Cover",
+    "qty": 1,
+    "price_cents": 3351
+   },
+   {
+    "label": "NOTIZBUCH A5 LINIERT",
+    "query": "Notizbuch",
+    "photo": "schwarzes Notizbuch",
+    "qty": 1,
+    "price_cents": 1202
+   },
+   {
+    "label": "ROMAN TASCHENBUCH BESTS",
+    "query": "Roman",
+    "photo": "Taschenbuch Roman",
+    "qty": 1,
+    "price_cents": 1483
+   }
+  ],
+  "text": "Thalia Filiale 12\n07.04.2025\n1x KOCHBUCH ITALIENISCH 33,51\n1x NOTIZBUCH A5 LINIERT 12,02\n1x ROMAN TASCHENBUCH BESTS 14,83\nSUMME 60,36\nBON-NR 100074\nKategorie: Buecher"
+ },
+ {
+  "id": "R0076",
+  "merchant": "MediaMarkt",
+  "category": "Elektronik",
+  "date": "2025-01-23",
+  "total_cents": 56566,
+  "positions": [
+   {
+    "label": "HDMI-KABEL 2M ULTRA",
+    "query": "HDMI-Kabel",
+    "photo": "HDMI-Kabel verpackt",
+    "qty": 1,
+    "price_cents": 2432
+   },
+   {
+    "label": "KOPFH. SONY WH-1000XM5",
+    "query": "Kopfhoerer",
+    "photo": "schwarze Sony Kopfhoerer",
+    "qty": 2,
+    "price_cents": 27067
+   }
+  ],
+  "text": "MediaMarkt Filiale 12\n23.01.2025\n1x HDMI-KABEL 2M ULTRA 24,32\n2x KOPFH, SONY WH-1000XM5 270,67\nSUMME 565,66\nBON-NR 100075\nKategorie: Elektronik"
+ },
+ {
+  "id": "R0077",
+  "merchant": "H&M",
+  "category": "Kleidung",
+  "date": "2026-02-28",
+  "total_cents": 15842,
+  "positions": [
+   {
+    "label": "WINTERJACKE PARKA M",
+    "query": "Winterjacke",
+    "photo": "schwarze Winterjacke",
+    "qty": 2,
+    "price_cents": 7921
+   }
+  ],
+  "text": "H&M Filiale 12\n28.02.2026\n2x WINTERJACKE PARKA M 79,21\nSUMME 158,42\nBON-NR 100076\nKategorie: Kleidung"
+ },
+ {
+  "id": "R0078",
+  "merchant": "Deichmann",
+  "category": "Schuhe",
+  "date": "2026-06-06",
+  "total_cents": 17866,
+  "positions": [
+   {
+    "label": "WANDERSCHUHE MID GTX 44",
+    "query": "Wanderschuhe",
+    "photo": "braune Wanderschuhe",
+    "qty": 2,
+    "price_cents": 8933
+   }
+  ],
+  "text": "Deichmann Filiale 12\n06.06.2026\n2x WANDERSCHUHE MID GTX 44 89,33\nSUMME 178,66\nBON-NR 100077\nKategorie: Schuhe"
+ },
+ {
+  "id": "R0079",
+  "merchant": "OBI",
+  "category": "Baumarkt",
+  "date": "2026-08-03",
+  "total_cents": 1175,
+  "positions": [
+   {
+    "label": "SILIKON SANITAER GRAU",
+    "query": "Silikon",
+    "photo": "Kartusche Sanitärsilikon",
+    "qty": 1,
+    "price_cents": 1175
+   }
+  ],
+  "text": "OBI Filiale 12\n03.08.2026\n1x SILIKON SANITAER GRAU 11,75\nSUMME 11,75\nBON-NR 100078\nKategorie: Baumarkt"
+ },
+ {
+  "id": "R0080",
+  "merchant": "dm",
+  "category": "Drogerie",
+  "date": "2024-04-04",
+  "total_cents": 5552,
+  "positions": [
+   {
+    "label": "ZAHNPASTA KRÄUTER 75ML",
+    "query": "Zahnpasta",
+    "photo": "Zahnpasta Tube",
+    "qty": 2,
+    "price_cents": 221
+   },
+   {
+    "label": "WASCHMITTEL COLOR 20WL",
+    "query": "Waschmittel",
+    "photo": "dm Waschmittel Flasche",
+    "qty": 3,
+    "price_cents": 614
+   },
+   {
+    "label": "WINDELN PREMIUM GR.4",
+    "query": "Windeln",
+    "photo": "Windelpackung",
+    "qty": 2,
+    "price_cents": 1481
+   },
+   {
+    "label": "DUSCHGEL MILCH&HONIG 250",
+    "query": "Duschgel",
+    "photo": "dm Duschgel Flasche",
+    "qty": 3,
+    "price_cents": 102
+   }
+  ],
+  "text": "dm Filiale 12\n04.04.2024\n2x ZAHNPASTA KRÄUTER 75ML 2,21\n3x WASCHMITTEL COLOR 20WL 6,14\n2x WINDELN PREMIUM GR,4 14,81\n3x DUSCHGEL MILCH&HONIG 250 1,02\nSUMME 55,52\nBON-NR 100079\nKategorie: Drogerie"
+ },
+ {
+  "id": "R0081",
+  "merchant": "Apotheke am Markt",
+  "category": "Gesundheit",
+  "date": "2024-04-21",
+  "total_cents": 2934,
+  "positions": [
+   {
+    "label": "VITAMIN D3 1000 90ST",
+    "query": "Vitamin D",
+    "photo": "Vitamin D Tablettendose",
+    "qty": 3,
+    "price_cents": 978
+   }
+  ],
+  "text": "Apotheke am Markt Filiale 12\n21.04.2024\n3x VITAMIN D3 1000 90ST 9,78\nSUMME 29,34\nBON-NR 100080\nKategorie: Gesundheit"
+ },
+ {
+  "id": "R0082",
+  "merchant": "MediaMarkt",
+  "category": "Elektronik",
+  "date": "2025-03-18",
+  "total_cents": 11345,
+  "positions": [
+   {
+    "label": "SSD SAMSUNG 870EVO 1TB",
+    "query": "SSD",
+    "photo": "Samsung SSD Festplatte",
+    "qty": 1,
+    "price_cents": 11345
+   }
+  ],
+  "text": "MediaMarkt Filiale 12\n18.03.2025\n1x SSD SAMSUNG 870EVO 1TB 113,45\nSUMME 113,45\nBON-NR 100081\nKategorie: Elektronik"
+ },
+ {
+  "id": "R0083",
+  "merchant": "Deichmann",
+  "category": "Schuhe",
+  "date": "2026-05-02",
+  "total_cents": 30945,
+  "positions": [
+   {
+    "label": "WANDERSCHUHE MID GTX 44",
+    "query": "Wanderschuhe",
+    "photo": "braune Wanderschuhe",
+    "qty": 3,
+    "price_cents": 10315
+   }
+  ],
+  "text": "Deichmann Filiale 12\n02.05.2026\n3x WANDERSCHUHE MID GTX 44 103,15\nSUMME 309,45\nBON-NR 100082\nKategorie: Schuhe"
+ },
+ {
+  "id": "R0084",
+  "merchant": "Thalia",
+  "category": "Buecher",
+  "date": "2026-02-22",
+  "total_cents": 9306,
+  "positions": [
+   {
+    "label": "KOCHBUCH ITALIENISCH",
+    "query": "Kochbuch",
+    "photo": "Kochbuch mit Pasta-Cover",
+    "qty": 3,
+    "price_cents": 3102
+   }
+  ],
+  "text": "Thalia Filiale 12\n22.02.2026\n3x KOCHBUCH ITALIENISCH 31,02\nSUMME 93,06\nBON-NR 100083\nKategorie: Buecher"
+ },
+ {
+  "id": "R0085",
+  "merchant": "H&M",
+  "category": "Kleidung",
+  "date": "2025-07-04",
+  "total_cents": 13751,
+  "positions": [
+   {
+    "label": "JEANS SLIM FIT 32/32",
+    "query": "Jeans",
+    "photo": "blaue Jeans",
+    "qty": 1,
+    "price_cents": 2145
+   },
+   {
+    "label": "WINTERJACKE PARKA M",
+    "query": "Winterjacke",
+    "photo": "schwarze Winterjacke",
+    "qty": 1,
+    "price_cents": 6678
+   },
+   {
+    "label": "T-SHIRT 3ER-PACK WEISS",
+    "query": "T-Shirts",
+    "photo": "drei weisse T-Shirts",
+    "qty": 2,
+    "price_cents": 2464
+   }
+  ],
+  "text": "H&M Filiale 12\n04.07.2025\n1x JEANS SLIM FIT 32/32 21,45\n1x WINTERJACKE PARKA M 66,78\n2x T-SHIRT 3ER-PACK WEISS 24,64\nSUMME 137,51\nBON-NR 100084\nKategorie: Kleidung"
+ },
+ {
+  "id": "R0086",
+  "merchant": "dm",
+  "category": "Drogerie",
+  "date": "2026-02-15",
+  "total_cents": 3969,
+  "positions": [
+   {
+    "label": "WINDELN PREMIUM GR.4",
+    "query": "Windeln",
+    "photo": "Windelpackung",
+    "qty": 2,
+    "price_cents": 981
+   },
+   {
+    "label": "ZAHNPASTA KRÄUTER 75ML",
+    "query": "Zahnpasta",
+    "photo": "Zahnpasta Tube",
+    "qty": 3,
+    "price_cents": 155
+   },
+   {
+    "label": "WASCHMITTEL COLOR 20WL",
+    "query": "Waschmittel",
+    "photo": "dm Waschmittel Flasche",
+    "qty": 2,
+    "price_cents": 771
+   }
+  ],
+  "text": "dm Filiale 12\n15.02.2026\n2x WINDELN PREMIUM GR,4 9,81\n3x ZAHNPASTA KRÄUTER 75ML 1,55\n2x WASCHMITTEL COLOR 20WL 7,71\nSUMME 39,69\nBON-NR 100085\nKategorie: Drogerie"
+ },
+ {
+  "id": "R0087",
+  "merchant": "IKEA",
+  "category": "Moebel",
+  "date": "2025-01-03",
+  "total_cents": 15407,
+  "positions": [
+   {
+    "label": "BILLY REGAL WEISS 80",
+    "query": "Regal",
+    "photo": "weisses Billy Regal",
+    "qty": 2,
+    "price_cents": 7359
+   },
+   {
+    "label": "KERZEN GLIMMA 20ST",
+    "query": "Kerzen",
+    "photo": "Packung Teelichter",
+    "qty": 1,
+    "price_cents": 689
+   }
+  ],
+  "text": "IKEA Filiale 12\n03.01.2025\n2x BILLY REGAL WEISS 80 73,59\n1x KERZEN GLIMMA 20ST 6,89\nSUMME 154,07\nBON-NR 100086\nKategorie: Moebel"
+ },
+ {
+  "id": "R0088",
+  "merchant": "MediaMarkt",
+  "category": "Elektronik",
+  "date": "2026-09-21",
+  "total_cents": 97178,
+  "positions": [
+   {
+    "label": "HDMI-KABEL 2M ULTRA",
+    "query": "HDMI-Kabel",
+    "photo": "HDMI-Kabel verpackt",
+    "qty": 1,
+    "price_cents": 2261
+   },
+   {
+    "label": "KOPFH. SONY WH-1000XM5",
+    "query": "Kopfhoerer",
+    "photo": "schwarze Sony Kopfhoerer",
+    "qty": 2,
+    "price_cents": 31689
+   },
+   {
+    "label": "SSD SAMSUNG 870EVO 1TB",
+    "query": "SSD",
+    "photo": "Samsung SSD Festplatte",
+    "qty": 2,
+    "price_cents": 10629
+   },
+   {
+    "label": "WASSERKOCHER 1,7L EDELST",
+    "query": "Wasserkocher",
+    "photo": "Edelstahl-Wasserkocher",
+    "qty": 3,
+    "price_cents": 3427
+   }
+  ],
+  "text": "MediaMarkt Filiale 12\n21.09.2026\n1x HDMI-KABEL 2M ULTRA 22,61\n2x KOPFH, SONY WH-1000XM5 316,89\n2x SSD SAMSUNG 870EVO 1TB 106,29\n3x WASSERKOCHER 1,7L EDELST 34,27\nSUMME 971,78\nBON-NR 100087\nKategorie: Elektronik"
+ },
+ {
+  "id": "R0089",
+  "merchant": "MediaMarkt",
+  "category": "Elektronik",
+  "date": "2025-07-23",
+  "total_cents": 95778,
+  "positions": [
+   {
+    "label": "HDMI-KABEL 2M ULTRA",
+    "query": "HDMI-Kabel",
+    "photo": "HDMI-Kabel verpackt",
+    "qty": 2,
+    "price_cents": 1479
+   },
+   {
+    "label": "WASSERKOCHER 1,7L EDELST",
+    "query": "Wasserkocher",
+    "photo": "Edelstahl-Wasserkocher",
+    "qty": 2,
+    "price_cents": 4032
+   },
+   {
+    "label": "SSD SAMSUNG 870EVO 1TB",
+    "query": "SSD",
+    "photo": "Samsung SSD Festplatte",
+    "qty": 2,
+    "price_cents": 8948
+   },
+   {
+    "label": "KOPFH. SONY WH-1000XM5",
+    "query": "Kopfhoerer",
+    "photo": "schwarze Sony Kopfhoerer",
+    "qty": 2,
+    "price_cents": 33430
+   }
+  ],
+  "text": "MediaMarkt Filiale 12\n23.07.2025\n2x HDMI-KABEL 2M ULTRA 14,79\n2x WASSERKOCHER 1,7L EDELST 40,32\n2x SSD SAMSUNG 870EVO 1TB 89,48\n2x KOPFH, SONY WH-1000XM5 334,30\nSUMME 957,78\nBON-NR 100088\nKategorie: Elektronik"
+ },
+ {
+  "id": "R0090",
+  "merchant": "BAUHAUS",
+  "category": "Baumarkt",
+  "date": "2026-07-02",
+  "total_cents": 7112,
+  "positions": [
+   {
+    "label": "FARBROLLER-SET 3TLG",
+    "query": "Farbroller",
+    "photo": "Farbroller-Set mit Wanne",
+    "qty": 2,
+    "price_cents": 2279
+   },
+   {
+    "label": "HOLZSCHRAUBEN 4X40 200ST",
+    "query": "Holzschrauben",
+    "photo": "Schachtel Holzschrauben",
+    "qty": 2,
+    "price_cents": 1277
+   }
+  ],
+  "text": "BAUHAUS Filiale 12\n02.07.2026\n2x FARBROLLER-SET 3TLG 22,79\n2x HOLZSCHRAUBEN 4X40 200ST 12,77\nSUMME 71,12\nBON-NR 100089\nKategorie: Baumarkt"
+ },
+ {
+  "id": "R0091",
+  "merchant": "BAUHAUS",
+  "category": "Baumarkt",
+  "date": "2025-05-18",
+  "total_cents": 15208,
+  "positions": [
+   {
+    "label": "FARBROLLER-SET 3TLG",
+    "query": "Farbroller",
+    "photo": "Farbroller-Set mit Wanne",
+    "qty": 3,
+    "price_cents": 1991
+   },
+   {
+    "label": "AKKUSCHR. GSR 18V-55",
+    "query": "Akkuschrauber",
+    "photo": "blauer Bosch Akkuschrauber",
+    "qty": 1,
+    "price_cents": 9235
+   }
+  ],
+  "text": "BAUHAUS Filiale 12\n18.05.2025\n3x FARBROLLER-SET 3TLG 19,91\n1x AKKUSCHR, GSR 18V-55 92,35\nSUMME 152,08\nBON-NR 100090\nKategorie: Baumarkt"
+ },
+ {
+  "id": "R0092",
+  "merchant": "H&M",
+  "category": "Kleidung",
+  "date": "2025-12-06",
+  "total_cents": 25469,
+  "positions": [
+   {
+    "label": "WINTERJACKE PARKA M",
+    "query": "Winterjacke",
+    "photo": "schwarze Winterjacke",
+    "qty": 3,
+    "price_cents": 7670
+   },
+   {
+    "label": "JEANS SLIM FIT 32/32",
+    "query": "Jeans",
+    "photo": "blaue Jeans",
+    "qty": 1,
+    "price_cents": 2459
+   }
+  ],
+  "text": "H&M Filiale 12\n06.12.2025\n3x WINTERJACKE PARKA M 76,70\n1x JEANS SLIM FIT 32/32 24,59\nSUMME 254,69\nBON-NR 100091\nKategorie: Kleidung"
+ },
+ {
+  "id": "R0093",
+  "merchant": "OBI",
+  "category": "Baumarkt",
+  "date": "2026-02-21",
+  "total_cents": 7116,
+  "positions": [
+   {
+    "label": "DUEBEL-SET UX 100ST",
+    "query": "Duebel",
+    "photo": "rotes Fischer Duebel-Set",
+    "qty": 2,
+    "price_cents": 1941
+   },
+   {
+    "label": "ARBEITSHANDSCHUHE L",
+    "query": "Arbeitshandschuhe",
+    "photo": "graue Arbeitshandschuhe",
+    "qty": 3,
+    "price_cents": 1078
+   }
+  ],
+  "text": "OBI Filiale 12\n21.02.2026\n2x DUEBEL-SET UX 100ST 19,41\n3x ARBEITSHANDSCHUHE L 10,78\nSUMME 71,16\nBON-NR 100092\nKategorie: Baumarkt"
+ },
+ {
+  "id": "R0094",
+  "merchant": "EDEKA",
+  "category": "Lebensmittel",
+  "date": "2026-08-08",
+  "total_cents": 5724,
+  "positions": [
+   {
+    "label": "OLIVENOEL NATIV 750ML",
+    "query": "Olivenoel",
+    "photo": "Olivenoelflasche",
+    "qty": 1,
+    "price_cents": 981
+   },
+   {
+    "label": "SCHOKOLADE VOLLMILCH 100",
+    "query": "Schokolade",
+    "photo": "Schokoladentafel",
+    "qty": 2,
+    "price_cents": 142
+   },
+   {
+    "label": "KAFFEEBOHNEN CREMA 1KG",
+    "query": "Kaffee",
+    "photo": "Kaffeepackung Bohnen",
+    "qty": 3,
+    "price_cents": 1272
+   },
+   {
+    "label": "BERGKAESE 400G STK",
+    "query": "Kaese",
+    "photo": "Stueck Bergkaese",
+    "qty": 1,
+    "price_cents": 643
+   }
+  ],
+  "text": "EDEKA Filiale 12\n08.08.2026\n1x OLIVENOEL NATIV 750ML 9,81\n2x SCHOKOLADE VOLLMILCH 100 1,42\n3x KAFFEEBOHNEN CREMA 1KG 12,72\n1x BERGKAESE 400G STK 6,43\nSUMME 57,24\nBON-NR 100093\nKategorie: Lebensmittel"
+ },
+ {
+  "id": "R0095",
+  "merchant": "Thalia",
+  "category": "Buecher",
+  "date": "2025-10-19",
+  "total_cents": 16285,
+  "positions": [
+   {
+    "label": "KOCHBUCH ITALIENISCH",
+    "query": "Kochbuch",
+    "photo": "Kochbuch mit Pasta-Cover",
+    "qty": 3,
+    "price_cents": 2994
+   },
+   {
+    "label": "ROMAN TASCHENBUCH BESTS",
+    "query": "Roman",
+    "photo": "Taschenbuch Roman",
+    "qty": 2,
+    "price_cents": 1469
+   },
+   {
+    "label": "NOTIZBUCH A5 LINIERT",
+    "query": "Notizbuch",
+    "photo": "schwarzes Notizbuch",
+    "qty": 3,
+    "price_cents": 1455
+   }
+  ],
+  "text": "Thalia Filiale 12\n19.10.2025\n3x KOCHBUCH ITALIENISCH 29,94\n2x ROMAN TASCHENBUCH BESTS 14,69\n3x NOTIZBUCH A5 LINIERT 14,55\nSUMME 162,85\nBON-NR 100094\nKategorie: Buecher"
+ },
+ {
+  "id": "R0096",
+  "merchant": "EDEKA",
+  "category": "Lebensmittel",
+  "date": "2026-06-28",
+  "total_cents": 2918,
+  "positions": [
+   {
+    "label": "OLIVENOEL NATIV 750ML",
+    "query": "Olivenoel",
+    "photo": "Olivenoelflasche",
+    "qty": 2,
+    "price_cents": 938
+   },
+   {
+    "label": "BERGKAESE 400G STK",
+    "query": "Kaese",
+    "photo": "Stueck Bergkaese",
+    "qty": 2,
+    "price_cents": 521
+   }
+  ],
+  "text": "EDEKA Filiale 12\n28.06.2026\n2x OLIVENOEL NATIV 750ML 9,38\n2x BERGKAESE 400G STK 5,21\nSUMME 29,18\nBON-NR 100095\nKategorie: Lebensmittel"
+ },
+ {
+  "id": "R0097",
+  "merchant": "IKEA",
+  "category": "Moebel",
+  "date": "2026-07-13",
+  "total_cents": 20587,
+  "positions": [
+   {
+    "label": "BILDERRAHMEN RIBBA 50",
+    "query": "Bilderrahmen",
+    "photo": "schwarzer Bilderrahmen",
+    "qty": 1,
+    "price_cents": 1513
+   },
+   {
+    "label": "BILLY REGAL WEISS 80",
+    "query": "Regal",
+    "photo": "weisses Billy Regal",
+    "qty": 3,
+    "price_cents": 6358
+   }
+  ],
+  "text": "IKEA Filiale 12\n13.07.2026\n1x BILDERRAHMEN RIBBA 50 15,13\n3x BILLY REGAL WEISS 80 63,58\nSUMME 205,87\nBON-NR 100096\nKategorie: Moebel"
+ },
+ {
+  "id": "R0098",
+  "merchant": "OBI",
+  "category": "Baumarkt",
+  "date": "2026-02-17",
+  "total_cents": 32270,
+  "positions": [
+   {
+    "label": "STICHSAEGE PST 800",
+    "query": "Stichsaege",
+    "photo": "grüne Bosch Stichsaege",
+    "qty": 3,
+    "price_cents": 8263
+   },
+   {
+    "label": "ARBEITSHANDSCHUHE L",
+    "query": "Arbeitshandschuhe",
+    "photo": "graue Arbeitshandschuhe",
+    "qty": 1,
+    "price_cents": 1279
+   },
+   {
+    "label": "DUEBEL-SET UX 100ST",
+    "query": "Duebel",
+    "photo": "rotes Fischer Duebel-Set",
+    "qty": 2,
+    "price_cents": 1592
+   },
+   {
+    "label": "SILIKON SANITAER GRAU",
+    "query": "Silikon",
+    "photo": "Kartusche Sanitärsilikon",
+    "qty": 3,
+    "price_cents": 1006
+   }
+  ],
+  "text": "OBI Filiale 12\n17.02.2026\n3x STICHSAEGE PST 800 82,63\n1x ARBEITSHANDSCHUHE L 12,79\n2x DUEBEL-SET UX 100ST 15,92\n3x SILIKON SANITAER GRAU 10,06\nSUMME 322,70\nBON-NR 100097\nKategorie: Baumarkt"
+ },
+ {
+  "id": "R0099",
+  "merchant": "H&M",
+  "category": "Kleidung",
+  "date": "2024-06-28",
+  "total_cents": 34903,
+  "positions": [
+   {
+    "label": "WINTERJACKE PARKA M",
+    "query": "Winterjacke",
+    "photo": "schwarze Winterjacke",
+    "qty": 3,
+    "price_cents": 8942
+   },
+   {
+    "label": "T-SHIRT 3ER-PACK WEISS",
+    "query": "T-Shirts",
+    "photo": "drei weisse T-Shirts",
+    "qty": 2,
+    "price_cents": 2407
+   },
+   {
+    "label": "JEANS SLIM FIT 32/32",
+    "query": "Jeans",
+    "photo": "blaue Jeans",
+    "qty": 1,
+    "price_cents": 3263
+   }
+  ],
+  "text": "H&M Filiale 12\n28.06.2024\n3x WINTERJACKE PARKA M 89,42\n2x T-SHIRT 3ER-PACK WEISS 24,07\n1x JEANS SLIM FIT 32/32 32,63\nSUMME 349,03\nBON-NR 100098\nKategorie: Kleidung"
+ },
+ {
+  "id": "R0100",
+  "merchant": "OBI",
+  "category": "Baumarkt",
+  "date": "2025-11-22",
+  "total_cents": 20823,
+  "positions": [
+   {
+    "label": "SILIKON SANITAER GRAU",
+    "query": "Silikon",
+    "photo": "Kartusche Sanitärsilikon",
+    "qty": 2,
+    "price_cents": 699
+   },
+   {
+    "label": "ARBEITSHANDSCHUHE L",
+    "query": "Arbeitshandschuhe",
+    "photo": "graue Arbeitshandschuhe",
+    "qty": 3,
+    "price_cents": 901
+   },
+   {
+    "label": "STICHSAEGE PST 800",
+    "query": "Stichsaege",
+    "photo": "grüne Bosch Stichsaege",
+    "qty": 2,
+    "price_cents": 8361
+   }
+  ],
+  "text": "OBI Filiale 12\n22.11.2025\n2x SILIKON SANITAER GRAU 6,99\n3x ARBEITSHANDSCHUHE L 9,01\n2x STICHSAEGE PST 800 83,61\nSUMME 208,23\nBON-NR 100099\nKategorie: Baumarkt"
+ }
+]

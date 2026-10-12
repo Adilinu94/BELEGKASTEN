@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Belegkasten</string>
+    <style name="Theme.Belegkasten" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">#0F1A17</item>
+    </style>
+</resources>

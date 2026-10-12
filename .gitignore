@@ -1,0 +1,26 @@
+# Gradle
+.gradle/
+build/
+gradle-8.9-bin.zip
+
+# Android / IDE
+.idea/
+*.iml
+local.properties
+captures/
+.externalNativeBuild/
+.cxx/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.pyc
+
+# Lokale Tool-Konfiguration
+.commandcode/
+
+# Logs
+*.log

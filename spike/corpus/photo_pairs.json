@@ -1,0 +1,152 @@
+[
+ {
+  "id": "P001",
+  "object": "runde LED Deckenlampe",
+  "target": "R0021"
+ },
+ {
+  "id": "P002",
+  "object": "blaue Jeans",
+  "target": "R0092"
+ },
+ {
+  "id": "P003",
+  "object": "graue Arbeitshandschuhe",
+  "target": "R0098"
+ },
+ {
+  "id": "P004",
+  "object": "drei weisse T-Shirts",
+  "target": "R0015"
+ },
+ {
+  "id": "P005",
+  "object": "Scheibenwischer Paar",
+  "target": "R0038"
+ },
+ {
+  "id": "P006",
+  "object": "schwarze Winterjacke",
+  "target": "R0001"
+ },
+ {
+  "id": "P007",
+  "object": "Autobatterie-Ladegeraet",
+  "target": "R0067"
+ },
+ {
+  "id": "P008",
+  "object": "Vitamin D Tablettendose",
+  "target": "R0045"
+ },
+ {
+  "id": "P009",
+  "object": "schwarzes Notizbuch",
+  "target": "R0054"
+ },
+ {
+  "id": "P010",
+  "object": "Taschenbuch Roman",
+  "target": "R0035"
+ },
+ {
+  "id": "P011",
+  "object": "weisse Sneaker",
+  "target": "R0013"
+ },
+ {
+  "id": "P012",
+  "object": "Olivenoelflasche",
+  "target": "R0094"
+ },
+ {
+  "id": "P013",
+  "object": "Edelstahl-Wasserkocher",
+  "target": "R0088"
+ },
+ {
+  "id": "P014",
+  "object": "Pflasterbox",
+  "target": "R0022"
+ },
+ {
+  "id": "P015",
+  "object": "braune Wanderschuhe",
+  "target": "R0078"
+ },
+ {
+  "id": "P016",
+  "object": "dm Duschgel Flasche",
+  "target": "R0028"
+ },
+ {
+  "id": "P017",
+  "object": "Stueck Bergkaese",
+  "target": "R0073"
+ },
+ {
+  "id": "P018",
+  "object": "Samsung SSD Festplatte",
+  "target": "R0089"
+ },
+ {
+  "id": "P019",
+  "object": "Zahnpasta Tube",
+  "target": "R0074"
+ },
+ {
+  "id": "P020",
+  "object": "Kartusche Sanitärsilikon",
+  "target": "R0098"
+ },
+ {
+  "id": "P021",
+  "object": "HDMI-Kabel verpackt",
+  "target": "R0034"
+ },
+ {
+  "id": "P022",
+  "object": "Schachtel Holzschrauben",
+  "target": "R0036"
+ },
+ {
+  "id": "P023",
+  "object": "Motoroel Kanister",
+  "target": "R0062"
+ },
+ {
+  "id": "P024",
+  "object": "Packung Teelichter",
+  "target": "R0061"
+ },
+ {
+  "id": "P025",
+  "object": "gruene Bosch Bohrmaschine",
+  "target": "R0036"
+ },
+ {
+  "id": "P026",
+  "object": "Schokoladentafel",
+  "target": "R0059"
+ },
+ {
+  "id": "P027",
+  "object": "Windelpackung",
+  "target": "R0080"
+ },
+ {
+  "id": "P028",
+  "object": "grüne Bosch Stichsaege",
+  "target": "R0026"
+ },
+ {
+  "id": "P029",
+  "object": "Nasenspray Flasche",
+  "target": "R0052"
+ },
+ {
+  "id": "P030",
+  "object": "schwarze Sony Kopfhoerer",
+  "target": "R0056"
+ }
+]

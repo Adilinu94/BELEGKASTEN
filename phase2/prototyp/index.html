@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Belegkasten — Klick-Prototyp (Phase 2)</title>
+<style>
+:root{--bg:#0f1a17;--card:#16241f;--ink:#f2efe6;--mut:#a9b5ad;--acc:#d7f75b;--line:#24352e}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,sans-serif;background:#05080a;color:var(--ink);display:flex;gap:32px;justify-content:center;padding:32px 16px;flex-wrap:wrap}
+.hint{max-width:340px;font-size:14px;color:var(--mut);line-height:1.6}
+.hint h1{color:var(--ink);font-size:20px;margin-bottom:12px}
+.hint li{margin:8px 0 8px 18px}
+.phone{width:360px;height:740px;background:var(--bg);border:2px solid #2a3a33;border-radius:36px;overflow:hidden;display:flex;flex-direction:column}
+.screen{flex:1;overflow-y:auto;padding:20px 16px;display:none;flex-direction:column}
+.screen.on{display:flex}
+.topbar{display:flex;align-items:center;gap:8px;margin-bottom:16px}
+.topbar b{font-size:18px}
+.topbar .box{margin-left:auto;font-size:12px;color:var(--mut);border:1px solid var(--line);border-radius:8px;padding:2px 8px}
+h2{font-size:24px;margin-bottom:4px}
+.sub{color:var(--mut);font-size:14px;margin-bottom:16px}
+.cam{background:#0a120f;border:1px dashed var(--line);border-radius:16px;height:280px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;color:var(--mut);margin-bottom:16px}
+.cam .frame{border:2px solid var(--acc);border-radius:8px;padding:24px 40px;font-size:14px;color:var(--acc)}
+.btn{background:var(--acc);color:#101510;border:0;border-radius:12px;padding:14px;font-size:16px;font-weight:700;cursor:pointer;width:100%;margin-top:8px}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.field{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px;margin-bottom:10px}
+.field.ok{border-color:#3c5a2a}.field.warn{border-color:#8a6d1f}
+.field small{color:var(--mut);font-size:12px;display:block}
+.field .v{font-size:17px}.field.warn .v{color:#ffd76a}
+.searchbox{background:#0c1411;border:1px solid var(--line);border-radius:12px;padding:14px;font-size:16px;width:100%;color:var(--ink);margin-bottom:12px}
+.hit{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:10px;cursor:pointer}
+.hit:first-of-type{border-color:var(--acc)}
+.hit small{color:var(--mut)}
+.nav{display:flex;border-top:1px solid var(--line)}
+.nav button{flex:1;background:none;border:0;color:var(--mut);padding:14px 0;font-size:13px;cursor:pointer}
+.nav button.on{color:var(--acc);font-weight:700}
+.timer{font-size:12px;color:var(--mut);text-align:center;padding:6px}
+</style>
+</head>
+<body>
+<div class="hint">
+<h1>Klick-Prototyp · Aufgabe für Tester</h1>
+<p>Stell dir vor: Die Waschmaschine ist kaputt, du brauchst die Rechnung. Du hast 3 Aufgaben:</p>
+<ol>
+<li><strong>Aufnehmen:</strong> Nimm einen Beleg auf (Tab „Erfassen"), bestätige die Felder.</li>
+<li><strong>Wiederfinden:</strong> Finde den BAUHAUS-Beleg vom März (Tab „Suchen").</li>
+<li><strong>Detail:</strong> Öffne den Treffer, prüfe Summe und Garantiefrist.</li>
+</ol>
+<p>Denke laut! Der Beobachter misst die Zeit bis zum richtigen Beleg (Ziel: unter 30 s für Aufgabe 2).</p>
+<p>Dies ist eine Attrappe: Suche und Erkennung sind fest verdrahtet, kein echtes Modell.</p>
+</div>
+<div class="phone">
+<div class="screen on" id="s-cap">
+<div class="topbar"><b>Belegkasten</b><span class="box">Beta</span></div>
+<h2>Erfassen</h2><p class="sub">Beleg vor die Kamera halten — Aufnahme erfolgt automatisch.</p>
+<div class="cam"><div class="frame">BAUHAUS-Bon im Rahmen</div><span>Auto-Capture bereit …</span></div>
+<button class="btn" onclick="go('s-conf')">Aufnehmen (simuliert)</button>
+</div>
+<div class="screen" id="s-conf">
+<div class="topbar"><b>Belegkasten</b><span class="box">Beta</span></div>
+<h2>Prüfen</h2><p class="sub">Markierte Felder bitte bestätigen.</p>
+<div class="field ok"><small>Händler (erkannt)</small><div class="v">BAUHAUS</div></div>
+<div class="field ok"><small>Datum (erkannt)</small><div class="v">14.03.2025</div></div>
+<div class="field ok"><small>Summe (erkannt, geprüft)</small><div class="v">89,99 €</div></div>
+<div class="field warn"><small>Kategorie (unsicher — bitte wählen)</small><div class="v">Werkzeug / Baumarkt?</div></div>
+<button class="btn" onclick="go('s-search')">Speichern</button>
+<button class="btn ghost" onclick="go('s-cap')">Neu aufnehmen</button>
+</div>
+<div class="screen" id="s-search">
+<div class="topbar"><b>Belegkasten</b><span class="box">Beta</span></div>
+<h2>Suchen</h2><p class="sub">Beschreib, was du suchst.</p>
+<input class="searchbox" id="q" value="der vom Baumarkt im März" oninput="suchen(this.value)">
+<div id="hits"></div>
+</div>
+<div class="screen" id="s-detail">
+<div class="topbar"><b>Belegkasten</b><span class="box">Beta</span></div>
+<h2>BAUHAUS</h2><p class="sub">14.03.2025 · Bon-Nr. 100042</p>
+<div class="field ok"><small>Positionen</small><div class="v">Bohrmaschine PSB 750 — 89,99 €</div></div>
+<div class="field ok"><small>Summe (aus Beleg, geprüft)</small><div class="v">89,99 €</div></div>
+<div class="field ok"><small>Garantie (Standardwert, änderbar)</small><div class="v">läuft bis 14.03.2027 · Erinnerung an</div></div>
+<button class="btn ghost" onclick="go('s-search')">Zurück zur Suche</button>
+</div>
+<div class="timer" id="timer">Aufgabe 2 läuft: 0 s</div>
+<div class="nav">
+<button onclick="tab('s-cap',this)">Erfassen</button>
+<button class="on" onclick="tab('s-search',this)">Suchen</button>
+<button onclick="tab('s-detail',this)">Beleg</button>
+</div>
+</div>
+<script>
+const BELEGE=[
+{id:1,h:"BAUHAUS",d:"14.03.2025",s:"89,99 €",t:"Bohrmaschine PSB 750 · Baumarkt März",f:"Garantie bis 14.03.2027"},
+{id:2,h:"dm",d:"02.03.2025",s:"12,45 €",t:"Duschgel Zahnpasta Drogerie März",f:"keine Garantie"},
+{id:3,h:"MediaMarkt",d:"21.01.2025",s:"299,00 €",t:"Kopfhörer Sony Elektronik Januar",f:"Garantie bis 21.01.2027"}];
+function go(id){document.querySelectorAll('.screen').forEach(e=>e.classList.remove('on'));document.getElementById(id).classList.add('on');}
+function tab(id,btn){go(id);document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('on'));btn.classList.add('on');}
+function norm(s){return s.toLowerCase().replace(/ä/g,"a").replace(/ö/g,"o").replace(/ü/g,"u");}
+function suchen(q){
+const w=norm(q).split(/\s+/).filter(x=>x.length>2);
+const r=BELEGE.map(b=>({b,p:w.filter(t=>norm(b.h+" "+b.d+" "+b.t).includes(t)).length})).sort((a,c)=>c.p-a.p);
+document.getElementById('hits').innerHTML=r.map(({b})=>
+`<div class="hit" onclick="go('s-detail')"><strong>${b.h}</strong> · ${b.d}<br><span>${b.s} — ${b.t}</span><br><small>${b.f}</small></div>`).join('');
+}
+suchen(document.getElementById('q').value);
+let s=0;setInterval(()=>{s++;document.getElementById('timer').textContent="Aufgabe 2 läuft: "+s+" s";},1000);
+</script>
+</body>
+</html>
