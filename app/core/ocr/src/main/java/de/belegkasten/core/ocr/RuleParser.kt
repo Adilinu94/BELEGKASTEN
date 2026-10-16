@@ -1,5 +1,6 @@
 package de.belegkasten.core.ocr
 
+import java.math.BigDecimal
 import javax.inject.Inject
 
 // Fixed rules first: date, total, receipt number from stable lines.
@@ -45,8 +46,8 @@ class RuleParser @Inject constructor() {
     }
 
     // "1.234,56" -> 123456. German format only; anything else returns null.
+    // BigDecimal, not Double: 1.15 * 100 is 114.99999999999999 as a Double, i.e. 114 cents.
     fun toCents(german: String): Long? = runCatching {
-        val clean = german.replace(".", "").replace(",", ".")
-        (clean.toDouble() * 100).toLong()
+        BigDecimal(german.replace(".", "").replace(",", ".")).movePointRight(2).longValueExact()
     }.getOrNull()
 }

@@ -37,8 +37,9 @@ def cosine(a: list, b: list) -> float:
 
 
 def doc_text(r: dict) -> str:
-    items = " ".join(p["query"] for p in r["positions"])
-    return f"title: {r['merchant']} | text: {items} {r['category']}"
+    # Roher Bontext wie nach der Texterkennung - derselbe Text, den die Baseline liest.
+    # (Vorher: bereinigte Suchwoerter p["query"], die die App nie haben wird.)
+    return f"title: {r['merchant']} | text: {r['text']}"
 
 
 def main():

@@ -22,4 +22,5 @@ dependencies {
     implementation(libs.kotlinx.coroutines)
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
+    testImplementation(libs.kotlin.test)
 }

@@ -28,4 +28,18 @@ class RuleParserTest {
     fun toCentsHandlesThousands() {
         assertEquals(123456, parser.toCents("1.234,56"))
     }
+
+    // Double rechnet 1,15 * 100 zu 114,99... -> 114 Cent. Diese Werte sind die Falle.
+    @Test
+    fun toCentsIsExactForValuesDoubleGetsWrong() {
+        assertEquals(29L, parser.toCents("0,29"))
+        assertEquals(115L, parser.toCents("1,15"))
+        assertEquals(870L, parser.toCents("8,70"))
+        assertEquals(1999L, parser.toCents("19,99"))
+    }
+
+    @Test
+    fun parseReadsTotalExactly() {
+        assertEquals(1999L, parser.parse("EDEKA\n03.04.2025\nSUMME 19,99\nBON-NR 7").totalCents)
+    }
 }
