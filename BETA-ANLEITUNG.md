@@ -14,17 +14,22 @@ adb install -r app\app\build\outputs\apk\debug\app-debug.apk
 Hinweis: Aktuell ist kein Gerät in der Entwicklungsumgebung verbunden —
 der Testlauf muss auf eigenem Gerät erfolgen.
 
+**Stand 2026-10-16:** Erfassen, Prüfansicht, Navigation und Sicherung sind im Code noch
+nicht verdrahtet (siehe `STATUS.md`). Die Testschritte 1 bis 4 unten sind mit dem
+aktuellen Build nicht ausführbar. Diese Anleitung erst an Tester geben, wenn die
+Hauptschleife steht und der Spike-Bericht ausgefüllt ist.
+
 ## 3. Was getestet werden soll (feste Reihenfolge)
 1. Beleg fotografieren → Vorschläge prüfen (Kaufhaus, Baumarkt, Apotheke je 3 Belege)
 2. In der Prüfansicht eine falsche Summe/ein falsches Datum korrigieren
 3. Wortsuche: „der vom Baumarkt im März"
 4. Sicherung exportieren mit Passwort, App neu installieren, Sicherung einlesen
-5. In den Einstellungen Testzeitraum-Limit sichtb
+5. In den Einstellungen prüfen, ob das Testzeitraum-Limit sichtbar ist
 
 ## 4. Messung ohne Telemetrie
 - Telemetrie ist absichtlich deaktiviert.
 - Erwünscht: kurzes Tagebuch pro Tag — wurde der Beleg in < 10 s abgelegt? Wurde er wiedergefunden?
-- Bei Absturz: Menü → „Diagnose-Export" in einstelllungen, Datei als ZIP-Anhang melden. Enthält nur lokale Logs, keine Belegdaten.
+- Bei Absturz: Menü → „Diagnose-Export" in den Einstellungen, Datei als ZIP-Anhang melden. Enthält nur lokale Logs, keine Belegdaten.
 
 ## 5. Abbruchkriterien für Beta
 - Ein Beleg nicht auffindbar in < 2 s
