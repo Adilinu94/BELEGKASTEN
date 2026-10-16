@@ -30,12 +30,17 @@ class SearchEngine @Inject constructor(
         val merchantWord = q.split(" ").firstOrNull { w ->
             w.length > 2 && w !in months.keys && w !in setOf("der", "die", "das", "vom", "von", "im", "bei", "den")
         }
-        val cands = receipts.filterCandidates(
+        // The first non-filler word is only a guess at the merchant ("Winterjacke 2026" has
+        // none). If no merchant matches, rank all receipts instead of returning nothing.
+        val byMerchant = if (merchantWord == null) emptyList() else receipts.filterCandidates(
             merchant = merchantWord,
             // Month filter needs a year; without one we skip it and let ranking decide.
             month = null,
             limit = 200,
-        ).let { list ->
+        )
+        val cands = byMerchant.ifEmpty {
+            receipts.filterCandidates(merchant = null, month = null, limit = Int.MAX_VALUE)
+        }.let { list ->
             if (monthNum != null) list.filter { it.date.substring(5, 7) == monthNum }.ifEmpty { list }
             else list
         }

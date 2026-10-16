@@ -16,7 +16,7 @@ from pathlib import Path
 m = SentenceTransformer("google/embeddinggemma-2-270m")
 C = Path("spike/corpus"); R = json.loads((C/"receipts.json").read_text("utf-8"))
 Q = json.loads((C/"queries.json").read_text("utf-8"))
-docs = [f"title: {r['merchant']} | text: {' '.join(p['query'] for p in r['positions'])} {r['category']}" for r in R]
+docs = [f"title: {r['merchant']} | text: {r['text']}" for r in R]  # roher Bontext, wie die Baseline
 dv = m.encode(docs, normalize_embeddings=True)
 hits = 0
 for q in Q:
