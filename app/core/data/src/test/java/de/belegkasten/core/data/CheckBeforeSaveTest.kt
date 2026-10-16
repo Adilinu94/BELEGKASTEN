@@ -33,4 +33,20 @@ class CheckBeforeSaveTest {
         val problems = CheckBeforeSave.checkReceipt(receipt(0, "14.03.2025"), emptyList())
         assertEquals(1, problems.filterIsInstance<CheckBeforeSave.Problem.BadDate>().size)
     }
+
+    // Richtiges Format, aber kein Kalendertag: typische OCR-Fehlgriffe.
+    @Test
+    fun impossibleCalendarDatesAreFlagged() {
+        for (date in listOf("2025-13-45", "2025-02-30", "2025-02-29", "2025-00-10")) {
+            val problems = CheckBeforeSave.checkReceipt(receipt(0, date), emptyList())
+            assertEquals(1, problems.filterIsInstance<CheckBeforeSave.Problem.BadDate>().size, date)
+        }
+    }
+
+    @Test
+    fun realDatesIncludingLeapDayPass() {
+        for (date in listOf("2024-02-29", "2025-12-31", "2026-01-01")) {
+            assertTrue(CheckBeforeSave.checkReceipt(receipt(0, date), emptyList()).isEmpty(), date)
+        }
+    }
 }

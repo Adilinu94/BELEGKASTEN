@@ -19,14 +19,16 @@ class SearchEngine @Inject constructor(
     private val store: EmbeddingStore,
 ) {
     private val months = mapOf(
-        "januar" to "01", "februar" to "02", "maerz" to "03", "april" to "04",
+        // "marz": normalize() strips the umlaut, so "März" arrives as "marz".
+        "januar" to "01", "februar" to "02", "maerz" to "03", "marz" to "03", "april" to "04",
         "mai" to "05", "juni" to "06", "juli" to "07", "august" to "08",
         "september" to "09", "oktober" to "10", "november" to "11", "dezember" to "12",
     )
 
     suspend fun search(rawQuery: String, topK: Int = 10): List<SearchHit> {
         val q = normalize(rawQuery)
-        val monthNum = months.entries.firstOrNull { q.contains(it.key) }?.value
+        // Whole words only: "mai" is inside "email".
+        val monthNum = q.split(" ").firstNotNullOfOrNull { months[it] }
         val merchantWord = q.split(" ").firstOrNull { w ->
             w.length > 2 && w !in months.keys && w !in setOf("der", "die", "das", "vom", "von", "im", "bei", "den")
         }

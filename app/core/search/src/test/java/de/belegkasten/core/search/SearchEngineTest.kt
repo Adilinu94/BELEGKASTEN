@@ -81,6 +81,27 @@ class SearchEngineTest {
         assertEquals("R3", top(engine, "der vom BAUHAUS im maerz").first())
     }
 
+    // Zwei BAUHAUS-Belege mit gleichem Text: nur der Monat kann entscheiden.
+    // Die Normalisierung macht aus "März" -> "marz".
+    @Test
+    fun umlautMonthNarrowsCandidates() {
+        val data = listOf(
+            receipt("JUL", "BAUHAUS", "2025-07-01", "Baumarkt") to "BOHRMASCH. PSB 750 RCE",
+            receipt("MAR", "BAUHAUS", "2025-03-14", "Baumarkt") to "BOHRMASCH. PSB 750 RCE",
+        )
+        assertEquals(listOf("MAR"), top(engineFor(data), "der vom BAUHAUS im März", k = 10))
+    }
+
+    // "mai" steckt in "Email": ein Teilstring-Treffer darf keinen Monatsfilter setzen.
+    @Test
+    fun monthNameInsideAnotherWordIsNotAMonth() {
+        val data = listOf(
+            receipt("A", "Amazon", "2025-01-10", "Elektronik") to "EMAIL KABEL",
+            receipt("B", "Foo", "2025-05-05", "Sonstiges") to "ZEUG KRAM",
+        )
+        assertEquals("A", top(engineFor(data), "Email Kabel").first())
+    }
+
     @Test
     fun oldestReceiptIsFoundAmongMoreThan200() {
         val filler = (1..300).map {
