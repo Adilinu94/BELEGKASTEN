@@ -37,6 +37,17 @@ EOF
 3. Schwellen: Textsuche < 2 s, Foto < 5 s, RAM-Dauerlast < 400 MB
    (Pixel 7a / Galaxy A54 o. ae.).
 
+## Schnellster Weg: `compare.py`
+
+```bash
+cd spike/harness
+python compare.py --model st:google/embeddinggemma-2-270m
+python compare.py --model st:google/embeddinggemma-2-270m --corpus ../corpus_real   # eigene Belege
+```
+
+Misst Baseline, Embedding allein und Feldfilter + Embedding (wie die App) in einem Lauf
+und prueft die 15-Prozentpunkte-Schwelle. Schema fuer eigene Belege: Kopf von `compare.py`.
+
 ## Danach
 
 Baseline aus `baseline_search.py` gegen echten Wert halten:
