@@ -15,7 +15,7 @@ Umfang, Abnahme und Stopp-Regel. Kein Code vor Phase 0.
   Asset Delivery (install-time).
 - Regel: ADR-008 gilt ab der ersten zahlungspflichtigen Version — Lese-,
   Export- und Sicherungszugriff nie blockieren.
-- Sicherung: AES-256-GCM, Schlüssel per Argon2id aus Nutzerpasswort.
+- Sicherung: AES-256-GCM, Schlüssel per PBKDF2-HMAC-SHA256 (600.000 Iterationen) aus Nutzerpasswort, siehe ADR-009.
 
 ---
 
