@@ -16,9 +16,11 @@ android {
     kotlinOptions { jvmTarget = "17" }
 }
 dependencies {
+    implementation(project(":core:database"))
     implementation(libs.androidx.datastore)
     implementation(libs.kotlinx.coroutines)
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
     implementation(libs.play.billing)
+    testImplementation(libs.kotlin.test)
 }

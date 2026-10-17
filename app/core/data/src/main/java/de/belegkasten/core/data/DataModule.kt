@@ -8,6 +8,7 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import de.belegkasten.core.database.BelegkastenDb
+import de.belegkasten.core.database.MIGRATION_1_2
 import javax.inject.Singleton
 
 @Module
@@ -18,7 +19,7 @@ object DataModule {
     fun provideDb(@ApplicationContext context: Context): BelegkastenDb =
         Room.databaseBuilder(context, BelegkastenDb::class.java, "belegkasten.db")
             // No destructive migration: backups must stay readable (Phase 6.7).
-            .fallbackToDestructiveMigrationOnDowngrade()
+            .addMigrations(MIGRATION_1_2)
             .build()
 
     @Provides

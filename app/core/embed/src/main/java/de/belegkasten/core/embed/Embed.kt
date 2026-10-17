@@ -8,8 +8,7 @@ import kotlin.math.sqrt
 
 const val EMBED_DIM = 256
 
-// Loads the bundled EmbeddingGemma variant via MediaPipe tasks-retrieval
-// (UniversalEmbedder) from the install-time asset pack "embed_model".
+// Future real-model contract. No model loader or PAD pack is integrated yet.
 // CRITICAL: float32/bfloat16 only — never float16 (NaN per model card).
 // Task prefixes are mandatory: query "task: search result | query: ...",
 // document "title: ... | text: ...".
@@ -18,9 +17,9 @@ interface Embedder {
     suspend fun embedDocument(title: String, text: String): FloatArray
 }
 
-// Fallback used until the model pack is wired (Spike 0.3 / Phase 3.5).
+// Development-only vectors persisted until the model decision is resolved.
 // Deterministic char-trigram hashing, L2-normalized. NOT a semantic search —
-// replaced by the MediaPipe implementation before the acceptance test.
+// Not used by the current text/field search or eligible for semantic acceptance.
 class HashEmbedder @Inject constructor() : Embedder {
     override suspend fun embedQuery(text: String): FloatArray =
         embed("task: search result | query: $text")
@@ -44,6 +43,7 @@ class HashEmbedder @Inject constructor() : Embedder {
 class EmbeddingStore @Inject constructor() {
     fun toBlob(vector: FloatArray): ByteArray {
         require(vector.size == EMBED_DIM) { "expected $EMBED_DIM dims, got ${vector.size}" }
+        validate(vector)
         return ByteBuffer.allocate(vector.size * 4).order(ByteOrder.LITTLE_ENDIAN).let { buf ->
             vector.forEach { buf.putFloat(it) }
             buf.array()
@@ -53,12 +53,14 @@ class EmbeddingStore @Inject constructor() {
     fun fromBlob(blob: ByteArray): FloatArray {
         require(blob.size == EMBED_DIM * 4) { "corrupt embedding blob: ${blob.size} bytes" }
         return ByteBuffer.wrap(blob).order(ByteOrder.LITTLE_ENDIAN).let { buf ->
-            FloatArray(EMBED_DIM) { buf.float }
+            FloatArray(EMBED_DIM) { buf.float }.also(::validate)
         }
     }
 
     fun cosine(a: FloatArray, b: FloatArray): Float {
-        require(a.size == b.size)
+        require(a.size == EMBED_DIM && b.size == EMBED_DIM)
+        validate(a)
+        validate(b)
         var dot = 0.0
         for (i in a.indices) dot += a[i] * b[i]
         return dot.toFloat() // inputs are L2-normalized
@@ -66,4 +68,10 @@ class EmbeddingStore @Inject constructor() {
 
     fun rank(query: FloatArray, candidates: Map<String, FloatArray>, topK: Int = 3): List<String> =
         candidates.entries.sortedByDescending { cosine(query, it.value) }.take(topK).map { it.key }
+
+    private fun validate(vector: FloatArray) {
+        require(vector.all { it.isFinite() }) { "non-finite embedding" }
+        val norm = vector.sumOf { it.toDouble() * it.toDouble() }
+        require(kotlin.math.abs(norm - 1.0) < 0.01) { "embedding must be L2-normalized" }
+    }
 }

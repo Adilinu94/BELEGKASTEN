@@ -1,0 +1,807 @@
+{
+  "n_receipts": 100,
+  "n_queries": 50,
+  "dim": 256,
+  "baseline_recall_at_3": 0.72,
+  "recall_at_3": 0.82,
+  "baseline_hits": 36,
+  "embedding_hits": 41,
+  "delta_pp": 10.0,
+  "delta_threshold_pp": 15,
+  "delta_threshold_met": false,
+  "index_ms": 22029.654500001925,
+  "query_latency_ms": {
+    "p50": 95.2429499993741,
+    "p95": 124.037399997178,
+    "max": 194.5871999996598
+  },
+  "queries": [
+    {
+      "query_id": "Q001",
+      "target": "R0089",
+      "baseline_top3": [
+        "R0040",
+        "R0041",
+        "R0089"
+      ],
+      "embedding_top3": [
+        "R0041",
+        "R0089",
+        "R0063"
+      ],
+      "latency_ms": 100.20989999975427
+    },
+    {
+      "query_id": "Q002",
+      "target": "R0006",
+      "baseline_top3": [
+        "R0002",
+        "R0006",
+        "R0019"
+      ],
+      "embedding_top3": [
+        "R0006",
+        "R0055",
+        "R0010"
+      ],
+      "latency_ms": 89.02669999952195
+    },
+    {
+      "query_id": "Q003",
+      "target": "R0038",
+      "baseline_top3": [
+        "R0025",
+        "R0038",
+        "R0062"
+      ],
+      "embedding_top3": [
+        "R0025",
+        "R0044",
+        "R0020"
+      ],
+      "latency_ms": 88.58369999870774
+    },
+    {
+      "query_id": "Q004",
+      "target": "R0056",
+      "baseline_top3": [
+        "R0056",
+        "R0027",
+        "R0034"
+      ],
+      "embedding_top3": [
+        "R0056",
+        "R0088",
+        "R0041"
+      ],
+      "latency_ms": 93.72190000067349
+    },
+    {
+      "query_id": "Q005",
+      "target": "R0068",
+      "baseline_top3": [
+        "R0014",
+        "R0048",
+        "R0068"
+      ],
+      "embedding_top3": [
+        "R0077",
+        "R0068",
+        "R0014"
+      ],
+      "latency_ms": 90.44660000290605
+    },
+    {
+      "query_id": "Q006",
+      "target": "R0088",
+      "baseline_top3": [
+        "R0034",
+        "R0088",
+        "R0027"
+      ],
+      "embedding_top3": [
+        "R0088",
+        "R0034",
+        "R0089"
+      ],
+      "latency_ms": 92.9586999991443
+    },
+    {
+      "query_id": "Q007",
+      "target": "R0023",
+      "baseline_top3": [
+        "R0023",
+        "R0028",
+        "R0086"
+      ],
+      "embedding_top3": [
+        "R0023",
+        "R0007",
+        "R0086"
+      ],
+      "latency_ms": 87.2745999986364
+    },
+    {
+      "query_id": "Q008",
+      "target": "R0049",
+      "baseline_top3": [
+        "R0049",
+        "R0040",
+        "R0041"
+      ],
+      "embedding_top3": [
+        "R0049",
+        "R0081",
+        "R0071"
+      ],
+      "latency_ms": 90.48230000189506
+    },
+    {
+      "query_id": "Q009",
+      "target": "R0075",
+      "baseline_top3": [
+        "R0075",
+        "R0002",
+        "R0012"
+      ],
+      "embedding_top3": [
+        "R0075",
+        "R0002",
+        "R0035"
+      ],
+      "latency_ms": 89.32719999938854
+    },
+    {
+      "query_id": "Q010",
+      "target": "R0060",
+      "baseline_top3": [
+        "R0004",
+        "R0011",
+        "R0014"
+      ],
+      "embedding_top3": [
+        "R0060",
+        "R0014",
+        "R0085"
+      ],
+      "latency_ms": 90.17469999889727
+    },
+    {
+      "query_id": "Q011",
+      "target": "R0033",
+      "baseline_top3": [
+        "R0020",
+        "R0033",
+        "R0008"
+      ],
+      "embedding_top3": [
+        "R0033",
+        "R0037",
+        "R0044"
+      ],
+      "latency_ms": 106.68109999824082
+    },
+    {
+      "query_id": "Q012",
+      "target": "R0037",
+      "baseline_top3": [
+        "R0003",
+        "R0037",
+        "R0044"
+      ],
+      "embedding_top3": [
+        "R0044",
+        "R0037",
+        "R0062"
+      ],
+      "latency_ms": 94.01779999825521
+    },
+    {
+      "query_id": "Q013",
+      "target": "R0057",
+      "baseline_top3": [
+        "R0057",
+        "R0013",
+        "R0014"
+      ],
+      "embedding_top3": [
+        "R0057",
+        "R0042",
+        "R0083"
+      ],
+      "latency_ms": 90.80679999897256
+    },
+    {
+      "query_id": "Q014",
+      "target": "R0039",
+      "baseline_top3": [
+        "R0024",
+        "R0047",
+        "R0053"
+      ],
+      "embedding_top3": [
+        "R0085",
+        "R0060",
+        "R0048"
+      ],
+      "latency_ms": 90.96169999975245
+    },
+    {
+      "query_id": "Q015",
+      "target": "R0059",
+      "baseline_top3": [
+        "R0050",
+        "R0059",
+        "R0094"
+      ],
+      "embedding_top3": [
+        "R0050",
+        "R0094",
+        "R0096"
+      ],
+      "latency_ms": 98.49110000141081
+    },
+    {
+      "query_id": "Q016",
+      "target": "R0050",
+      "baseline_top3": [
+        "R0050",
+        "R0059",
+        "R0094"
+      ],
+      "embedding_top3": [
+        "R0050",
+        "R0096",
+        "R0094"
+      ],
+      "latency_ms": 102.59959999893908
+    },
+    {
+      "query_id": "Q017",
+      "target": "R0031",
+      "baseline_top3": [
+        "R0022",
+        "R0031",
+        "R0045"
+      ],
+      "embedding_top3": [
+        "R0049",
+        "R0081",
+        "R0045"
+      ],
+      "latency_ms": 98.90050000103656
+    },
+    {
+      "query_id": "Q018",
+      "target": "R0046",
+      "baseline_top3": [
+        "R0010",
+        "R0024",
+        "R0028"
+      ],
+      "embedding_top3": [
+        "R0074",
+        "R0046",
+        "R0010"
+      ],
+      "latency_ms": 95.22649999780697
+    },
+    {
+      "query_id": "Q019",
+      "target": "R0003",
+      "baseline_top3": [
+        "R0003",
+        "R0021",
+        "R0043"
+      ],
+      "embedding_top3": [
+        "R0003",
+        "R0021",
+        "R0043"
+      ],
+      "latency_ms": 99.43550000025425
+    },
+    {
+      "query_id": "Q020",
+      "target": "R0002",
+      "baseline_top3": [
+        "R0002",
+        "R0001",
+        "R0003"
+      ],
+      "embedding_top3": [
+        "R0002",
+        "R0013",
+        "R0095"
+      ],
+      "latency_ms": 89.06529999876511
+    },
+    {
+      "query_id": "Q021",
+      "target": "R0096",
+      "baseline_top3": [
+        "R0011",
+        "R0050",
+        "R0073"
+      ],
+      "embedding_top3": [
+        "R0096",
+        "R0030",
+        "R0094"
+      ],
+      "latency_ms": 90.75669999947422
+    },
+    {
+      "query_id": "Q022",
+      "target": "R0100",
+      "baseline_top3": [
+        "R0051",
+        "R0070",
+        "R0100"
+      ],
+      "embedding_top3": [
+        "R0079",
+        "R0051",
+        "R0100"
+      ],
+      "latency_ms": 103.07380000085686
+    },
+    {
+      "query_id": "Q023",
+      "target": "R0046",
+      "baseline_top3": [
+        "R0005",
+        "R0012",
+        "R0016"
+      ],
+      "embedding_top3": [
+        "R0046",
+        "R0005",
+        "R0010"
+      ],
+      "latency_ms": 101.49820000151522
+    },
+    {
+      "query_id": "Q024",
+      "target": "R0080",
+      "baseline_top3": [
+        "R0007",
+        "R0023",
+        "R0053"
+      ],
+      "embedding_top3": [
+        "R0023",
+        "R0080",
+        "R0028"
+      ],
+      "latency_ms": 89.00440000070375
+    },
+    {
+      "query_id": "Q025",
+      "target": "R0081",
+      "baseline_top3": [
+        "R0081",
+        "R0056",
+        "R0009"
+      ],
+      "embedding_top3": [
+        "R0081",
+        "R0064",
+        "R0045"
+      ],
+      "latency_ms": 100.1393000005919
+    },
+    {
+      "query_id": "Q026",
+      "target": "R0040",
+      "baseline_top3": [
+        "R0040",
+        "R0041",
+        "R0089"
+      ],
+      "embedding_top3": [
+        "R0041",
+        "R0089",
+        "R0063"
+      ],
+      "latency_ms": 96.05379999993602
+    },
+    {
+      "query_id": "Q027",
+      "target": "R0075",
+      "baseline_top3": [
+        "R0075",
+        "R0002",
+        "R0012"
+      ],
+      "embedding_top3": [
+        "R0075",
+        "R0002",
+        "R0035"
+      ],
+      "latency_ms": 88.76080000118236
+    },
+    {
+      "query_id": "Q028",
+      "target": "R0012",
+      "baseline_top3": [
+        "R0012",
+        "R0035",
+        "R0075"
+      ],
+      "embedding_top3": [
+        "R0084",
+        "R0075",
+        "R0095"
+      ],
+      "latency_ms": 88.4288999986893
+    },
+    {
+      "query_id": "Q029",
+      "target": "R0096",
+      "baseline_top3": [
+        "R0096",
+        "R0011",
+        "R0030"
+      ],
+      "embedding_top3": [
+        "R0096",
+        "R0073",
+        "R0094"
+      ],
+      "latency_ms": 91.75719999984722
+    },
+    {
+      "query_id": "Q030",
+      "target": "R0026",
+      "baseline_top3": [
+        "R0024",
+        "R0026",
+        "R0053"
+      ],
+      "embedding_top3": [
+        "R0026",
+        "R0024",
+        "R0032"
+      ],
+      "latency_ms": 95.25940000094124
+    },
+    {
+      "query_id": "Q031",
+      "target": "R0047",
+      "baseline_top3": [
+        "R0047",
+        "R0024",
+        "R0026"
+      ],
+      "embedding_top3": [
+        "R0047",
+        "R0093",
+        "R0026"
+      ],
+      "latency_ms": 86.7937000002712
+    },
+    {
+      "query_id": "Q032",
+      "target": "R0033",
+      "baseline_top3": [
+        "R0020",
+        "R0033",
+        "R0037"
+      ],
+      "embedding_top3": [
+        "R0044",
+        "R0037",
+        "R0033"
+      ],
+      "latency_ms": 91.30929999810178
+    },
+    {
+      "query_id": "Q033",
+      "target": "R0096",
+      "baseline_top3": [
+        "R0096",
+        "R0011",
+        "R0030"
+      ],
+      "embedding_top3": [
+        "R0096",
+        "R0073",
+        "R0030"
+      ],
+      "latency_ms": 92.78520000225399
+    },
+    {
+      "query_id": "Q034",
+      "target": "R0060",
+      "baseline_top3": [
+        "R0004",
+        "R0011",
+        "R0014"
+      ],
+      "embedding_top3": [
+        "R0066",
+        "R0001",
+        "R0060"
+      ],
+      "latency_ms": 96.6387999978906
+    },
+    {
+      "query_id": "Q035",
+      "target": "R0097",
+      "baseline_top3": [
+        "R0058",
+        "R0097",
+        "R0040"
+      ],
+      "embedding_top3": [
+        "R0097",
+        "R0058",
+        "R0002"
+      ],
+      "latency_ms": 88.37810000113677
+    },
+    {
+      "query_id": "Q036",
+      "target": "R0072",
+      "baseline_top3": [
+        "R0061",
+        "R0018",
+        "R0027"
+      ],
+      "embedding_top3": [
+        "R0048",
+        "R0072",
+        "R0085"
+      ],
+      "latency_ms": 93.83019999950193
+    },
+    {
+      "query_id": "Q037",
+      "target": "R0051",
+      "baseline_top3": [
+        "R0024",
+        "R0053",
+        "R0070"
+      ],
+      "embedding_top3": [
+        "R0079",
+        "R0051",
+        "R0024"
+      ],
+      "latency_ms": 88.6739999987185
+    },
+    {
+      "query_id": "Q038",
+      "target": "R0069",
+      "baseline_top3": [
+        "R0002",
+        "R0006",
+        "R0019"
+      ],
+      "embedding_top3": [
+        "R0039",
+        "R0069",
+        "R0015"
+      ],
+      "latency_ms": 97.05329999997048
+    },
+    {
+      "query_id": "Q039",
+      "target": "R0048",
+      "baseline_top3": [
+        "R0001",
+        "R0014",
+        "R0015"
+      ],
+      "embedding_top3": [
+        "R0092",
+        "R0077",
+        "R0066"
+      ],
+      "latency_ms": 100.18399999898975
+    },
+    {
+      "query_id": "Q040",
+      "target": "R0075",
+      "baseline_top3": [
+        "R0012",
+        "R0035",
+        "R0054"
+      ],
+      "embedding_top3": [
+        "R0054",
+        "R0012",
+        "R0075"
+      ],
+      "latency_ms": 97.423199997138
+    },
+    {
+      "query_id": "Q041",
+      "target": "R0014",
+      "baseline_top3": [
+        "R0014",
+        "R0066",
+        "R0077"
+      ],
+      "embedding_top3": [
+        "R0077",
+        "R0066",
+        "R0017"
+      ],
+      "latency_ms": 97.35079999882146
+    },
+    {
+      "query_id": "Q042",
+      "target": "R0004",
+      "baseline_top3": [
+        "R0004",
+        "R0001",
+        "R0002"
+      ],
+      "embedding_top3": [
+        "R0004",
+        "R0087",
+        "R0061"
+      ],
+      "latency_ms": 121.67049999698065
+    },
+    {
+      "query_id": "Q043",
+      "target": "R0029",
+      "baseline_top3": [
+        "R0009",
+        "R0029",
+        "R0071"
+      ],
+      "embedding_top3": [
+        "R0071",
+        "R0029",
+        "R0045"
+      ],
+      "latency_ms": 194.5871999996598
+    },
+    {
+      "query_id": "Q044",
+      "target": "R0082",
+      "baseline_top3": [
+        "R0034",
+        "R0040",
+        "R0056"
+      ],
+      "embedding_top3": [
+        "R0082",
+        "R0056",
+        "R0040"
+      ],
+      "latency_ms": 194.44429999930435
+    },
+    {
+      "query_id": "Q045",
+      "target": "R0084",
+      "baseline_top3": [
+        "R0084",
+        "R0002",
+        "R0012"
+      ],
+      "embedding_top3": [
+        "R0084",
+        "R0075",
+        "R0035"
+      ],
+      "latency_ms": 121.65140000070096
+    },
+    {
+      "query_id": "Q046",
+      "target": "R0018",
+      "baseline_top3": [
+        "R0018",
+        "R0019",
+        "R0036"
+      ],
+      "embedding_top3": [
+        "R0018",
+        "R0090",
+        "R0019"
+      ],
+      "latency_ms": 122.40309999833698
+    },
+    {
+      "query_id": "Q047",
+      "target": "R0039",
+      "baseline_top3": [
+        "R0010",
+        "R0015",
+        "R0036"
+      ],
+      "embedding_top3": [
+        "R0092",
+        "R0015",
+        "R0039"
+      ],
+      "latency_ms": 121.92309999954887
+    },
+    {
+      "query_id": "Q048",
+      "target": "R0013",
+      "baseline_top3": [
+        "R0013",
+        "R0016",
+        "R0001"
+      ],
+      "embedding_top3": [
+        "R0013",
+        "R0042",
+        "R0016"
+      ],
+      "latency_ms": 124.037399997178
+    },
+    {
+      "query_id": "Q049",
+      "target": "R0018",
+      "baseline_top3": [
+        "R0018",
+        "R0027",
+        "R0032"
+      ],
+      "embedding_top3": [
+        "R0018",
+        "R0091",
+        "R0090"
+      ],
+      "latency_ms": 109.87910000039847
+    },
+    {
+      "query_id": "Q050",
+      "target": "R0048",
+      "baseline_top3": [
+        "R0014",
+        "R0048",
+        "R0068"
+      ],
+      "embedding_top3": [
+        "R0077",
+        "R0068",
+        "R0014"
+      ],
+      "latency_ms": 108.33389999970677
+    }
+  ],
+  "note": "embeddinggemma-2-text-only",
+  "measured_at": "2026-10-16T13:19:31.243136+00:00",
+  "model": "google/embeddinggemma-2",
+  "revision_requested": "914f7f89142e33e77833254d9c9b90c3cef7303b",
+  "revision_resolved": "914f7f89142e33e77833254d9c9b90c3cef7303b",
+  "active_parameters": 271002624,
+  "device": "cpu",
+  "dtype": "torch.float32",
+  "model_load_ms_including_download": 4928.32289999933,
+  "batch_size": 4,
+  "local_files_only": true,
+  "corpus_sha256": {
+    "receipts.json": "f076a6ed18e183a97651c77e5ed4513643bee67804940ca254c2a963b6cb5171",
+    "queries.json": "d35bbbf554d23d511b1ed5a313652437d7a22df722940efb2b3f136c1bfd79e4"
+  },
+  "corpus_kind": "synthetic",
+  "acceptance_eligible": false,
+  "limitations": [
+    "Desktop CPU, not Android: no device latency/RAM/offline proof.",
+    "Bundled corpus is synthetic; other corpora need independent validation.",
+    "Existing single-target labels unchanged, even for ambiguous queries.",
+    "Baseline is token/field scoring, not SQLite FTS4.",
+    "No object photos tested; descriptions are not images."
+  ],
+  "runtime": {
+    "python": "3.13.15",
+    "platform": "Windows-11-10.0.22635-SP0",
+    "cpu": "Intel64 Family 6 Model 94 Stepping 3, GenuineIntel",
+    "torch_threads": 4,
+    "torch": "2.14.1+cpu",
+    "sentence-transformers": "6.1.0",
+    "transformers": "5.20.0",
+    "numpy": "2.5.4",
+    "huggingface-hub": "1.33.0",
+    "torchvision": "0.29.1+cpu",
+    "pillow": "12.3.0"
+  }
+}

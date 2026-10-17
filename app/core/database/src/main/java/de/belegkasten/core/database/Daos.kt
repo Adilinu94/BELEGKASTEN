@@ -15,6 +15,9 @@ interface ReceiptDao {
     @Query("SELECT * FROM receipts WHERE id = :id")
     suspend fun byId(id: String): ReceiptEntity?
 
+    @Query("SELECT EXISTS(SELECT 1 FROM receipts WHERE imagePath = :path OR attachmentPath = :path)")
+    suspend fun referencesPath(path: String): Boolean
+
     // First stage of two-stage search: field filters (merchant, month) narrow candidates.
     @Query(
         "SELECT * FROM receipts WHERE " +
@@ -29,6 +32,15 @@ interface ReceiptDao {
 
     @Query("SELECT COUNT(*) FROM receipts")
     suspend fun count(): Int
+
+    @Query("SELECT * FROM receipts ORDER BY id")
+    suspend fun all(): List<ReceiptEntity>
+
+    @Query("SELECT receipts.* FROM receipts JOIN receipt_fts ON receipts.id = receipt_fts.receiptId WHERE receipt_fts MATCH :query")
+    suspend fun fullTextCandidates(query: String): List<ReceiptEntity>
+
+    @Insert
+    suspend fun index(entry: ReceiptFtsEntity)
 }
 
 @Dao
@@ -38,6 +50,9 @@ interface ItemDao {
 
     @Insert(onConflict = OnConflictStrategy.ABORT)
     suspend fun insertAll(items: List<ItemEntity>)
+
+    @Query("SELECT * FROM items ORDER BY id")
+    suspend fun all(): List<ItemEntity>
 }
 
 @Dao
@@ -62,4 +77,13 @@ interface DeadlineDao {
 
     @Update
     suspend fun update(deadline: DeadlineEntity)
+
+    @Query("UPDATE deadlines SET notified = 1 WHERE id = :id AND due_date = :dueDate")
+    suspend fun markNotified(id: String, dueDate: String)
+
+    @Query("SELECT * FROM deadlines ORDER BY id")
+    suspend fun all(): List<DeadlineEntity>
+
+    @Query("SELECT * FROM deadlines WHERE item_id IN (SELECT id FROM items WHERE receipt_id = :receiptId) ORDER BY due_date")
+    suspend fun forReceipt(receiptId: String): List<DeadlineEntity>
 }

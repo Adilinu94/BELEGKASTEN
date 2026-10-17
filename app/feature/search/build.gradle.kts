@@ -20,6 +20,9 @@ android {
 dependencies {
     implementation(project(":core:model"))
     implementation(project(":core:search"))
+    implementation(project(":core:data"))
+    implementation(project(":core:ui"))
+    implementation(libs.androidx.lifecycle.compose)
     implementation(libs.kotlinx.coroutines)
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)

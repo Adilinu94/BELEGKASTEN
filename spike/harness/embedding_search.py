@@ -4,10 +4,10 @@ Stufe 1 (jetzt, ohne Modell): Hashing-Trick-Embeddings (char-Trigramme ->
 fixe Dimension, L2-normalisiert, Kosinus). Prueft das Plumbing:
 Vektorablage als BLOB, Kosinus im Code, Recall@3-Messung, Latenz/RAM-Groessenordnung.
 
-Stufe 2 (echtes Modell, auf Geraet/Rechner mit HF-Zugang): In
-EMBEDDING_SPIKE_MODELL.md steht, wie EmbeddingGemma 2 (270M zuerst) per
-MediaPipe/SentenceTransformers dieselbe Schnittstelle bedient und die
-Hash-Vektoren ersetzt. Dann erst gilt die 15-Prozentpunkte-Schwelle.
+Stufe 2 (echtes Modell): gemma_search.py misst EmbeddingGemma 2
+mit dem Text-only-Encoder (270M). EMBEDDING_SPIKE_MODELL.md beschreibt
+den Lauf. Auch ein echter Modelllauf auf dem synthetischen Korpus
+ersetzt nicht die Abnahme mit echten Belegen und Android-Geraeten.
 """
 import hashlib
 import json

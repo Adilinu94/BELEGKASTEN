@@ -20,11 +20,17 @@ android {
 dependencies {
     implementation(project(":core:backup"))
     implementation(project(":core:license"))
+    implementation(project(":core:data"))
+    implementation(project(":core:database"))
+    implementation(libs.androidx.core)
+    implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.lifecycle.compose)
     implementation(libs.kotlinx.coroutines)
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
     implementation(libs.hilt.navigation.compose)
     implementation(libs.androidx.work)
+    implementation(libs.androidx.room.runtime)
     val bom = libs.compose.bom
     implementation(platform(bom))
     implementation(libs.compose.ui)

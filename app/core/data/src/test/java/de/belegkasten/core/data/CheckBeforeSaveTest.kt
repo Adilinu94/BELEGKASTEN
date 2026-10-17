@@ -33,4 +33,21 @@ class CheckBeforeSaveTest {
         val problems = CheckBeforeSave.checkReceipt(receipt(0, "14.03.2025"), emptyList())
         assertEquals(1, problems.filterIsInstance<CheckBeforeSave.Problem.BadDate>().size)
     }
+
+    @Test fun invalidCalendarDatesRejected() {
+        listOf("2025-02-30", "2025-02-29", "2025-13-01", "0000-00-00").forEach {
+            assertTrue(CheckBeforeSave.checkReceipt(receipt(0, it), emptyList()).any { p -> p is CheckBeforeSave.Problem.BadDate })
+        }
+        assertTrue(CheckBeforeSave.validDate("2024-02-29"))
+    }
+    @Test fun overflowingAmountRejected() {
+        val positions = listOf(ItemEntity("I1", "R1", "Artikel", 2, Long.MAX_VALUE))
+        assertTrue(CheckBeforeSave.Problem.AmountOverflow in CheckBeforeSave.checkReceipt(receipt(0), positions))
+    }
+    @Test fun invalidItemsRejected() {
+        listOf(ItemEntity("", "R1", "Artikel", 1, 1), ItemEntity("I1", "OTHER", "Artikel", 1, 1),
+            ItemEntity("I1", "R1", "", 1, 1), ItemEntity("I1", "R1", "Artikel", 0, 1)).forEach {
+            assertTrue(CheckBeforeSave.checkReceipt(receipt(1), listOf(it)).any { p -> p is CheckBeforeSave.Problem.InvalidItem })
+        }
+    }
 }

@@ -18,6 +18,7 @@ Thumbs.db
 # Python
 __pycache__/
 *.pyc
+.venv-spike/
 
 # Lokale Tool-Konfiguration
 .commandcode/

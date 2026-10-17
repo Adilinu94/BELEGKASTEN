@@ -21,6 +21,7 @@ data class Receipt(
     // Phase-A fallback: shared E-Rechnung PDF is kept as attachment, parsed in Phase D.
     val attachmentPath: String? = null,
     val createdAtEpochMs: Long,
+    val ocrText: String = "",
 )
 
 data class ReceiptItem(

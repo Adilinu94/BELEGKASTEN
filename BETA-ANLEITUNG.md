@@ -1,6 +1,12 @@
 # Beta-Anleitung — 50 bis 200 Tester
 
-Stand: 2026-10-11
+Stand: 2026-10-16
+
+> **Noch nicht für die Beta-Testgruppe freigegeben.** Die App ist aktuell ein
+> buildbares Gerüst: Aufnahme, Import, Detailnavigation und Wiederherstellung
+> sind nicht vollständig implementiert. Die folgenden Aufgaben sind das
+> geplante Testprotokoll, kein Nachweis vorhandener Funktionalität.
+> Aktuelle Lücken: `ABNAHME-PHASE-3.md`. Nur synthetische Testdaten verwenden.
 
 ## 1. Voraussetzungen
 - Android ab 8.0 (API 26)
@@ -19,12 +25,15 @@ der Testlauf muss auf eigenem Gerät erfolgen.
 2. In der Prüfansicht eine falsche Summe/ein falsches Datum korrigieren
 3. Wortsuche: „der vom Baumarkt im März"
 4. Sicherung exportieren mit Passwort, App neu installieren, Sicherung einlesen
-5. In den Einstellungen Testzeitraum-Limit sichtb
+5. In den Einstellungen Testzeitraum-Limit prüfen; nach Ablauf müssen Lesen,
+   Suchen, Export und Sicherung weiterhin funktionieren.
 
 ## 4. Messung ohne Telemetrie
 - Telemetrie ist absichtlich deaktiviert.
 - Erwünscht: kurzes Tagebuch pro Tag — wurde der Beleg in < 10 s abgelegt? Wurde er wiedergefunden?
-- Bei Absturz: Menü → „Diagnose-Export" in einstelllungen, Datei als ZIP-Anhang melden. Enthält nur lokale Logs, keine Belegdaten.
+- Geplant, noch nicht vorhanden: Diagnose-Export in den Einstellungen mit
+  aggregierten Nutzungszahlen, ohne Beleginhalte. Bis dahin Fehlerablauf,
+  Android-Version und Fehlermeldung notieren; keine echten Belegbilder mitsenden.
 
 ## 5. Abbruchkriterien für Beta
 - Ein Beleg nicht auffindbar in < 2 s

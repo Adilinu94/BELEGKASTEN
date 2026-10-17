@@ -1,31 +1,64 @@
 # STATUS.md — Gesamtübersicht
 
-Stand: 2026-10-11
+Stand: 2026-10-16 · geprüft auf `main` (`710c812`, PR #1 gemergt)
 
 | Phase | Inhalt | Status | Nachweis |
 |---|---|---|---|
-| 0 | Spike (100 Belege, Baseline vs. semantisch) | ⏳ offen | `spike/BERICHT.md` noch ausfüllen; Harness läuft (Baseline Recall@3 72,0 %) |
-| 1 | Landingpage, Interviews, Concierge, Vorverkauf | ⏳ Artefakte fertig, Nutzerzmessung ausstehend | `phase1/` |
+| 0 | Spike (Baseline vs. semantisch) | ⏳ Echter CPU-Lauf fertig; Echtbelege/Geräte offen | Baseline 72 %, Gemma 82 %: **+10 pp, unter 15-pp-Schwelle**; `spike/BERICHT.md` |
+| 1 | Landingpage, Interviews, Concierge, Vorverkauf | ⏳ Artefakte fertig, Nutzermessung ausstehend | `phase1/` |
 | 2 | Klick-Prototyp, Nutzertest-Anleitung | ⏳ Artefakte fertig, Test ausstehend | `phase2/` |
-| 3 | Beta-App (Android) | ✅ Code komplett; Gerätetest offen | `assembleDebug` SUCCESS, 6/6 Tests grün |
-| 4–7 | Polieren, Modell-Pack, Store | ⬜ nicht gestartet | `BAUPLAN.md` |
+| 3 | Android-Beta | ⏳ Buildbares Gerüst, **keine vollständige Beta** | `assembleDebug` und 12 JVM-Tests grün; Kernflows teilweise Platzhalter |
+| 4–7 | Komfort, Bindung, Härtung, Store | ⬜ nicht gestartet | `BAUPLAN.md` |
 
-## Was heute fertig wurde (Phase 3)
-- Vollständiges Multi-Module-Android-Projekt unter `app/`, Build grün
-- Kernlogik als Pure-Kotlin testbar: `CheckBeforeSave` (3 Tests), `RuleParser` (3 Tests)
-- ADR-008 in Code: Lizenzende stoppt nur die Erfassung, nie den Zugriff
-- Sicherung: AES-256-GCM + PBKDF2 600k, ZIP/SHA-256, Header `BKBF1`
-- Navigation: Erfassen → Prüfen → Suchen → Einstellungen
+## Verifiziert am 2026-10-16
 
-## Die drei Haken bis echte Beta
-1. Spike-Bericht ausfüllen → Zahl für Modell-Pack
-2. Gerät aussuchen fur RAM/Zeit-Werte (Ruhe < 400 MB; Text < 2 s; Foto < 5 s)
-3. `HashEmbedder` → MediaPipe EmbeddingGemma 2 tauschen
+- `app/gradlew.bat testDebugUnitTest assembleDebug --console=plain` erfolgreich.
+- 12 JVM-Tests: Prüfregeln (3), Regel-Parser (5), Suchlogik (4).
+- Exakte Cent-Berechnung per BigDecimal und Such-Rückfall aus PR #1 enthalten.
+- Spike-Baseline reproduziert: 36/50 Treffer (72 %); Hash: 11/50 (22 %).
+- Neuer Runner für echtes EmbeddingGemma 2: korrekte Modell-ID, Text-only,
+  float32, 256 Dimensionen; getrennte Ergebnisdatei, Korpus-Hashes und Top-3-IDs.
+- Echter CPU-Lauf: 41/50 Treffer (82 %), +10 pp zur Baseline. Kein Produkt-GO
+  aus synthetischen Belegen; Ergebnis unter der festgelegten +15-pp-Schwelle.
+- Wiederholung mit festgehaltener Modellrevision aus lokalem Cache: alle
+  50 Top-3-Ranglisten und Vergleichswerte identisch.
+- 11 Python-Tests für Harness, Eingaben, Vektoren, Präfixe, Vergleichsschwelle,
+  festgehaltene Modellrevision und Fehler ohne Hash-Rückfall.
 
-## Sofort-Befehle
+## Korrektur der bisherigen Abnahmeangaben
+
+Die Fassung vom 2026-10-11 setzte „Code komplett“ mit einem grünen Build gleich.
+Das ist nicht durch den Quellcode gedeckt:
+
+- `Capture.kt`: Kamera-/Importbuttons ohne Aktion; keine OCR-/Speicherkette.
+- `MainActivity.kt`: vier Ziele deklariert, aber keine bedienbare Navigation.
+- `Receipts.kt` / `Search.kt`: Listen ohne Detailziel; keine Bestätigungsansicht.
+- `Settings.kt`: Sicherungsbuttons ohne Aktion. `validateAndImport()` liest nur
+  das Manifest, stellt nichts wieder her und prüft keine ZIP-Datei-Hashes.
+- `LicenseManager.kt`: Testphasenlogik vorhanden, im UI nicht wirksam verdrahtet;
+  SKU vorhanden, echter Kauf-/Wiederherstellungsflow fehlt.
+- `HashEmbedder` statt semantischem Modell; kein echtes PAD-Modul, nur Asset-README
+  und Bibliotheksabhängigkeit. FTS4 und Diagnose-Export fehlen ebenfalls.
+- Kein Gerät angeschlossen; Offline-, RAM- und Performance-Nachweise offen.
+
+Weitere Abnahmelücken stehen in `ABNAHME-PHASE-3.md`. Keine echten Belege als
+einzige Kopie in diesem Gerüst ablegen und keine Beta-/Store-Freigabe daraus ableiten.
+
+## Nächster Entscheidungspunkt
+
+1. Echte geschwärzte Belege und unabhängige Suchaufgaben für Phase 0 beschaffen;
+   Gerätewerte und Offline-Nachweis messen. Die Go/No-Go-Regel aus `BAUPLAN.md` gilt.
+2. Such-GO anhand dieses Testsets entscheiden oder die Produktannahme neu bewerten;
+   die +15-pp-Schwelle nicht aufgrund des synthetischen Ergebnisses ändern.
+3. Erst nach der Entscheidung die Phase-3-Kernflows vervollständigen: Eingang →
+   OCR → Feldprüfung → atomar speichern → Suche → Detail; sichere Wiederherstellung.
+
+## Befehle (aus dem Repository-Hauptordner)
+
 ```powershell
-cd "G:\AI Agentur\BELEGKASTEN\app"
-.\gradlew.bat assembleDebug          # APK bauen
-.\gradlew.bat testDebugUnitTest      # Tests
-adb install -r app\build\outputs\apk\debug\app-debug.apk
+app\gradlew.bat -p app testDebugUnitTest assembleDebug --console=plain
+python -m unittest discover -s spike/harness -p "test_*.py" -v
+adb install -r app\app\build\outputs\apk\debug\app-debug.apk
 ```
+
+Echter Modelllauf: `spike/harness/EMBEDDING_SPIKE_MODELL.md`.
