@@ -17,8 +17,8 @@ object DataModule {
     @Singleton
     fun provideDb(@ApplicationContext context: Context): BelegkastenDb =
         Room.databaseBuilder(context, BelegkastenDb::class.java, "belegkasten.db")
-            // No destructive migration: backups must stay readable (Phase 6.7).
-            .fallbackToDestructiveMigrationOnDowngrade()
+            // No destructive migration, also not on downgrade: Room then fails loudly instead of
+            // silently wiping the archive (backups must stay readable, Phase 6.7).
             .build()
 
     @Provides
