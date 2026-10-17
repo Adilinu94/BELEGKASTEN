@@ -13,7 +13,7 @@ Korrigiert 2026-10-16 nach Abgleich mit dem Code (siehe STATUS.md „Noch nicht 
 
 ## 3.2 Offline-Garantie (Kernversprechen)
 - [x] Kein `android.permission.INTERNET` im Quell-Manifest
-- [ ] Berechtigungen der gebauten APK geprüft (`aapt dump permissions`): Billing, Asset Delivery und ML Kit können Einträge mitbringen
+- [ ] Berechtigungen der gebauten APK geprüft (`aapt2 dump permissions`): Billing, Asset Delivery und ML Kit können Einträge mitbringen. Die CI (`.github/workflows/ci.yml`) bricht ab, wenn `INTERNET` in der APK steht; Ergebnis des ersten Laufs auf GitHub abwarten
 - [ ] Modell-Auslieferung: unter `assets/embed_model/` liegt nur ein README, es gibt kein Asset-Pack-Modul; Play Asset Delivery (install-time) ist noch einzurichten
 - [x] ML Kit gebundelt-Variante (`text-recognition`), keine Play-Services-Version (`document-scanner` steht nur im Versionskatalog, ungenutzt)
 - [ ] Verifikation im Flugmodus auf Gerät (10.1, ausstehend)

@@ -45,3 +45,4 @@ cd app                                # Linux/macOS
 adb install -r app/build/outputs/apk/debug/app-debug.apk
 cd ../spike/harness && python compare.py    # Spike-Vergleich (Platzhalter-Modell)
 ```
+CI auf GitHub (`.github/workflows/ci.yml`): Gradle-Tests, `assembleDebug`, Prüfung der APK-Berechtigungen (kein `INTERNET`) und Spike-Harness bei jedem Push auf `main` und jedem Pull Request. Das ist die unabhängige Bestätigung für „Build und Tests grün".
