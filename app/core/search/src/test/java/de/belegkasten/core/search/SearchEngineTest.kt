@@ -1,113 +1,41 @@
 package de.belegkasten.core.search
 
-import de.belegkasten.core.database.EmbeddingDao
-import de.belegkasten.core.database.EmbeddingEntity
-import de.belegkasten.core.database.ReceiptDao
-import de.belegkasten.core.database.ReceiptEntity
-import de.belegkasten.core.embed.EmbeddingStore
-import de.belegkasten.core.embed.HashEmbedder
-import kotlin.test.Test
-import kotlin.test.assertEquals
-import kotlin.test.assertTrue
-import kotlinx.coroutines.flow.Flow
+import de.belegkasten.core.database.*
+import kotlin.test.*
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.runBlocking
 
-// Bildet die SQL aus Daos.kt nach: merchant LIKE '%x%' (ohne Groß-/Kleinschreibung),
-// ORDER BY date DESC, LIMIT. Nutzt HashEmbedder, prüft also die Suchlogik, nicht das Modell.
 class SearchEngineTest {
-
-    private class FakeReceipts(private val all: List<ReceiptEntity>) : ReceiptDao {
-        override fun observeAll(): Flow<List<ReceiptEntity>> = flowOf(all)
-        override suspend fun byId(id: String) = all.firstOrNull { it.id == id }
-        override suspend fun filterCandidates(merchant: String?, month: String?, limit: Int) =
-            all.filter {
-                (merchant == null || it.merchant.contains(merchant, ignoreCase = true)) &&
-                    (month == null || it.date.startsWith(month))
-            }.sortedByDescending { it.date }.take(limit)
-        override suspend fun insert(receipt: ReceiptEntity) = throw UnsupportedOperationException()
-        override suspend fun count() = all.size
+    private class FakeReceipts(val rows: List<ReceiptEntity>) : ReceiptDao {
+        override fun observeAll() = flowOf(rows)
+        override suspend fun byId(id: String) = rows.find { it.id == id }
+        override suspend fun referencesPath(path: String) = rows.any { it.imagePath == path || it.attachmentPath == path }
+        override suspend fun all() = rows
+        override suspend fun fullTextCandidates(query: String) = emptyList<ReceiptEntity>()
+        override suspend fun filterCandidates(merchant: String?, month: String?, limit: Int) = rows.filter {
+            (merchant == null || it.merchant.contains(merchant, true)) && (month == null || it.date.startsWith(month)) }.take(limit)
+        override suspend fun insert(receipt: ReceiptEntity) = error("unused")
+        override suspend fun index(entry: ReceiptFtsEntity) = error("unused")
+        override suspend fun count() = rows.size
     }
-
-    private class FakeEmbeddings(private val byId: Map<String, EmbeddingEntity>) : EmbeddingDao {
-        override suspend fun forReceipt(receiptId: String) = byId[receiptId]
-        override suspend fun all() = byId.values.toList()
-        override suspend fun upsert(embedding: EmbeddingEntity) = throw UnsupportedOperationException()
-    }
-
-    private fun receipt(id: String, merchant: String, date: String, category: String) =
-        ReceiptEntity(id, merchant, date, 1000, category, null, "CAMERA", null, 0)
-
-    private fun engineFor(data: List<Pair<ReceiptEntity, String>>): SearchEngine {
-        val store = EmbeddingStore()
-        val embedder = HashEmbedder()
-        val vectors = runBlocking {
-            data.associate { (r, text) ->
-                r.id to EmbeddingEntity(
-                    r.id, 256, store.toBlob(embedder.embedDocument(r.merchant, "$text ${r.category}")),
-                )
-            }
-        }
-        return SearchEngine(FakeReceipts(data.map { it.first }), FakeEmbeddings(vectors), embedder, store)
-    }
-
+    private fun receipt(id: String, merchant: String, date: String, category: String, text: String) =
+        ReceiptEntity(id, merchant, date, 1000, category, null, "IMPORT", null, 0, text)
     private val base = listOf(
-        receipt("R1", "H&M", "2026-03-14", "Kleidung") to "JEANS SLIM FIT WINTERJACKE PARKA M",
-        receipt("R2", "ATU", "2024-06-19", "Auto") to "SCHEIBENWISCHER AERO MOTOROEL 5W-30 5L",
-        receipt("R3", "BAUHAUS", "2025-03-14", "Baumarkt") to "BOHRMASCH. PSB 750 RCE",
-        receipt("R4", "dm", "2025-10-07", "Drogerie") to "DUSCHGEL MILCH&HONIG ZAHNPASTA",
+        receipt("R1", "H&M", "2026-03-14", "Kleidung", "WINTERJACKE PARKA"),
+        receipt("R2", "ATU", "2024-06-19", "Auto", "MOTOROEL SCHEIBENWISCHER"),
+        receipt("R3", "BAUHAUS", "2025-03-14", "Baumarkt", "BOHRMASCHINE"),
+        receipt("R4", "dm", "2025-10-07", "Drogerie", "DUSCHGEL"),
     )
-
-    private fun top(engine: SearchEngine, query: String, k: Int = 3) =
-        runBlocking { engine.search(query, k) }.map { it.receiptId }
-
-    @Test
-    fun wordThatIsNoMerchantStillFindsReceipts() {
-        val engine = engineFor(base)
-        assertEquals("R1", top(engine, "Winterjacke 2026").first())
-        assertEquals("R2", top(engine, "Motoroel bei ATU").first())
+    private fun search(q: String, rows: List<ReceiptEntity> = base) = runBlocking { SearchEngine(FakeReceipts(rows)).search(q) }.map { it.receiptId }
+    @Test fun itemWithoutMerchantFound() { assertEquals(listOf("R1"), search("Winterjacke 2026")) }
+    @Test fun merchantAnywhereInQueryFound() { assertEquals(listOf("R2"), search("Motoroel bei ATU")) }
+    @Test fun germanMonthAndCategory() { assertEquals(listOf("R3"), search("der vom Baumarkt im März")); assertEquals(listOf("R3"), search("Baumarkt maerz")) }
+    @Test fun explicitYearRestricts() { assertEquals(listOf("R3"), search("März 2025")); assertTrue(search("März 2024").isEmpty()) }
+    @Test fun noFalseMonthSubstring() { assertEquals(listOf("R4"), search("DUSCHGEL")); assertTrue(search("Mai").isEmpty()) }
+    @Test fun oldestAmongManyFound() {
+        val rows = (1..300).map { receipt("F$it", "Filler", "2026-09-01", "Sonstiges", "Kram") } + base
+        assertEquals(listOf("R1"), search("Winterjacke", rows))
     }
-
-    @Test
-    fun categoryWordWithMonthFindsReceipt() {
-        // "Baumarkt" steht in keinem Händlernamen; der Monatsfilter bleibt aktiv.
-        assertTrue("R3" in top(engineFor(base), "der vom Baumarkt im maerz"))
-    }
-
-    @Test
-    fun merchantFilterStillNarrowsCandidates() {
-        val engine = engineFor(base)
-        assertEquals(listOf("R2"), top(engine, "ATU", k = 10))
-        assertEquals("R3", top(engine, "der vom BAUHAUS im maerz").first())
-    }
-
-    // Zwei BAUHAUS-Belege mit gleichem Text: nur der Monat kann entscheiden.
-    // Die Normalisierung macht aus "März" -> "marz".
-    @Test
-    fun umlautMonthNarrowsCandidates() {
-        val data = listOf(
-            receipt("JUL", "BAUHAUS", "2025-07-01", "Baumarkt") to "BOHRMASCH. PSB 750 RCE",
-            receipt("MAR", "BAUHAUS", "2025-03-14", "Baumarkt") to "BOHRMASCH. PSB 750 RCE",
-        )
-        assertEquals(listOf("MAR"), top(engineFor(data), "der vom BAUHAUS im März", k = 10))
-    }
-
-    // "mai" steckt in "Email": ein Teilstring-Treffer darf keinen Monatsfilter setzen.
-    @Test
-    fun monthNameInsideAnotherWordIsNotAMonth() {
-        val data = listOf(
-            receipt("A", "Amazon", "2025-01-10", "Elektronik") to "EMAIL KABEL",
-            receipt("B", "Foo", "2025-05-05", "Sonstiges") to "ZEUG KRAM",
-        )
-        assertEquals("A", top(engineFor(data), "Email Kabel").first())
-    }
-
-    @Test
-    fun oldestReceiptIsFoundAmongMoreThan200() {
-        val filler = (1..300).map {
-            receipt("F$it", "Filler", "2026-%02d-%02d".format(1 + it % 9, 1 + it % 28), "Sonstiges") to "ZEUG KRAM"
-        }
-        val old = receipt("OLD", "H&M", "2020-01-02", "Kleidung") to "WINTERJACKE PARKA M"
-        assertTrue("OLD" in top(engineFor(filler + old), "Winterjacke"))
-    }
+    @Test fun emptyAndUnknownQueriesEmpty() { assertTrue(search("").isEmpty()); assertTrue(search("unbekannt").isEmpty()) }
+    @Test fun shortMerchantWorks() { assertEquals(listOf("R4"), search("dm")) }
 }

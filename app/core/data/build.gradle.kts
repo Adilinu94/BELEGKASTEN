@@ -18,6 +18,8 @@ android {
 dependencies {
     implementation(project(":core:model"))
     implementation(project(":core:database"))
+    implementation(project(":core:embed"))
+    implementation(project(":core:license"))
     implementation(libs.kotlinx.coroutines)
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)

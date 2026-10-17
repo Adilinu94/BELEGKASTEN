@@ -18,6 +18,7 @@ android {
     composeOptions { kotlinCompilerExtensionVersion = "1.5.14" }
 }
 dependencies {
+    testImplementation(libs.kotlin.test)
     implementation(project(":core:model"))
     implementation(project(":core:database"))
     implementation(project(":core:data"))
@@ -25,6 +26,9 @@ dependencies {
     implementation(project(":core:embed"))
     implementation(project(":core:license"))
     implementation(libs.androidx.core)
+    implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.lifecycle.compose)
+    implementation(libs.mlkit.text.latin)
     implementation(libs.camerax.core)
     implementation(libs.camerax.camera2)
     implementation(libs.camerax.lifecycle)

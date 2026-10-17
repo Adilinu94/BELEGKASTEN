@@ -249,7 +249,7 @@ ab." Das ist der Grund, warum man bleibt. Die Frist stammt meist aus einem Stand
 
 **Backup und Gerätewechsel**
 - Ohne Konto gibt es keine Wiederherstellung, wenn das Gerät verloren geht. Deshalb Export als ZIP mit Datenbank, Anhängen und Manifest samt SHA-256-Prüfung, plus Wiederherstellung (Vorbild: [Warrant Book](https://github.com/rwrife/warrant-book), MIT).
-- **Entscheidung Verschlüsselung (v3):** Die Sicherungsdatei wird **standardmäßig verschlüsselt** (AES-256-GCM, Schlüssel aus einem vom Nutzer gewählten Passwort per PBKDF2-HMAC-SHA256 mit 600.000 Iterationen abgeleitet; v3 nannte Argon2id, der Code nutzt PBKDF2, siehe ADR-009). Begründung: Die Datei enthält alle Belege mit Beträgen, Händlern und Daten. Unverschlüsselt auf einem USB-Stick oder in einer Cloud abgelegt wäre sie das größte Datenleck des ganzen Produkts. Der Nutzer wählt den Speicherort selbst, das Passwort vergibt er beim Export. Wer das Passwort verliert, verliert die Sicherung — das steht so im Export-Dialog.
+- **Entscheidung Verschlüsselung (v3):** Die Sicherungsdatei wird **standardmäßig verschlüsselt** (AES-256-GCM, Schlüssel aus einem vom Nutzer gewählten Passwort per Argon2id abgeleitet). Begründung: Die Datei enthält alle Belege mit Beträgen, Händlern und Daten. Unverschlüsselt auf einem USB-Stick oder in einer Cloud abgelegt wäre sie das größte Datenleck des ganzen Produkts. Der Nutzer wählt den Speicherort selbst, das Passwort vergibt er beim Export. Wer das Passwort verliert, verliert die Sicherung — das steht so im Export-Dialog.
 - Der Nutzer wählt den Speicherort selbst. Export und Sicherung zählen zum lesenden Zugriff und bleiben ohne Lizenz nutzbar (ADR-008).
 
 **Offline-Nachweis und Modell-Auslieferung (entschieden in v3)**
@@ -501,7 +501,7 @@ Selbstständige zahlen.
    (270M/440M/740M) und ob die Paketgröße die Store-Limits einhält. Das misst
    der Spike.
 10. ~~**Sicherungsdatei.** Verschlüsseln oder nicht?~~ **Entschieden in v3:**
-    standardmäßig verschlüsselt (AES-256-GCM, Passwort per PBKDF2, siehe ADR-009 und Abschnitt 8).
+    standardmäßig verschlüsselt (AES-256-GCM, Passwort per Argon2id, Abschnitt 8).
 11. **Vertrieb.** Wie erreichen wir Privatpersonen mit diesem Problem?
 12. ~~**Testphase.** Wie viel kann man vor dem Kauf nutzen?~~ **Entschieden in v3:**
     30 Tage oder 50 Belege, was zuerst eintritt (Abschnitt 10).
@@ -540,7 +540,7 @@ Selbstständige zahlen.
 - **6 Nutzerfluss:** Moment 1 auf Auto-Capture je Beleg festgelegt, Moment 2 mit
   Beta-Hinweis.
 - **8 Technik:** Modell-Auslieferung per Play Asset Delivery entschieden,
-  Verschlüsselung der Sicherung entschieden (AES-256-GCM, Argon2id; später per ADR-009 auf PBKDF2 angeglichen),
+  Verschlüsselung der Sicherung entschieden (AES-256-GCM, Argon2id),
   GoBD-Hinweis bei Erinnern, ADR-008-Verweis für Export/Sicherung.
 - **10 Monetarisierung:** Testphase entschieden (30 Tage oder 50 Belege),
   Preis einheitlich als Zielpreis 14,99 Euro.

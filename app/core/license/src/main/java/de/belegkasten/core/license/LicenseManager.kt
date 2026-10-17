@@ -12,6 +12,7 @@ import javax.inject.Singleton
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
+import de.belegkasten.core.database.ReceiptDao
 
 private val Context.licenseStore by preferencesDataStore("license")
 
@@ -21,6 +22,7 @@ private val Context.licenseStore by preferencesDataStore("license")
 @Singleton
 class LicenseManager @Inject constructor(
     @ApplicationContext private val context: Context,
+    private val receipts: ReceiptDao,
 ) {
     companion object {
         const val TRIAL_DAYS = 30L
@@ -42,7 +44,7 @@ class LicenseManager @Inject constructor(
 
     suspend fun recordReceiptAdded() {
         context.licenseStore.edit { p ->
-            p[RECEIPT_COUNT] = (p[RECEIPT_COUNT] ?: 0) + 1
+            p[RECEIPT_COUNT] = ((p[RECEIPT_COUNT] ?: 0).toLong() + 1).coerceAtMost(Int.MAX_VALUE.toLong()).toInt()
         }
     }
 
@@ -50,24 +52,28 @@ class LicenseManager @Inject constructor(
     fun archiveUsable(): Boolean = true
 
     suspend fun captureEnabled(): Boolean {
-        val p = context.licenseStore.data.first()
-        if (p[PURCHASED] == true) return true
-        val first = p[FIRST_START] ?: System.currentTimeMillis()
-        val daysUsed = (System.currentTimeMillis() - first) / 86_400_000L
-        val count = p[RECEIPT_COUNT] ?: 0
-        return daysUsed < TRIAL_DAYS && count < TRIAL_RECEIPTS
+        return status().captureEnabled
     }
 
     suspend fun markPurchased() {
         context.licenseStore.edit { it[PURCHASED] = true }
     }
 
+    // Only a successful explicit Play query may invalidate the offline cache.
+    suspend fun clearVerifiedMissingPurchase() {
+        context.licenseStore.edit { it[PURCHASED] = false }
+    }
+
     suspend fun trialStatus(): String {
+        return status().note
+    }
+
+    suspend fun status(): TrialStatus {
+        ensureFirstStart()
         val p = context.licenseStore.data.first()
-        if (p[PURCHASED] == true) return "gekauft"
-        val first = p[FIRST_START] ?: System.currentTimeMillis()
-        val daysLeft = TRIAL_DAYS - (System.currentTimeMillis() - first) / 86_400_000L
-        val left = TRIAL_RECEIPTS - (p[RECEIPT_COUNT] ?: 0)
-        return "Testphase: noch $daysLeft Tage oder $left Belege"
+        // DB count survives a process death immediately after commit and cannot
+        // be bypassed by the UI. Restoring is always allowed, even past 50.
+        return trialStatus(p[PURCHASED] == true, p[FIRST_START]!!,
+            System.currentTimeMillis(), maxOf(p[RECEIPT_COUNT] ?: 0, receipts.count()))
     }
 }

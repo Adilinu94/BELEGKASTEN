@@ -1,10 +1,11 @@
 package de.belegkasten.core.ocr
 
 import java.math.BigDecimal
+import java.time.LocalDate
 import javax.inject.Inject
 
 // Fixed rules first: date, total, receipt number from stable lines.
-// Gemma 4 (understand/) handles merchant/category/positions; this parser
+// Gemma 4 merchant/category/position extraction is not yet integrated; this parser
 // covers what regex can do reliably on German receipts, incl. faded print.
 class RuleParser @Inject constructor() {
 
@@ -16,9 +17,9 @@ class RuleParser @Inject constructor() {
         val needsConfirmation: List<String>,
     )
 
-    private val dateDe = Regex("""(\d{1,2})\.(\d{1,2})\.(\d{2,4})""")
-    private val amount = Regex("""(\d{1,3}(?:\.\d{3})*,\d{2})""")
-    private val sumLine = Regex("""(?i)(summe|gesamt|total|endbetrag|zu zahlen)""")
+    private val dateDe = Regex("""(?<!\d)(\d{1,2})\.(\d{1,2})\.(\d{4}|\d{2})(?!\d)""")
+    private val amount = Regex("""(?<![\d.,+\-])(?:\d{1,3}(?:\.\d{3})+|\d+),\d{2}(?![\d.,])""")
+    private val sumLine = Regex("""(?i)\b(summe|gesamt(?:betrag)?|total|endbetrag|zu zahlen)\b""")
     private val bonNr = Regex("""(?i)(bon-?nr|beleg-?nr|re-?nr|kassenbon)\s*[:#]?\s*(\S+)""")
 
     fun parse(rawText: String): Fields {
@@ -30,11 +31,13 @@ class RuleParser @Inject constructor() {
         dateDe.find(rawText)?.let {
             val (d, m, y) = it.destructured
             val year = if (y.length == 2) "20$y" else y
-            dateIso = "$year-${m.padStart(2, '0')}-${d.padStart(2, '0')}"
-        } ?: needs.add("date").also { }
+            dateIso = runCatching { LocalDate.of(year.toInt(), m.toInt(), d.toInt()).toString() }.getOrNull()
+        }
+        if (dateIso == null) needs.add("date")
 
         val sumLines = rawText.lines().filter { sumLine.containsMatchIn(it) }
-        val amountText = sumLines.lastOrNull() ?: rawText.lines().lastOrNull { amount.containsMatchIn(it) }
+        // Never silently label a VAT, item or cash/change amount as the total.
+        val amountText = sumLines.lastOrNull()
         amountText?.let {
             totalCents = amount.find(it)?.value?.let(::toCents)
         }
@@ -48,6 +51,7 @@ class RuleParser @Inject constructor() {
     // "1.234,56" -> 123456. German format only; anything else returns null.
     // BigDecimal, not Double: 1.15 * 100 is 114.99999999999999 as a Double, i.e. 114 cents.
     fun toCents(german: String): Long? = runCatching {
+        require(Regex("(?:\\d+|\\d{1,3}(?:\\.\\d{3})+)(?:,\\d{1,2})?").matches(german))
         BigDecimal(german.replace(".", "").replace(",", ".")).movePointRight(2).longValueExact()
     }.getOrNull()
 }

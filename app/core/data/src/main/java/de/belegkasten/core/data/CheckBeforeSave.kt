@@ -10,25 +10,37 @@ import java.time.LocalDate
 object CheckBeforeSave {
     private val DATE = Regex("""\d{4}-\d{2}-\d{2}""")
 
-    // The pattern alone lets 2025-13-45 through (an OCR misread); strict ISO parsing rejects it.
-    private fun isValidDate(value: String): Boolean =
-        DATE.matches(value) && runCatching { LocalDate.parse(value) }.isSuccess
-
     sealed interface Problem {
         data class SumMismatch(val expectedCents: Long, val actualCents: Long) : Problem
         data class BadDate(val value: String) : Problem
         data class MissingField(val field: String) : Problem
+        data class InvalidItem(val id: String) : Problem
+        data object AmountOverflow : Problem
     }
 
     fun checkReceipt(receipt: ReceiptEntity, items: List<ItemEntity>): List<Problem> {
         val problems = mutableListOf<Problem>()
         if (receipt.merchant.isBlank()) problems += Problem.MissingField("merchant")
         if (receipt.category.isBlank()) problems += Problem.MissingField("category")
-        if (!isValidDate(receipt.date)) problems += Problem.BadDate(receipt.date)
+        if (!validDate(receipt.date)) problems += Problem.BadDate(receipt.date)
+        if (receipt.id.isBlank()) problems += Problem.MissingField("id")
         if (receipt.totalCents < 0) problems += Problem.MissingField("total_cents")
+        val ids = mutableSetOf<String>()
+        items.forEach {
+            if (it.id.isBlank() || !ids.add(it.id) || it.receiptId != receipt.id ||
+                it.label.isBlank() || it.quantity <= 0 || it.priceCents < 0
+            ) problems += Problem.InvalidItem(it.id)
+        }
         if (items.isNotEmpty()) {
-            val sum = items.sumOf { it.priceCents * it.quantity }
-            if (sum != receipt.totalCents) {
+            val sum = try {
+                items.fold(0L) { acc, item ->
+                    Math.addExact(acc, Math.multiplyExact(item.priceCents, item.quantity.toLong()))
+                }
+            } catch (_: ArithmeticException) {
+                problems += Problem.AmountOverflow
+                null
+            }
+            if (sum != null && sum != receipt.totalCents) {
                 problems += Problem.SumMismatch(expectedCents = sum, actualCents = receipt.totalCents)
             }
         }
@@ -36,7 +48,13 @@ object CheckBeforeSave {
     }
 
     fun checkDeadline(deadline: DeadlineEntity): List<Problem> {
-        if (!isValidDate(deadline.dueDate)) return listOf(Problem.BadDate(deadline.dueDate))
-        return emptyList()
+        return buildList {
+            if (!validDate(deadline.dueDate)) add(Problem.BadDate(deadline.dueDate))
+            if (deadline.id.isBlank() || deadline.itemId.isBlank()) add(Problem.MissingField("deadline_id/item_id"))
+            if (deadline.type !in setOf("RETURN", "WARRANTY")) add(Problem.MissingField("deadline_type"))
+        }
     }
+
+    fun validDate(value: String): Boolean = DATE.matches(value) &&
+        runCatching { LocalDate.parse(value).toString() == value }.getOrDefault(false)
 }

@@ -3,6 +3,7 @@ package de.belegkasten.core.database
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
+import androidx.room.Fts4
 import androidx.room.Index
 import androidx.room.PrimaryKey
 
@@ -19,6 +20,17 @@ data class ReceiptEntity(
     val source: String,
     val attachmentPath: String? = null,
     val createdAtEpochMs: Long,
+    @ColumnInfo(defaultValue = "''") val ocrText: String = "",
+)
+
+// Independent FTS table: maintained in the same transaction as receipts.
+@Fts4(tokenizer = "unicode61")
+@Entity(tableName = "receipt_fts")
+data class ReceiptFtsEntity(
+    val receiptId: String,
+    val merchant: String,
+    val category: String,
+    val ocrText: String,
 )
 
 @Entity(

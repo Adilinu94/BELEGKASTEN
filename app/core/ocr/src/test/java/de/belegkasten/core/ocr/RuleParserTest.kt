@@ -5,6 +5,12 @@ import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
 class RuleParserTest {
+    @Test fun ungroupedLargeTotalsAreNotTruncated() { assertEquals(123456L, RuleParser().parse("SUMME 1234,56").totalCents) }
+    @Test fun itemAndNegativeAmountsNotGuessedAsTotal() {
+        assertEquals(null, RuleParser().parse("Artikel 12,99\nMWST 2,07").totalCents)
+        assertEquals(null, RuleParser().parse("SUMME -12,99").totalCents)
+    }
+    @Test fun threeDigitYearNotAccepted() { assertEquals(null, RuleParser().parse("12.03.202").dateIso) }
     private val parser = RuleParser()
 
     @Test
@@ -41,5 +47,13 @@ class RuleParserTest {
     @Test
     fun parseReadsTotalExactly() {
         assertEquals(1999L, parser.parse("EDEKA\n03.04.2025\nSUMME 19,99\nBON-NR 7").totalCents)
+    }
+    @Test fun impossibleDateNeedsConfirmation() {
+        val fields = parser.parse("BAUHAUS\n30.02.2025\nSUMME 12,99")
+        assertEquals(null, fields.dateIso)
+        assertTrue("date" in fields.needsConfirmation)
+    }
+    @Test fun malformedAmountsRejected() {
+        listOf("1.15", "1,234", "NaN", "-1,00", "1e5", "9.22.1,00").forEach { assertEquals(null, parser.toCents(it)) }
     }
 }

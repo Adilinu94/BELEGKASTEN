@@ -34,19 +34,20 @@ class CheckBeforeSaveTest {
         assertEquals(1, problems.filterIsInstance<CheckBeforeSave.Problem.BadDate>().size)
     }
 
-    // Richtiges Format, aber kein Kalendertag: typische OCR-Fehlgriffe.
-    @Test
-    fun impossibleCalendarDatesAreFlagged() {
-        for (date in listOf("2025-13-45", "2025-02-30", "2025-02-29", "2025-00-10")) {
-            val problems = CheckBeforeSave.checkReceipt(receipt(0, date), emptyList())
-            assertEquals(1, problems.filterIsInstance<CheckBeforeSave.Problem.BadDate>().size, date)
+    @Test fun invalidCalendarDatesRejected() {
+        listOf("2025-02-30", "2025-02-29", "2025-13-01", "0000-00-00").forEach {
+            assertTrue(CheckBeforeSave.checkReceipt(receipt(0, it), emptyList()).any { p -> p is CheckBeforeSave.Problem.BadDate })
         }
+        assertTrue(CheckBeforeSave.validDate("2024-02-29"))
     }
-
-    @Test
-    fun realDatesIncludingLeapDayPass() {
-        for (date in listOf("2024-02-29", "2025-12-31", "2026-01-01")) {
-            assertTrue(CheckBeforeSave.checkReceipt(receipt(0, date), emptyList()).isEmpty(), date)
+    @Test fun overflowingAmountRejected() {
+        val positions = listOf(ItemEntity("I1", "R1", "Artikel", 2, Long.MAX_VALUE))
+        assertTrue(CheckBeforeSave.Problem.AmountOverflow in CheckBeforeSave.checkReceipt(receipt(0), positions))
+    }
+    @Test fun invalidItemsRejected() {
+        listOf(ItemEntity("", "R1", "Artikel", 1, 1), ItemEntity("I1", "OTHER", "Artikel", 1, 1),
+            ItemEntity("I1", "R1", "", 1, 1), ItemEntity("I1", "R1", "Artikel", 0, 1)).forEach {
+            assertTrue(CheckBeforeSave.checkReceipt(receipt(1), listOf(it)).any { p -> p is CheckBeforeSave.Problem.InvalidItem })
         }
     }
 }

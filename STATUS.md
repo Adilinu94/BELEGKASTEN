@@ -1,48 +1,66 @@
 # STATUS.md — Gesamtübersicht
 
-Stand: 2026-10-16 (nach Abgleich mit dem Code; Zeilen mit „laut Autor" sind nicht unabhängig geprüft)
+Stand: 2026-10-16 · geprüft auf `main` (`710c812`, PR #1 gemergt)
 
 | Phase | Inhalt | Status | Nachweis |
 |---|---|---|---|
-| 0 | Spike (100 Belege, Baseline vs. semantisch) | ⏳ offen | `spike/BERICHT.md` noch ausfüllen; Harness läuft nur auf **synthetischen** Daten (Baseline Recall@3 72,0 %), echte Belege und echtes Modell fehlen; Vergleich per `spike/harness/compare.py` |
-| 1 | Landingpage, Interviews, Concierge, Vorverkauf | ⏳ Artefakte fertig, Nutzerzmessung ausstehend | `phase1/` |
+| 0 | Spike (Baseline vs. semantisch) | ⏳ Echter CPU-Lauf fertig; Echtbelege/Geräte offen | Baseline 72 %, Gemma 82 %: **+10 pp, unter 15-pp-Schwelle**; `spike/BERICHT.md` |
+| 1 | Landingpage, Interviews, Concierge, Vorverkauf | ⏳ Artefakte fertig, Nutzermessung ausstehend | `phase1/` |
 | 2 | Klick-Prototyp, Nutzertest-Anleitung | ⏳ Artefakte fertig, Test ausstehend | `phase2/` |
-| 3 | Beta-App (Android) | 🟡 Kernlogik steht, Hauptschleife nicht verdrahtet; Gerätetest offen | Build und Tests grün laut Autor; Details unter „Noch nicht verdrahtet" |
-| 4–7 | Polieren, Modell-Pack, Store | ⬜ nicht gestartet | `BAUPLAN.md` |
+| 3 | Android-Beta | ⏳ Buildbares Gerüst, **keine vollständige Beta** | `assembleDebug` und 12 JVM-Tests grün; Kernflows teilweise Platzhalter |
+| 4–7 | Komfort, Bindung, Härtung, Store | ⬜ nicht gestartet | `BAUPLAN.md` |
 
-## Was heute fertig wurde (Phase 3)
-- Multi-Module-Android-Projekt unter `app/`, Build grün laut Autor
-- Kernlogik als Pure-Kotlin testbar: `CheckBeforeSave`, `RuleParser`, `SearchEngine` (Tests siehe Zweig `fix/geld-suche-spike`)
-- ADR-008 als Logik in `LicenseManager`: Lizenzende stoppt nur die Erfassung, nie den Zugriff (noch nicht an die Erfassung angebunden)
-- Sicherung (nur Export-Logik): AES-256-GCM + PBKDF2 600k, ZIP/SHA-256, Header `BKBF1`
-- Vier Bildschirme angelegt (Erfassen, Belege, Suchen, Einstellungen), noch ohne Wege dazwischen
+## Verifiziert am 2026-10-16
 
-## Noch nicht verdrahtet (Stand Code, 2026-10-16)
-- **Erfassen:** Buttons leer, CameraX nicht eingebunden. `OcrEngine`, `RuleParser` und `CheckBeforeSave` haben keinen Aufrufer; nichts schreibt einen Beleg in die Datenbank, nichts erzeugt ein Embedding. Die Suche findet deshalb nichts.
-- **Navigation:** `NavHost` ohne `navigate`/Leiste; erreichbar ist nur „Erfassen".
-- **Kauf:** nur die Konstante `SKU_LIFETIME`; kein `BillingClient`, `markPurchased()` wird nie aufgerufen.
-- **Sicherung:** Export-Button leer; „Wiederherstellung" prüft nur Passwort und Manifest und stellt nichts wieder her.
-- **Modell:** `HashEmbedder` ist Platzhalter; unter `assets/embed_model/` liegt nur ein README, kein Asset-Pack-Modul.
-- **Fristen:** `DeadlineWorker` ist leer (Phase 5).
-- **Gemma 4:** das `understand/`-Modul aus dem Bauplan gibt es noch nicht.
+- `app/gradlew.bat testDebugUnitTest assembleDebug --console=plain` erfolgreich.
+- 12 JVM-Tests: Prüfregeln (3), Regel-Parser (5), Suchlogik (4).
+- Exakte Cent-Berechnung per BigDecimal und Such-Rückfall aus PR #1 enthalten.
+- Spike-Baseline reproduziert: 36/50 Treffer (72 %); Hash: 11/50 (22 %).
+- Neuer Runner für echtes EmbeddingGemma 2: korrekte Modell-ID, Text-only,
+  float32, 256 Dimensionen; getrennte Ergebnisdatei, Korpus-Hashes und Top-3-IDs.
+- Echter CPU-Lauf: 41/50 Treffer (82 %), +10 pp zur Baseline. Kein Produkt-GO
+  aus synthetischen Belegen; Ergebnis unter der festgelegten +15-pp-Schwelle.
+- Wiederholung mit festgehaltener Modellrevision aus lokalem Cache: alle
+  50 Top-3-Ranglisten und Vergleichswerte identisch.
+- 11 Python-Tests für Harness, Eingaben, Vektoren, Präfixe, Vergleichsschwelle,
+  festgehaltene Modellrevision und Fehler ohne Hash-Rückfall.
 
-## Die drei Haken bis echte Beta
-1. Spike-Bericht ausfüllen → Zahl für Modell-Pack
-2. Gerät aussuchen fur RAM/Zeit-Werte (Ruhe < 400 MB; Text < 2 s; Foto < 5 s)
-3. `HashEmbedder` → MediaPipe EmbeddingGemma 2 tauschen
-4. Hauptschleife verdrahten (Erfassen → OCR → Prüfen → Speichern → Embedding). Laut Bauplan („Kein Code vor dem Spike-Bericht") erst nach Haken 1.
+## Korrektur der bisherigen Abnahmeangaben
 
-## Sofort-Befehle
+Die Fassung vom 2026-10-11 setzte „Code komplett“ mit einem grünen Build gleich.
+Das ist nicht durch den Quellcode gedeckt:
+
+- `Capture.kt`: Kamera-/Importbuttons ohne Aktion; keine OCR-/Speicherkette.
+- `MainActivity.kt`: vier Ziele deklariert, aber keine bedienbare Navigation.
+- `Receipts.kt` / `Search.kt`: Listen ohne Detailziel; keine Bestätigungsansicht.
+- `Settings.kt`: Sicherungsbuttons ohne Aktion. `validateAndImport()` liest nur
+  das Manifest, stellt nichts wieder her und prüft keine ZIP-Datei-Hashes.
+- `LicenseManager.kt`: Testphasenlogik vorhanden, im UI nicht wirksam verdrahtet;
+  SKU vorhanden, echter Kauf-/Wiederherstellungsflow fehlt.
+- `HashEmbedder` statt semantischem Modell; kein echtes PAD-Modul, nur Asset-README
+  und Bibliotheksabhängigkeit. FTS4 und Diagnose-Export fehlen ebenfalls.
+- Kein Gerät angeschlossen; Offline-, RAM- und Performance-Nachweise offen.
+
+Weitere Abnahmelücken stehen in `ABNAHME-PHASE-3.md`. Keine echten Belege als
+einzige Kopie in diesem Gerüst ablegen und keine Beta-/Store-Freigabe daraus ableiten.
+
+## Nächster Entscheidungspunkt
+
+1. Echte geschwärzte Belege und unabhängige Suchaufgaben für Phase 0 beschaffen;
+   Gerätewerte und Offline-Nachweis messen. Die Go/No-Go-Regel aus `BAUPLAN.md` gilt.
+2. Such-GO anhand dieses Testsets entscheiden oder die Produktannahme neu bewerten;
+   die +15-pp-Schwelle nicht aufgrund des synthetischen Ergebnisses ändern.
+3. Erst nach der Entscheidung die Phase-3-Kernflows vervollständigen: Eingang →
+   OCR → Feldprüfung → atomar speichern → Suche → Detail; sichere Wiederherstellung.
+
+## Befehle (aus dem Repository-Hauptordner)
+
 ```powershell
-cd "G:\AI Agentur\BELEGKASTEN\app"
-.\gradlew.bat assembleDebug          # APK bauen
-.\gradlew.bat testDebugUnitTest      # Tests
-adb install -r app\build\outputs\apk\debug\app-debug.apk
+app\gradlew.bat -p app testDebugUnitTest assembleDebug --console=plain
+python -m unittest discover -s spike/harness -p "test_*.py" -v
+adb install -r app\app\build\outputs\apk\debug\app-debug.apk
 ```
-```bash
-cd app                                # Linux/macOS
-./gradlew assembleDebug && ./gradlew testDebugUnitTest
-adb install -r app/build/outputs/apk/debug/app-debug.apk
-cd ../spike/harness && python compare.py    # Spike-Vergleich (Platzhalter-Modell)
-```
-CI auf GitHub (`.github/workflows/ci.yml`): Gradle-Tests, `assembleDebug`, Prüfung der APK-Berechtigungen (kein `INTERNET`) und Spike-Harness bei jedem Push auf `main` und jedem Pull Request. Das ist die unabhängige Bestätigung für „Build und Tests grün".
+
+Echter Modelllauf: `spike/harness/EMBEDDING_SPIKE_MODELL.md`.
+
+CI auf GitHub (`.github/workflows/ci.yml`): Gradle-Tests, `assembleDebug`, Prüfung der APK-Berechtigungen (kein `INTERNET`) und Python-Tests des Spike-Harness bei jedem Push auf `main` und jedem Pull Request. Das ist die Gegenprobe zu „Build und Tests grün" auf einer frischen Maschine; ein erster Lauf steht aus.

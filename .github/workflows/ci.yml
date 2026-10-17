@@ -51,7 +51,7 @@ jobs:
           fi
 
   spike:
-    name: Spike-Harness (Baseline und Vergleich)
+    name: Spike-Harness (Baseline und Tests)
     runs-on: ubuntu-latest
     timeout-minutes: 10
     env:
@@ -66,5 +66,5 @@ jobs:
       - name: Baseline
         run: python spike/harness/baseline_search.py
 
-      - name: Vergleich (Hash-Platzhalter, nur Plumbing)
-        run: python spike/harness/compare.py
+      - name: Python-Tests (ohne Modell-Download)
+        run: python -m unittest discover -s spike/harness -p "test_*.py" -v

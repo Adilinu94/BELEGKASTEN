@@ -1,57 +1,78 @@
-# Abnahme-Checke — Phase 3 (Beta-App)
+# Abnahme-Checkliste — Phase 3 (Android-Beta)
 
-Stand: 2026-10-11 · Status: Kernlogik vorhanden, Hauptschleife nicht verdrahtet, Hardware-Test offen
-Korrigiert 2026-10-16 nach Abgleich mit dem Code (siehe STATUS.md „Noch nicht verdrahtet"): Haken, die der Code nicht stützt, sind zurückgenommen.
+Stand: 2026-10-16 · **nicht abgenommen**. Buildbares Gerüst; Kernflows und
+Hardware-Nachweise fehlen. Die frühere „code-seitige Abnahme“ ist korrigiert.
 
 ## 3.1 Projekt & Build
-- [x] Gradle-Wrapper 8.9 vorhanden (`./gradlew`)
-- [x] AGP 8.7.3, Kotlin 1.9.24, KSP, Hilt, Room 2.6.1
-- [x] Java 17 / JVM-Target 17 in allen Modulen konsistent
-- [x] `./gradlew assembleDebug` → BUILD SUCCESSFUL
-- [x] `./gradlew testDebugUnitTest` → 6/6 Tests grün
-- [x] Module: core/{model,database,data,ocr,embed,search,backup,license,ui}, feature/{capture,receipts,search,settings}
 
-## 3.2 Offline-Garantie (Kernversprechen)
-- [x] Kein `android.permission.INTERNET` im Quell-Manifest
-- [ ] Berechtigungen der gebauten APK geprüft (`aapt2 dump permissions`): Billing, Asset Delivery und ML Kit können Einträge mitbringen. Die CI (`.github/workflows/ci.yml`) bricht ab, wenn `INTERNET` in der APK steht; Ergebnis des ersten Laufs auf GitHub abwarten
-- [ ] Modell-Auslieferung: unter `assets/embed_model/` liegt nur ein README, es gibt kein Asset-Pack-Modul; Play Asset Delivery (install-time) ist noch einzurichten
-- [x] ML Kit gebundelt-Variante (`text-recognition`), keine Play-Services-Version (`document-scanner` steht nur im Versionskatalog, ungenutzt)
-- [ ] Verifikation im Flugmodus auf Gerät (10.1, ausstehend)
+- [x] Gradle-Wrapper 8.9; AGP 8.7.3, Kotlin 1.9.24, KSP, Hilt, Room 2.6.1.
+- [x] Java/JVM-Target 17 in allen Modulen.
+- [x] `testDebugUnitTest assembleDebug` am 2026-10-16 erfolgreich.
+- [x] 12 JVM-Tests grün (Prüfregeln 3, Parser 5, Suchlogik 4).
+- [x] Module `core/{model,database,data,ocr,embed,search,backup,license,ui}` und
+  `feature/{capture,receipts,search,settings}` vorhanden.
 
-## 3.3 Prüfregeln (CheckBeforeSave)
-- [x] Summe stimmt → keine Meldung
-- [x] Summe falsch → `SumMismatch` (Logik + Test)
-- [x] Datum nicht ISO-8601 → `BadDate` (Logik + Test)
-- [x] Beträge in Cent `Long`, kein Float-Geld (`RuleParser.toCents` rechnete bis 2026-10-16 über `Double`, siehe Zweig `fix/geld-suche-spike`)
-- [ ] `CheckBeforeSave` wird vor dem Speichern aufgerufen und zeigt einen Korrekturdialog (kein Aufrufer, keine Dialog-UI)
+## 3.2 Offline & Modell-Auslieferung
 
-## 3.4 Lizensierung (ADR-008)
-- [x] Testphase-Logik: 30 Tage oder 50 Belege (`LicenseManager.captureEnabled`)
-- [ ] Testphase an die Erfassung angebunden: `recordReceiptAdded()` hat keinen Aufrufer, die Erfassen-Buttons sind nicht gesperrt
-- [x] Lesen / Suchen / Export / Sicherung nie lizenzabhängig (`archiveUsable()` ist immer wahr)
-- [ ] Kauf: nur die Konstante `SKU_LIFETIME`; kein `BillingClient`, `markPurchased()` hat keinen Aufrufer
-- [ ] Kauf-Flow mit ernsten App-Konten testen (10.2, ausstehend)
+- [x] Quellmanifest ohne `android.permission.INTERNET`.
+- [x] ML Kit Text Recognition als gebündelte Variante eingebunden.
+- [ ] Zusammengeführtes Manifest und Netzwerkmitschnitt prüfen. (Die CI prüft die gebaute APK auf `android.permission.INTERNET`; erster Lauf steht aus. Der Netzwerkmitschnitt bleibt Geräteabnahme.)
+- [ ] Start, Erfassen und Suchen im Flugmodus auf Gerät verifizieren.
+- [ ] Echter install-time-PAD-Pack: bislang nur Bibliothek + Asset-README,
+  kein Asset-Pack-Modul und kein Modell.
 
-## 3.5 Sicherung
-- [x] Format-Header `BKBF1`
-- [x] PBKDF2-HMAC-SHA256, 600.000 Iterationen, Salt+IV im Header
-- [x] ZIP mit JSON-Manifest + SHA-256 je Datei (beim Einlesen nicht verglichen; der GCM-Tag schützt das Ganze)
-- [ ] Wiederherstellung umgesetzt: `validateAndImport` prüft nur Passwort und Manifest; Export- und Wiederherstellen-Button sind leer
-- [ ] Konsistente Datenbankkopie: `belegkasten.db` wird ohne WAL-Abgleich gelesen (Room-Journal-Modus prüfen)
-- [ ] Speicherbedarf: ZIP und Verschlüsselung laufen komplett im RAM, bei großen Bildarchiven Absturzgefahr
-- [ ] Wiederherstellung mit echter 100-Beleg-Sicherung (10.3, ausstehend)
+## 3.3 Eingang → OCR → Prüfung → Speichern
 
-## 3.6 Navigation (Flow)
-- [ ] Erfassen → Prüfen → Suchen → Detail → Einstellungen verdrahtet: vier Ziele im `NavHost`, aber kein `navigate` und keine Leiste; Prüf- und Detailansicht gibt es nicht
-- [ ] Alle Ziele ohne Lizenz erreichbar (ADR-008): keine Lizenzsperre im Code, die Erreichbarkeit hängt an der fehlenden Navigation
-- [ ] Hauptschleife Erfassen → Texterkennung → Prüfen → Speichern → Embedding (keine Aufrufer, siehe STATUS.md)
-- [ ] UI-Durchgang 15 Aktionen < 60 s (10.4, ausstehend — Gerät)
+- [ ] Kameraaufnahme / Auto-Capture und Galerie-/Datei-Import implementieren.
+- [ ] Teilen-Intent tatsächlich verarbeiten (Filter existieren, Handler fehlt).
+- [ ] OCR-/Parser-Aufruf aus der Erfassung verdrahten.
+- [ ] Bestätigungs- und Korrekturansicht für Felder implementieren.
+- [ ] Beleg, Positionen und Embedding atomar speichern.
+- [x] Prüfregeln markieren abweichende Positionssumme, leere Pflichtfelder und
+  falsch geformte Datumsstrings.
+- [x] Beträge als Cent `Long`; Parser nutzt BigDecimal statt Double.
+- [ ] Kalenderdatum prüfen: der aktuelle Regex akzeptiert z. B. `2025-02-30`.
+- [ ] E-Rechnungs-PDF als dauerhaften Anhang speichern und öffnen.
 
-## 3.7 Bekannte Lücken (vor Store-Release)
-- [ ] `HashEmbedder` ist Platzhalter → MediaPipe EmbeddingGemma 2 tauschen (Spike 0.3 offen)
-- [ ] Foto-Suche hinter Beta-Flag; erst freigeben wenn Recall@3 ≥ 50 %
-- [ ] E-Rechnung nur PDF-Anhang-Fallback (XML ab Phase D)
-- [ ] Kein Gerät angeschlossen → Performance-/RAM-Tests ausstehend
+## 3.4 Navigation & Suche
 
-## Offene Nachweise (ausgelagert)
-- Spike-Score ≥ 15 pp über Baseline in BERICHT.md eintragen (Voraussetzung für Kaufentscheidung 3.7), gemessen mit echten Belegen und echtem Modell, nicht mit dem synthetischen Korpus und nicht mit dem Hash-Platzhalter
+- [ ] Bedienbare Navigation zu Erfassen / Belege / Suchen / Einstellungen.
+- [ ] Belegdetail und Öffnen aus Treffer-/Belegliste.
+- [x] Suchlogik hat Rückfall ohne Händlertreffer, mit Regressionstests.
+- [ ] Echte semantische Suche: `HashEmbedder` ist weiterhin Platzhalter.
+- [ ] FTS4-/Feld-Baseline und Modellvergleich auf echten Belegen.
+- [ ] Foto-Suche nur nach bestandenem Bild-Spike (Recall@3 ≥ 50 %).
+- [ ] UI-Durchgang und Such-/Erfassungszeiten auf Gerät messen.
+
+## 3.5 Lizenz (ADR-008)
+
+- [x] Testphase (30 Tage / 50 Belege) als Manager-Logik vorhanden.
+- [x] `archiveUsable()` ist immer wahr; SKU `belegkasten_lifetime` definiert.
+- [ ] Startzeit/Zähler und Erfassungssperre tatsächlich im Kernflow verdrahten.
+- [ ] Play-Billing-Kauf, Bestätigung und Kaufwiederherstellung implementieren/testen.
+- [ ] Lesen, Suchen, Export und Sicherung bei abgelaufener Testphase im UI testen.
+
+## 3.6 Sicherung & Datenintegrität
+
+- [x] Exportcode für `BKBF1`, AES-256-GCM und PBKDF2-HMAC-SHA256 (600.000).
+- [x] ZIP-Export enthält Manifest und SHA-256-Werte.
+- [ ] KDF-Widerspruch auflösen: Produktdokument/Bauplan verlangen Argon2id,
+  aktueller Code verwendet PBKDF2 (keine dokumentierte Entscheidungsänderung).
+- [ ] Konsistenter Datenbanksnapshot einschließlich ausstehender WAL-Schreibvorgänge.
+- [ ] Bilder **und PDF-Anhänge** vollständig sichern; Pfade auf Zweitgerät abgleichen.
+- [ ] ZIP-Inhalte, Datei-Hashes und Schema-Version tatsächlich validieren.
+- [ ] Wiederherstellen implementieren: `validateAndImport()` liest derzeit nur Manifest.
+- [ ] Passwort-/Dateidialoge und Fehlerbehandlung im UI verdrahten.
+- [ ] Sicherung mit 100 Belegen auf Zweitgerät wiederherstellen und vergleichen.
+- [ ] Destruktiven Downgrade-Pfad prüfen: `DataModule` aktiviert derzeit
+  `fallbackToDestructiveMigrationOnDowngrade()` trotz gegenteiligem Kommentar.
+
+## 3.7 Weitere offene Nachweise
+
+- [ ] Lokales Tagebuch und freiwilliger Diagnose-Export (nur Aggregate).
+- [ ] Geräte-Matrix, RAM, Paketgröße und Erkennungsqualität.
+- [ ] Spike-Go/No-Go anhand echter Belege, nicht synthetischer Harness-Ergebnisse.
+
+Der echte CPU-Runner und seine Grenzen stehen in
+`spike/harness/EMBEDDING_SPIKE_MODELL.md`. Ein grüner Build allein erfüllt
+keines der noch offenen End-to-End-Abnahmekriterien.

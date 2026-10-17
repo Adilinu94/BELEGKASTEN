@@ -11,10 +11,12 @@ import kotlinx.coroutines.tasks.await
 // Callers build InputImage from a local file (fromFilePath with a content Uri
 // or fromBitmap) and pass it here; this class never touches the network.
 class OcrEngine @Inject constructor() {
-    private val recognizer = TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS)
-
     suspend fun recognize(image: InputImage): String {
-        val result = recognizer.process(image).await()
-        return result.text
+        val recognizer = TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS)
+        return try {
+            recognizer.process(image).await().text
+        } finally {
+            recognizer.close()
+        }
     }
 }
