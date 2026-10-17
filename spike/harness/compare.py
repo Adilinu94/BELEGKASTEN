@@ -21,8 +21,10 @@ Eigener Korpus (Ordner mit zwei Dateien, Schema wie spike/corpus):
 Als "text" gehoert der rohe Text nach der Texterkennung, nicht bereinigte Stichwoerter.
 """
 import argparse
+import datetime
 import json
 import math
+import re
 from pathlib import Path
 
 import baseline_search
@@ -74,6 +76,50 @@ def app_candidates(query, receipts):
     return cands
 
 
+def check_corpus(receipts, queries):
+    """-> (Fehler, Warnungen). Faengt Formatfehler ab, bevor eine echte Messung daran scheitert."""
+    errors, warnings = [], []
+    ids = set()
+    for i, r in enumerate(receipts):
+        where = f"receipts.json[{i}]"
+        if not isinstance(r, dict):
+            errors.append(f"{where}: kein Objekt")
+            continue
+        for key in ("id", "merchant", "date", "text"):
+            if not isinstance(r.get(key), str) or not r[key].strip():
+                errors.append(f"{where}: Feld '{key}' fehlt oder ist leer")
+        rid = r.get("id")
+        if rid in ids:
+            errors.append(f"{where}: doppelte id '{rid}'")
+        ids.add(rid)
+        date = r.get("date")
+        if isinstance(date, str) and date.strip():
+            try:
+                if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", date):
+                    raise ValueError
+                datetime.date.fromisoformat(date)
+            except ValueError:
+                errors.append(f"{where}: date '{date}' ist kein Kalendertag im Format YYYY-MM-DD")
+        text = r.get("text")
+        if isinstance(text, str) and text.strip() and len(text) < 25:
+            warnings.append(f"{where}: text hat nur {len(text)} Zeichen - roher OCR-Text erwartet, keine Stichwoerter")
+    qids = set()
+    for i, q in enumerate(queries):
+        where = f"queries.json[{i}]"
+        if not isinstance(q, dict):
+            errors.append(f"{where}: kein Objekt")
+            continue
+        for key in ("id", "text", "target"):
+            if not isinstance(q.get(key), str) or not q[key].strip():
+                errors.append(f"{where}: Feld '{key}' fehlt oder ist leer")
+        if q.get("id") in qids:
+            errors.append(f"{where}: doppelte id '{q.get('id')}'")
+        qids.add(q.get("id"))
+        if isinstance(q.get("target"), str) and q["target"] not in ids:
+            errors.append(f"{where}: target '{q['target']}' ist kein Beleg in receipts.json")
+    return errors, warnings
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--model", default="hash", help="hash (Standard) oder st:<name>")
@@ -84,6 +130,12 @@ def main():
     corpus = Path(args.corpus)
     receipts = json.loads((corpus / "receipts.json").read_text(encoding="utf-8"))
     queries = json.loads((corpus / "queries.json").read_text(encoding="utf-8"))
+    errors, warnings = check_corpus(receipts, queries)
+    if errors:
+        shown = "\n  ".join(errors[:10]) + (f"\n  ... und {len(errors) - 10} weitere" if len(errors) > 10 else "")
+        raise SystemExit(f"Korpus {corpus} ist fehlerhaft ({len(errors)} Fehler):\n  {shown}")
+    for w in warnings[:5]:
+        print("Warnung:", w)
     doc_vecs, query_vec, label = load_embedder(args.model, args.dim)
 
     vecs = dict(zip((r["id"] for r in receipts), doc_vecs([embedding_search.doc_text(r) for r in receipts])))
