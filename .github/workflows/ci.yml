@@ -68,3 +68,20 @@ jobs:
 
       - name: Python-Tests (ohne Modell-Download)
         run: python -m unittest discover -s spike/harness -p "test_*.py" -v
+
+  datenbank:
+    name: Datenbank (SQL, Schema, Migration)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      # Läuft ohne Android: @Query, Volltextsuche und Migration 1->2 gegen echtes SQLite (FTS4).
+      - name: Room-SQL prüfen
+        run: python tools/check_room_sql.py

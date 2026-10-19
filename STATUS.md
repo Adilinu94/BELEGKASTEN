@@ -58,9 +58,10 @@ einzige Kopie in diesem Gerüst ablegen und keine Beta-/Store-Freigabe daraus ab
 ```powershell
 app\gradlew.bat -p app testDebugUnitTest assembleDebug --console=plain
 python -m unittest discover -s spike/harness -p "test_*.py" -v
+python tools/check_room_sql.py
 adb install -r app\app\build\outputs\apk\debug\app-debug.apk
 ```
 
 Echter Modelllauf: `spike/harness/EMBEDDING_SPIKE_MODELL.md`.
 
-CI auf GitHub (`.github/workflows/ci.yml`): Gradle-Tests, `assembleDebug`, Prüfung der APK-Berechtigungen (kein `INTERNET`) und Python-Tests des Spike-Harness bei jedem Push auf `main` und jedem Pull Request. Das ist die Gegenprobe zu „Build und Tests grün" auf einer frischen Maschine; ein erster Lauf steht aus.
+CI auf GitHub (`.github/workflows/ci.yml`): Gradle-Tests, `assembleDebug`, Prüfung der APK-Berechtigungen (kein `INTERNET`) Python-Tests des Spike-Harness und eine SQL-Prüfung der Room-Datenbank (`tools/check_room_sql.py`: Abfragen, Volltextsuche, Migration 1→2, ohne Android) bei jedem Push auf `main` und jedem Pull Request. Das ist die Gegenprobe zu „Build und Tests grün" auf einer frischen Maschine; ein erster Lauf steht aus.
