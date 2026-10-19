@@ -558,6 +558,10 @@ Mitschnitt), Modellvariante und Paketgröße (Spike), Vertriebskanal,
 Zahlbereitschaft, Marktgröße, Business-Tür (GoBD-Aufwand), Foto- und
 Dauer-Aufnahme (Spike/Prototyp).
 
+## Anhang · Änderungen in v2 (10.10.2026)
+
+*Änderungsliste der Fassung v2, unverändert übernommen. Das „Noch zu entscheiden" am Ende dieses Blocks ist durch v3 überholt.*
+
 - **Kopf:** Stand und Hinweis auf v2.
 - **1 Pressemitteilung:** Kern ist das Wiederfinden. Dauer-Aufnahme heraus, FAQ um Internet, Handywechsel und kostenlose Apps erweitert.
 - **2 Problem und Warum jetzt:** kostenlose Konkurrenz, Kassenbon als Gesetzentwurf, E-Rechnung vor allem für die zweite Zielgruppe, fünf neue Zeilen in der Belegtabelle.
@@ -578,4 +582,4 @@ Dauer-Aufnahme (Spike/Prototyp).
 - **17 Offene Fragen:** Frage 1, 3 und 4 ergänzt, Frage 6 bis 12 neu.
 - **18 Quellen:** ergänzt.
 
-**Noch zu entscheiden (in dieser Fassung offen):** Schwellenwerte in Abschnitt 15, Umfang der Testphase, Verschlüsselung der Sicherung, Scanner-Wahl, Vertriebskanal, Messung ohne Telemetrie.
+**Noch zu entscheiden (Stand v2, in v3 überholt):** Schwellenwerte in Abschnitt 15, Umfang der Testphase, Verschlüsselung der Sicherung, Scanner-Wahl, Vertriebskanal, Messung ohne Telemetrie. In v3 entschieden: Schwellenwerte, Testphase, Verschlüsselung, Messung ohne Telemetrie. Offen bleibt die Liste im v3-Block oben.

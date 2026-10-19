@@ -16,7 +16,7 @@ Hardware-Nachweise fehlen. Die frühere „code-seitige Abnahme“ ist korrigier
 
 - [x] Quellmanifest ohne `android.permission.INTERNET`.
 - [x] ML Kit Text Recognition als gebündelte Variante eingebunden.
-- [ ] Zusammengeführtes Manifest und Netzwerkmitschnitt prüfen.
+- [ ] Zusammengeführtes Manifest und Netzwerkmitschnitt prüfen. (Die CI prüft die gebaute APK auf `android.permission.INTERNET`; erster Lauf steht aus. Der Netzwerkmitschnitt bleibt Geräteabnahme.)
 - [ ] Start, Erfassen und Suchen im Flugmodus auf Gerät verifizieren.
 - [ ] Echter install-time-PAD-Pack: bislang nur Bibliothek + Asset-README,
   kein Asset-Pack-Modul und kein Modell.

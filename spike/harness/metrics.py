@@ -2,7 +2,8 @@
 import re
 import unicodedata
 
-MONTH_TO_NUM = {"januar": 1, "februar": 2, "maerz": 3, "märz": 3, "april": 4,
+# "marz": normalize() entfernt den Umlaut, aus "März" wird "marz".
+MONTH_TO_NUM = {"januar": 1, "februar": 2, "maerz": 3, "marz": 3, "märz": 3, "april": 4,
                 "mai": 5, "juni": 6, "juli": 7, "august": 8, "september": 9,
                 "oktober": 10, "november": 11, "dezember": 12}
 
